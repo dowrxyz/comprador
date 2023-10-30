@@ -1,34 +1,97 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
-import TabsPage from '../views/TabsPage.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/tabs/tab1'
+    redirect: '/signin'
   },
   {
-    path: '/tabs/',
-    component: TabsPage,
-    children: [
+    path: '/signin',
+    component: () => import('@/views/Session/login.vue')
+  },
+  {
+    path: '/signup',
+    component: () => import('@/views/Session/register.vue')
+  },
+  {
+    path: '/password',
+    component: () => import('@/views/Session/password.vue')
+  },
+  {
+    path: '/chat/deal/:name',
+    name: 'chatDeals',
+    component: () => import('@/views/User/Deal.vue')
+  },
+  {
+    path: '/licitacion/:name',
+    component: () => import('@/views/User/LicitacionRecibida.vue')
+  },
+  {
+    path: '/chat/licitacion/:name',
+    component: () => import('@/views/User/ChatLicitacion.vue')
+  },
+  {
+    path: '/orders',
+    component: () => import('@/views/User/Orders.vue')
+  },
+  {
+    path: '/profile',
+    component: () => import('@/views/User/Profile.vue')
+  },
+  {
+    path: '/status',
+    component: () => import('@/views/User/OrderStatus.vue')
+  },
       {
-        path: '',
-        redirect: '/tabs/tab1'
+        path: '/app/home',
+        component: () => import('@/views/Home.vue')
       },
       {
-        path: 'tab1',
-        component: () => import('@/views/Tab1Page.vue')
+        path: '/app/insumos',
+        component: () => import('@/views/User/Insumos.vue')
       },
       {
-        path: 'tab2',
-        component: () => import('@/views/Tab2Page.vue')
+        path: '/app/tutorials',
+        component: () => import('@/views/User/Tutorials.vue')
       },
       {
-        path: 'tab3',
-        component: () => import('@/views/Tab3Page.vue')
+        path: '/app/market',
+        component: () => import('@/views/User/MarketDeals.vue')
+      },
+      {
+        path: '/app/product/:name',
+        name: 'product',
+        component: () => import('@/views/User/Product.vue')
+      },
+      {
+        path: '/app/add/product/',
+        component: () => import('@/views/User/AddProduct.vue')
+      },
+      {
+        path: '/app/dashboard',
+        component: () => import('@/views/User/Dashboard.vue')
+      },
+      {
+        path: '/app/manage/:name',
+        component: () => import('@/views/User/Manage.vue')
+      },
+      {
+        path: '/app/licitar',
+        component: () => import('@/views/User/Licitaciones.vue')
+      },
+      {
+        path: '/app/licitar/:name',
+        component: () => import('@/views/User/Licitar.vue')
+      },
+      {
+        path: '/app/licitaciones',
+        component: () => import('@/views/User/MisLicitaciones.vue')
+      },
+      {
+        path: '/app/notifications',
+        component: () => import('@/views/User/Notifications.vue')
       }
-    ]
-  }
 ]
 
 const router = createRouter({

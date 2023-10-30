@@ -18,13 +18,19 @@
     "@capacitor/haptics": "^5.0.6",
     "@capacitor/keyboard": "^5.0.6",
     "@capacitor/status-bar": "^5.0.6",
+    "@coreui/vue": "^4.10.1",
     "@ionic/vue": "^7.0.0",
     "@ionic/vue-router": "^7.0.0",
+    "apexcharts": "^3.44.0",
     "ionicons": "^7.0.0",
     "vue": "^3.2.45",
-    "vue-router": "^4.1.6"
+    "vue-multiselect": "^3.0.0-beta.3",
+    "vue-router": "^4.1.6",
+    "vue-sweetalert2": "^5.0.5",
+    "vue3-apexcharts": "^1.4.4"
   },
   "devDependencies": {
+    "@capacitor/assets": "^3.0.1",
     "@vitejs/plugin-legacy": "^4.0.2",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vue/eslint-config-typescript": "^11.0.2",
