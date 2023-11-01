@@ -1,17 +1,27 @@
 <template>
   <div class="content w-full mx-auto grid my-5 gap-2">
     <h2 class="text-gray-500 font-bold font-md text-center">Filtra por</h2>
-    <div class="flex gap-3 justify-center items-end mx-auto w-5/6">
-      <div class="input-container grid items-end justify-center relative">
-        <multiselect
-          v-model="cantonSelected"
-          :options="canton"
-          :multiple="true"
-          placeholder="Canton"
-          deselect-label="Quitar filtro"
-          select-label="Añadir filtro"
-        >
-        </multiselect>
+    <div class="grid grid-cols-2 justify-center items-end mx-auto w-5/6">
+      <div
+        @click="showCantonWrapper"
+        v-if="!cantonWrapper"
+        class="input-container border-2 mr-2 w-11/12 grid items-end relative h-12 text-gray-500 p-2"
+      >
+        <p class="text-left">Canton</p>
+        <div class="absolute right-1 top-3">
+          <img
+            src="@/assets/Search.svg"
+            alt="Search by Canton"
+            class="h-6 w-6"
+          />
+        </div>
+      </div>
+      <div
+        @click="showCantonWrapper"
+        v-else
+        class="input-hover border-2 mr-2 w-11/12 grid items-end relative h-12 text-gray-500 p-2"
+      >
+        <p class="text-left">Canton</p>
         <div class="absolute right-1 top-3">
           <img
             src="@/assets/Search.svg"
@@ -21,48 +31,105 @@
         </div>
       </div>
 
-      <div class="input-container grid items-end justify-center relative">
-        <multiselect
-          v-model="calidadSelected"
-          :options="calidad"
-          :multiple="true"
-          placeholder="Comerciante"
-          deselect-label="Quitar filtro"
-          select-label="Añadir filtro"
-          :show-labels="false"
-          :hide-selected="true"
-        >
-        </multiselect>
+      <div
+        @click="showComercianteWrapper"
+        v-if="!comercianteWrapper"
+        class="input-container border-2 w-full grid items-end relative h-12 text-gray-500 p-2"
+      >
+        <p class="">Comerciante</p>
         <div class="absolute right-1 top-3">
           <img
             src="@/assets/Search.svg"
-            alt="Search by Calidad"
+            alt="Search by Comerciante"
             class="h-6 w-6"
           />
         </div>
       </div>
-    </div>
 
-    <div
-      class="my-2 w-11/12 mx-auto shadow-sm h-24 grid items-center p-3 gap-3 rounded"
-    >
-      <div class="grid grid-cols-2 justify-between">
-        <label for="range" class="text-gray-700 text-md font-bold"
-          >Distancia</label
-        >
-        <span class="text-gray-800 text-md text-right"
-          >({{ distancia }} km)</span
-        >
+      <div
+        @click="showComercianteWrapper"
+        v-else
+        class="input-hover border-2 w-full grid items-end relative h-12 text-gray-500 p-2"
+      >
+        <p class="">Comerciante</p>
+        <div class="absolute right-1 top-3">
+          <img
+            src="@/assets/Search.svg"
+            alt="Search by Comerciante"
+            class="h-6 w-6"
+          />
+        </div>
       </div>
-      <input
-        type="range"
-        class="w-full rangeDistancia"
-        min="5"
-        max="150"
-        step="5"
-        name="range"
-        v-model="distancia"
-      />
+
+      <div class="flex">
+        <div
+          v-if="cantonWrapper"
+          class="wrapper w-11/12 col-span-2 md:col-span-1 border-b-2 border-l-2 border-r-2 rounded-b-md"
+        >
+          <div class="w-full mx-auto h-24 grid items-center p-3 gap-3 rounded">
+            <div class="grid mx-auto md:mx-0 md:grid-cols-2 justify-between">
+              <label for="range" class="text-gray-700 text-md font-bold"
+                >Distancia</label
+              >
+              <span class="text-gray-800 text-md text-right"
+                >({{ distancia }} km)</span
+              >
+            </div>
+            <input
+              type="range"
+              class="w-full rangeDistancia"
+              min="5"
+              max="150"
+              step="5"
+              name="range"
+              v-model="distancia"
+            />
+          </div>
+
+          <div class="checkboxes mt-3 md:grid-cols-2 grid justify-start">
+            <div class="grid grid-cols-2 items-center mb-2 w-full text-sm">
+              <input type="checkbox" name="Provincia" class="checkbox" />
+              <label for="Provincia" class="text-gray-600">Quito</label>
+            </div>
+            <div class="grid grid-cols-2 items-center mb-2 w-full text-sm">
+              <input type="checkbox" name="Provincia" class="checkbox" />
+              <label for="Provincia" class="text-gray-600">Guayas</label>
+            </div>
+            <div class="grid grid-cols-2 items-center mb-2 w-full text-sm">
+              <input type="checkbox" name="Provincia" class="checkbox" />
+              <label for="Provincia" class="text-gray-600">La Paz</label>
+            </div>
+            <div class="grid grid-cols-2 items-center mb-2 w-full text-sm">
+              <input type="checkbox" name="Provincia" class="checkbox" />
+              <label for="Provincia" class="text-gray-600">Otra</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        v-if="comercianteWrapper"
+        class="wrapper md:w-full border-b-2 border-l-2 border-r-2 rounded-b-md"
+      >
+        <div class="checkboxes md:grid-cols-2 grid">
+          <div class="grid grid-cols-2 items-center mb-2 w-full text-sm">
+            <input type="checkbox" name="Provincia" class="checkbox" />
+            <label for="Provincia" class="text-gray-600">Aso Agrícola</label>
+          </div>
+          <div class="grid grid-cols-2 items-center mb-2 w-full text-sm">
+            <input type="checkbox" name="Provincia" class="checkbox" />
+            <label for="Provincia" class="text-gray-600">Empresa</label>
+          </div>
+          <div class="grid grid-cols-2 items-center mb-2 w-full text-sm">
+            <input type="checkbox" name="Provincia" class="checkbox" />
+            <label for="Provincia" class="text-gray-600">Fabrica</label>
+          </div>
+          <div class="grid grid-cols-2 items-center mb-2 w-full text-sm">
+            <input type="checkbox" name="Provincia" class="checkbox" />
+            <label for="Provincia" class="text-gray-600">Artesano</label>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="grid gap-1">
@@ -235,35 +302,64 @@
 </template>
 
 <script allowJs>
-import multiselect from "vue-multiselect";
 export default {
-  components: { multiselect },
   props: {
     Item: String,
   },
   data() {
     return {
-      selected: null,
       distancia: 5,
       calidadSelected: "",
       cantonSelected: "",
-      calidad: ["Agrícola", "Empresa", "Particular"],
-      canton: ["Provincia", "Provincia", "Provincia"],
+      comercianteWrapper: false,
+      cantonWrapper: false,
     };
+  },
+  methods: {
+    showCantonWrapper() {
+      if (this.comercianteWrapper) this.comercianteWrapper = false;
+      this.cantonWrapper = this.cantonWrapper ? false : true;
+    },
+    showComercianteWrapper() {
+      if (this.cantonWrapper) this.cantonWrapper = false;
+      this.comercianteWrapper = this.comercianteWrapper ? false : true;
+    },
   },
 };
 </script>
-
-<style
-  src="../../node_modules/vue-multiselect/dist/vue-multiselect.css"
-></style>
 
 <style scoped>
 .input {
   font-size: 14px;
 }
 
+.checkbox {
+  accent-color: #a3e635;
+}
+
 .rangeDistancia {
   accent-color: #a3e635;
+}
+
+.input-container {
+  border-top: 1px solid #e2e8f0;
+  border-left: 1px solid #e2e8f0;
+  border-right: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.input-hover {
+  border-bottom: none;
+  border-top: 1px solid #e2e8f0;
+  border-left: 1px solid #e2e8f0;
+  border-right: 1px solid #e2e8f0;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 </style>
