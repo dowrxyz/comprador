@@ -2,7 +2,7 @@
   <div class="licitacion my-5 w-full mx-auto">
     <div class="grid gap-4 my-1">
       <h1 class="text-gray-500 text-md font-bold text-center">
-        Publica tu oferta ({{ Licitacion }})
+        Edita tu oferta ({{ Licitacion }})
       </h1>
 
       <div
@@ -101,7 +101,7 @@
       <button @click="showModal" type="button"
         class="py-3 px-5 default-bar mx-auto mt-3 w-2/3 rounded font-bold grid items-center mb-3"
       >
-        Publicar licitación
+        Actualizar
       </button>
     </form>
   </div>

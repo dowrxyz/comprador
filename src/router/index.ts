@@ -73,6 +73,18 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/User/Dashboard.vue')
       },
       {
+        path: '/app/multiusuarios',
+        component: () => import('@/views/User/Multi.vue')
+      },
+      {
+        path: '/app/multiusuarios/crear',
+        component: () => import('@/views/User/Multicrear.vue')
+      },
+      {
+        path: '/app/multiusuarios/editar',
+        component: () => import('@/views/User/Multieditar.vue')
+      },
+      {
         path: '/app/manage/:name',
         component: () => import('@/views/User/Manage.vue')
       },
@@ -83,6 +95,10 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/app/licitar/:name',
         component: () => import('@/views/User/Licitar.vue')
+      },
+      {
+        path: '/app/licitacion/editar/:name',
+        component: () => import('@/views/User/LicitacionEditar.vue')
       },
       {
         path: '/app/licitaciones',

@@ -1,22 +1,27 @@
 <template>
-  <div class="licitacion my-5 w-full mx-auto">
-    <form class="mx-auto grid items-center gap-3 w-11/12 mt-3">
+  <div class="licitacion my-5 w-full md:w-5/6 mx-auto">
+    <form class="mx-auto flex items-center gap-3 w-11/12 md:w-1/2 mt-3 justify-evenly">
       <div class="grid mt-3 gap-2 relative">
         <label for="Inicio" class="text-gray-500 font-bold text-sm"
-          >Seleccionar Fecha: Desde - Hasta</label
+          >Fecha de Inicio</label
         >
         <input
           type="date"
           name="Inicio"
-          class="w-full text-gray-500 mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+          class="w-full text-gray-500 bg-transparent border border-2 border-gray-300 px-3 py-3 rounded-md"
         />
-        <span class="text-gray-500 absolute bottom-4 left-36 md:left-36">/</span>
+        <img src="@/assets/Status/Event.svg" class="absolute bottom-4 right-2" alt="Calendar">
+      </div>
+      <div class="grid mt-3 gap-2 relative">
+        <label for="Fin" class="text-gray-500 font-bold text-sm"
+          >Fecha de Finalizacion</label
+        >
         <input
           type="date"
           name="Fin"
-          id="Fin"
-          class="text-gray-500 bg-transparent absolute bottom-1 mb-0.5 left-44 md:left-44 h-12"
+          class="w-full text-gray-500 bg-transparent border border-2 border-gray-300 px-3 py-3 rounded-md"
         />
+        <img src="@/assets/Status/Event.svg" class="absolute bottom-4 right-2" alt="Calendar">
       </div>
     </form>
 

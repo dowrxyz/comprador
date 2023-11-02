@@ -1,69 +1,147 @@
 <template>
- <ion-page>
-  <ion-content>
-    <ion-header>
-      <ion-toolbar color="primary">
-        <div class="grid grid-cols-3 items-center mx-auto w-11/12">
-          <a href="/signin">
-            <img src="@/assets/Arrow.svg" alt="Back" class="w-4 h-4" />
-          </a>
-          <h2 class="text-center">Registro</h2>
-        </div>
-      </ion-toolbar>
-    </ion-header>
+  <ion-page>
+    <ion-content>
+      <ion-header>
+        <ion-toolbar color="primary">
+          <div class="grid grid-cols-3 items-center mx-auto w-11/12">
+            <a href="/signin">
+              <img src="@/assets/Arrow.svg" alt="Back" class="w-4 h-4" />
+            </a>
+            <h2 class="text-center">Registro</h2>
+          </div>
+        </ion-toolbar>
+      </ion-header>
 
-    <div class="logIn">
-      <img
-        src="@/assets/AgroIcon.svg"
-        alt="App Icon"
-        class="icon-app mx-auto my-4"
-      />
-
-      <form class="mx-auto grid items-center gap-3 w-full my-5">
-        <label for="data1" class="text-gray-600 font-bold w-5/6 mx-auto">Data 1</label>
-        <input
-          type="text"
-          name="data1"
-          class="text-gray-400 w-5/6 mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
-          placeholder="Data 1"
+      <div class="logIn">
+        <img
+          src="@/assets/AgroIcon.svg"
+          alt="App Icon"
+          class="icon-app mx-auto my-4"
         />
-        <label for="data2" class="text-gray-600 font-bold w-5/6 mx-auto">Data 2</label>
-        <select
-          name="data2"
-          class="w-5/6 mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
-        >
-          <option selected>Data2</option>
-        </select>
-        
-      <div class="mx-auto grid relative w-5/6">
-        <div class="relative">
-          <label for="ubicacion" class="text-gray-600 font-bold w-5/6 mx-auto"
-            >Ubicación</label
-          >
-          <input
-            type="text"
-            name="ubicacion"
-            class="w-full text-gray-400 mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
-            placeholder="Ingresar ubicación"
-          />
 
-          <div class="absolute right-3 top-11">
-            <img
-              src="@/assets/Search.svg"
-              alt="Your ubication"
-              class="h-5 w-5"
+        <form
+          class="mx-auto items-center gap-3 w-full my-5 md:w-1/2 justify-center grid md:grid-cols-2"
+        >
+          <div class="">
+            <label for="ruc" class="text-gray-600 font-bold w-5/6 mx-auto"
+              >RUC</label
+            >
+            <input
+              type="text"
+              name="ruc"
+              class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+              placeholder="Tu cedula"
             />
           </div>
-        </div>
+          <div class="">
+            <label for="correo" class="text-gray-600 font-bold w-5/6 mx-auto"
+              >Correo</label
+            >
+            <input
+              type="text"
+              id="correo"
+              class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+              placeholder="Tu correo"
+            />
+          </div>
+          <div class="">
+            <label for="clave" class="text-gray-600 font-bold w-5/6 mx-auto"
+              >Clave</label
+            >
+            <input
+              type="password"
+              id="clave"
+              class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+              placeholder="Contraseña"
+            />
+          </div>
+          <div class="">
+            <label for="comp" class="text-gray-600 font-bold w-5/6 mx-auto"
+              >Compañía</label
+            >
+            <input
+              type="text"
+              id="comp"
+              class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+              placeholder="Nombre de Compañía"
+            />
+          </div>
+
+          <div class="mx-auto grid relative w-full">
+            <div class="relative">
+              <label
+                for="provincia"
+                class="text-gray-600 font-bold w-5/6 mx-auto"
+                >Pronvincia</label
+              >
+              <select
+                id="provincia"
+                class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
+              >
+                <option selected>Jaramijó</option>
+                <option selected>Pedro Carbo</option>
+                <option selected>Milagro</option>
+              </select>
+
+              <div class="absolute right-3 top-11">
+                <img
+                  src="@/assets/Search.svg"
+                  alt="Your ubication"
+                  class="h-5 w-5"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="mx-auto grid relative w-full">
+            <div class="relative">
+              <label
+                for="canton"
+                class="text-gray-600 font-bold w-5/6 mx-auto"
+                >Cantón</label
+              >
+              <select
+                id="canton"
+                class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
+              >
+                <option selected>Jaramijó</option>
+                <option selected>Pedro Carbo</option>
+                <option selected>Milagro</option>
+              </select>
+
+              <div class="absolute right-3 top-11">
+                <img
+                  src="@/assets/Search.svg"
+                  alt="Your ubication"
+                  class="h-5 w-5"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="">
+            <label for="dic" class="text-gray-600 font-bold w-5/6 mx-auto"
+              >Direccion</label
+            >
+            <input
+              type="text"
+              id="dic"
+              class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+              placeholder="Tu direccion"
+            />
+          </div>
+
+
+          <button
+            class="py-3 px-5 default-bar mx-auto mt-3 w-2/3 rounded font-bold col-span-2"
+            @click="showModal"
+            type="button"
+          >
+            Enviar
+          </button>
+        </form>
       </div>
-        <button class="py-3 px-5 default-bar mx-auto mt-3 w-2/3 rounded font-bold" @click="showModal" type="button">
-          Enviar
-        </button>
-      </form>
 
-    </div>
-
-    <CModal alignment="center" :visible="visible">
+      <CModal alignment="center" :visible="visible">
         <CModalBody>
           <div class="grid w-full gap-3 pb-3">
             <img
@@ -79,17 +157,16 @@
             </h2>
             <div class="mx-auto text-center">
               <p class="text-gray-400 text-sm w-3/4 mx-auto">
-                Agroec analizará su perfil. Se hará llegar un correo electrónico para notificar disponibilidad de acceso a la Aplicación. 
+                Agroec analizará su perfil. Se hará llegar un correo electrónico
+                para notificar disponibilidad de acceso a la Aplicación.
               </p>
             </div>
           </div>
         </CModalBody>
       </CModal>
-
-  </ion-content>
-</ion-page>
+    </ion-content>
+  </ion-page>
 </template>
-
 
 <script allowJs>
 import { CModal, CModalBody } from "@coreui/vue";
@@ -100,7 +177,7 @@ export default {
   },
   data() {
     return {
-      visible: false
+      visible: false,
     };
   },
   methods: {
@@ -114,4 +191,3 @@ export default {
   },
 };
 </script>
-

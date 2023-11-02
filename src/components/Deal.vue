@@ -3,9 +3,9 @@
     v-if="!details"
     class="content w-11/12 mx-auto grid my-5 gap-4 justify-center min-h-full"
   >
-    <div class="mx-auto w-11/12 mt-2 items-center h-5/6 overflow-scroll">
+    <div class="mx-auto w-11/12 mt-2 items-center h-5/6 overflow-hidden">
       <div class="messages grid h-100 gap-3">
-        <div class="message-incoming flex gap-2 items-center overflow-scroll">
+        <div class="message-incoming flex gap-2 items-center overflow-hidden">
           <img
             src="@/assets/People/Factory.svg"
             alt="Incoming Message Profile Icon"

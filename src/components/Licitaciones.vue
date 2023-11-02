@@ -1,5 +1,5 @@
 <template>
-  <div class="content w-11/12 mx-auto grid my-6 gap-2">
+  <div class="content w-11/12 mx-auto grid my-6 gap-2  md:w-1/2">
     <div
       class="content-cards grid grid-cols-3 gap-2 items-center justify-center"
     >

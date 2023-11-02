@@ -6,7 +6,7 @@
       class="icon-app mx-auto my-6"
     />
 
-    <form class="mx-auto grid items-center gap-3 w-full">
+    <form class="mx-auto grid items-center gap-3 w-full md:w-1/3">
       <label for="data1" class="text-gray-600 font-bold w-5/6 mx-auto"
         >Data 1</label
       >

@@ -1,6 +1,6 @@
 <template>
   <div class="addProduct mt-6">
-    <form class="mx-auto grid items-center gap-3 w-full">
+    <form class="mx-auto grid items-center gap-3 w-full md:w-2/5">
       <label for="listado" class="text-gray-500 font-bold w-5/6 mx-auto"
         >Productos en listado</label
       >

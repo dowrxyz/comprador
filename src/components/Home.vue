@@ -1,5 +1,5 @@
 <template>
-  <div class="content w-11/12 mx-auto grid my-5 gap-2">
+  <div class="content w-11/12 mx-auto grid my-5 gap-2 md:w-3/4">
     <div class="content-message grid gap-2 text-left">
       <h1 class="font-bold text-md text-gray-600">Hola, Santiago</h1>
       <p class="text-md text-gray-400">Bienvenido a Agroec</p>
@@ -116,7 +116,7 @@
 
     <RouterLink
       to="/app/dashboard"
-      class="text-center py-3 px-1 default-bar mx-auto my-6 w-5/6 rounded"
+      class="text-center py-3 px-1 default-bar mx-auto my-6 w-5/6 rounded md:w-1/4"
     >
       Gestión por producto
     </RouterLink>
