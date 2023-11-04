@@ -20,14 +20,14 @@
         />
 
         <form
-          class="mx-auto items-center gap-3 w-full my-5 md:w-1/2 justify-center grid md:grid-cols-2"
+          class="mx-auto items-center gap-3 w-11/12 my-5 md:w-1/2 justify-center grid md:grid-cols-2"
         >
           <div class="">
             <label for="ruc" class="text-gray-600 font-bold w-5/6 mx-auto"
               >RUC</label
             >
             <input
-              type="text"
+              type="number"
               name="ruc"
               class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
               placeholder="Tu cedula"
@@ -72,15 +72,15 @@
               <label
                 for="provincia"
                 class="text-gray-600 font-bold w-5/6 mx-auto"
-                >Pronvincia</label
+                >Provincia</label
               >
               <select
                 id="provincia"
                 class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
               >
                 <option selected>Jaramijó</option>
-                <option selected>Pedro Carbo</option>
-                <option selected>Milagro</option>
+                <option>Pedro Carbo</option>
+                <option>Milagro</option>
               </select>
 
               <div class="absolute right-3 top-11">
@@ -105,8 +105,8 @@
                 class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
               >
                 <option selected>Jaramijó</option>
-                <option selected>Pedro Carbo</option>
-                <option selected>Milagro</option>
+                <option>Pedro Carbo</option>
+                <option>Milagro</option>
               </select>
 
               <div class="absolute right-3 top-11">
@@ -127,6 +127,102 @@
               id="dic"
               class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
               placeholder="Tu direccion"
+            />
+          </div>
+          <div class="">
+            <label for="dic" class="text-gray-600 font-bold w-5/6 mx-auto"
+              >Ubicacion</label
+            >
+            <input
+              type="text"
+              id="dic"
+              class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+              placeholder="GPS"
+            />
+          </div>
+
+          <Contact num="1"/>
+          <Contact num="2"/>
+          <Contact num="3"/>
+
+
+
+          <div class="mx-auto grid relative w-full col-span-2">
+            <div class="relative">
+              <label
+                for="negocio"
+                class="text-gray-600 font-bold w-5/6 mx-auto"
+                >Tipo de Negocio</label
+              >
+              <select
+                id="negocio"
+                class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
+              >
+                <option selected>Asóciacion Agricola</option>
+                <option>Agricultor</option>
+                <option>Comerciante</option>
+              </select>
+
+              <div class="absolute right-3 top-11">
+                <img
+                  src="@/assets/Search.svg"
+                  alt="Type of your business"
+                  class="h-5 w-5"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-span-2 grid">
+            <label for="eco" class="text-gray-600 font-bold w-full mx-auto"
+              >Productos de Interes</label
+            >
+            <RouterLink to="/app/add/product/interested" class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 px-3 py-3 rounded-md">Agregar productos</RouterLink>
+          </div> 
+      
+          <div class="">
+            <label for="eco" class="text-gray-600 font-bold w-5/6 mx-auto"
+              >Actividad Económica</label
+            >
+            <input
+              type="text"
+              id="eco"
+              class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+              placeholder="Tu actividad"
+            />
+          </div>
+
+          
+          <div class="">
+            <label for="ctm" class="text-gray-600 font-bold w-5/6 mx-auto"
+              >Consumo Mes TM</label
+            >
+            <input
+              type="number"
+              name="ctm"
+              class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+            />
+          </div>
+          
+          <div class="">
+            <label for="ca" class="text-gray-600 font-bold w-5/6 mx-auto"
+              >Consumo Anual</label
+            >
+            <input
+              type="number"
+              name="ca"
+              class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+            />
+          </div>
+
+          <div class="">
+            <label for="pmes" class="text-gray-600 font-bold w-5/6 mx-auto"
+              >Presupuesto por Mes</label
+            >
+            <input
+              type="number"
+              name="pmes"
+              class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
             />
           </div>
 
@@ -169,10 +265,12 @@
 </template>
 
 <script allowJs>
+import Contact from "@/components/Contacto.vue";
 import { CModal, CModalBody } from "@coreui/vue";
 export default {
   components: {
     CModal,
+    Contact,
     CModalBody,
   },
   data() {
@@ -191,3 +289,13 @@ export default {
   },
 };
 </script>
+
+
+<style scoped>
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+</style>

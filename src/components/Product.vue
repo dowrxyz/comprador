@@ -1,7 +1,7 @@
 <template>
   <div class="content w-full mx-auto grid my-5 gap-2">
     <h2 class="text-gray-500 font-bold font-md text-center">Filtra por</h2>
-    <div class="grid grid-cols-2 justify-center items-end mx-auto w-5/6">
+    <div class="grid grid-cols-2 justify-center items-end mx-auto w-5/6 md:w-2/6">
       <div
         @click="showCantonWrapper"
         class="input-container border-2 mr-2 w-11/12 grid items-end relative h-12 text-gray-500 p-2"
@@ -230,11 +230,23 @@
               />
             </div>
 
-            <div class="checkboxes mt-3 md:grid-cols-2 grid justify-start">
-              <div class="grid grid-cols-2 items-center mb-2 w-full text-sm" v-for="option in options" :key="option.value">
-                <input type="checkbox" :id="option.name" class="checkbox" v-model="cantonSelected" :value="option.value"/>
-                <label :for="option.name" class="text-gray-600">{{option.name}}</label>
-              </div>
+            <div class="checkboxes mt-3 md:grid-cols-2 grid justify-start"> 
+                <div class="grid grid-cols-2 items-center mb-2 text-sm">
+                  <input type="checkbox" name="City1" class="checkbox" v-model="jaramijo" @change="handleCheckboxChange"/>
+                  <label for="City1" class="text-gray-600 col-span-1">Jaramijó</label>
+                </div>
+                <div class="grid grid-cols-2 items-center mb-2 w-full text-sm">
+                  <input type="checkbox" name="City2" class="checkbox" v-model="pedroCarbo" @change="handleCheckboxChange"/>
+                  <label for="City2" class="text-gray-600">Pedro Carbo</label>
+                </div>
+                <div class="grid grid-cols-2 items-center mb-2 w-full text-sm">
+                  <input type="checkbox" name="City3" class="checkbox" v-model="milagro" @change="handleCheckboxChange"/>
+                  <label for="City3" class="text-gray-600">Milagro</label>
+                </div>
+                <div class="grid grid-cols-2 items-center mb-2 w-full text-sm">
+                  <input type="checkbox" name="City4" class="checkbox" v-model="all" @change="handleCheckboxChange"/>
+                  <label for="City4" class="text-gray-600">Todos</label>
+                </div>
             </div>
           </div>
         </div>
@@ -255,19 +267,11 @@
         <div
           class="wrapper w-full"
         >
-          <div class="checkboxes md:grid-cols-2 grid">
-            <div class="grid grid-cols-2 items-center mb-2 text-sm">
-              <input type="checkbox" name="Provincia" class="checkbox" v-model="agricultorSelected" @change="handleCheckboxChange"/>
-              <label for="Provincia" class="text-gray-600 col-span-1">Agricultor</label>
-            </div>
-            <div class="grid grid-cols-2 items-center mb-2 w-full text-sm">
-              <input type="checkbox" name="Provincia" class="checkbox" v-model="comercianteSelected" @change="handleCheckboxChange"/>
-              <label for="Provincia" class="text-gray-600">Comerciante</label>
-            </div>
-            <div class="grid grid-cols-2 items-center mb-2 w-full text-sm">
-              <input type="checkbox" name="Provincia" class="checkbox" v-model="asociacionSelected" @change="handleCheckboxChange"/>
-              <label for="Provincia" class="text-gray-600">Asociación de Agricultor</label>
-            </div>
+          <div class="checkboxes grid">
+              <div class="grid grid-cols-2 items-center mb-2 w-full text-sm" v-for="option in options" :key="option.value">
+                <input type="checkbox" :id="option.name" class="checkbox" v-model="comercianteType" :value="option.value"/>
+                <label :for="option.name" class="text-gray-600">{{option.name}}</label>
+              </div>
           </div>
         </div>
       </div>
@@ -288,18 +292,17 @@ export default {
   data() {
     return {
       distancia: 5,
-      comercianteSelected: "",
+      pedroCarbo: false,
+      jaramijo: false,
+      all: false,
+      milagro: false,
       selectSeller: false,
       selectCanton: false,
-      cantonSelected: [],
-      asociacionSelected: "",
-      agricultorSelected: "",
-      comercianteSelected: "",
+      comercianteType: [],
       options: [
-        { name: "Pedro Carbo", value: "Pedro Carbo" },
-        { name: "Jaramijó", value: "Jaramijó" },
-        { name: "Milagro", value: "Milagro" },
-        { name: "Todos", value: "All" },
+        { name: "Agricultor", value: "Agricultor" },
+        { name: "Asóciacion Agricultora", value: "Asóciacion Agricultora" },
+        { name: "Comericiante", value: "Comerciante" },
       ]
     };
   },
@@ -316,21 +319,26 @@ export default {
     },
     handleCheckboxChange() {
       // Implementa la lógica para garantizar que solo uno esté seleccionado
-      if (this.agricultorSelected) {
-        this.comercianteSelected = false;
-        this.asociacionSelected = false;
+      if (this.pedroCarbo) {
+        this.jaramijo = false;
+        this.milagro = false;
+        this.all = false;
       }
-      if (this.comercianteSelected) {
-        this.agricultorSelected = false;
-        this.asociacionSelected = false;
+      if (this.jaramijo) {
+        this.pedroCarbo = false;
+        this.milagro = false;
+        this.all = false;
       }
-      if (this.asociacionSelected) {
-        this.agricultorSelected = false;
-        this.comercianteSelected = false;
+      if (this.milagro) {
+        this.jaramijo = false;
+        this.pedroCarbo = false;
+        this.all = false;
       }
-    },
-    handleCantonChange(){
-
+      if (this.all) {
+        this.jaramijo = false;
+        this.milagro = false;
+        this.pedroCarbo = false;
+      }
     }
   },
 };

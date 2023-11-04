@@ -3,25 +3,23 @@
     <form class="mx-auto flex items-center gap-3 w-11/12 md:w-1/2 mt-3 justify-evenly">
       <div class="grid mt-3 gap-2 relative">
         <label for="Inicio" class="text-gray-500 font-bold text-sm"
-          >Fecha de Inicio</label
+          >Fecha: Desde</label
         >
         <input
           type="date"
           name="Inicio"
           class="w-full text-gray-500 bg-transparent border border-2 border-gray-300 px-3 py-3 rounded-md"
         />
-        <img src="@/assets/Status/Event.svg" class="absolute bottom-4 right-2" alt="Calendar">
       </div>
       <div class="grid mt-3 gap-2 relative">
         <label for="Fin" class="text-gray-500 font-bold text-sm"
-          >Fecha de Finalizacion</label
+          >Fecha: Hasta</label
         >
         <input
           type="date"
           name="Fin"
           class="w-full text-gray-500 bg-transparent border border-2 border-gray-300 px-3 py-3 rounded-md"
         />
-        <img src="@/assets/Status/Event.svg" class="absolute bottom-4 right-2" alt="Calendar">
       </div>
     </form>
 

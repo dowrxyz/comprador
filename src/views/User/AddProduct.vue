@@ -6,7 +6,7 @@
             <RouterLink to="/app/market">
               <img src="@/assets/Arrow.svg" alt="Back" class="w-4 h-4" />
             </RouterLink>
-            <h2 class="text-center mx-auto">Agregar Productos</h2>
+            <h2 class="text-center mx-auto">Agregar Productos de interés</h2>
           </div>
         </ion-toolbar>
       </ion-header>

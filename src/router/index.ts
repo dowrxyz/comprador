@@ -101,6 +101,10 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/User/LicitacionEditar.vue')
       },
       {
+        path: '/app/add/product/interested',
+        component: () => import('@/views/User/InterestedProduct.vue')
+      },
+      {
         path: '/app/licitaciones',
         component: () => import('@/views/User/MisLicitaciones.vue')
       },
