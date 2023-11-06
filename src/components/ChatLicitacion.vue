@@ -3,28 +3,88 @@
     v-if="!details"
     class="content w-11/12 mx-auto grid my-5 gap-4 justify-center min-h-full"
   >
-    <div class="mx-auto w-11/12 mt-2 items-center h-5/6 overflow-hidden">
-      <div class="messages grid h-100 gap-3 overflow-hidden">
+    <div class="mx-auto w-11/12 mt-2 message-wrap overflow-y-scroll">
+      <div class="messages grid gap-3 p-2">
         <div class="message-incoming flex gap-2 items-center">
           <img
-            src="@/assets/People/Farmer.svg"
+            src="@/assets/People/Factory.svg"
             alt="Incoming Message Profile Icon"
             class="h-16 w-16"
           />
           <div class="message-content incoming-chat rounded-md p-2 w-11/12">
             <p class="text-sm text-gray-800">
-              Puedo licitar, puesto en mi planta
+              Me intereso, te ofrezco $17.50, puesto en mi planta.
             </p>
           </div>
         </div>
         <div class="message-outgoing flex gap-2 items-center">
           <div class="message-content outgoing-chat rounded-md p-2 w-11/12">
             <p class="text-sm text-gray-800">
-              Acepto, necesito cumplir con esta licitacion.
+              Acepto donde esta ubicado, envieme su ubicacion.
             </p>
           </div>
           <img
-            src="@/assets/People/Factory.svg"
+            src="@/assets/People/Aso.svg"
+            alt="Outgoing Message Profile Icon"
+            class="h-16 w-16"
+          />
+        </div>
+        <div class="message-outgoing flex gap-2 items-center">
+          <div class="message-content outgoing-chat rounded-md p-2 w-11/12">
+            <p class="text-sm text-gray-800">
+              Acepto donde esta ubicado, envieme su ubicacion.
+            </p>
+          </div>
+          <img
+            src="@/assets/People/Aso.svg"
+            alt="Outgoing Message Profile Icon"
+            class="h-16 w-16"
+          />
+        </div>
+        <div class="message-outgoing flex gap-2 items-center">
+          <div class="message-content outgoing-chat rounded-md p-2 w-11/12">
+            <p class="text-sm text-gray-800">
+              Acepto donde esta ubicado, envieme su ubicacion.
+            </p>
+          </div>
+          <img
+            src="@/assets/People/Aso.svg"
+            alt="Outgoing Message Profile Icon"
+            class="h-16 w-16"
+          />
+        </div>
+        <div class="message-outgoing flex gap-2 items-center">
+          <div class="message-content outgoing-chat rounded-md p-2 w-11/12">
+            <p class="text-sm text-gray-800">
+              Acepto donde esta ubicado, envieme su ubicacion.
+            </p>
+          </div>
+          <img
+            src="@/assets/People/Aso.svg"
+            alt="Outgoing Message Profile Icon"
+            class="h-16 w-16"
+          />
+        </div>
+        <div class="message-outgoing flex gap-2 items-center">
+          <div class="message-content outgoing-chat rounded-md p-2 w-11/12">
+            <p class="text-sm text-gray-800">
+              Acepto donde esta ubicado, envieme su ubicacion.
+            </p>
+          </div>
+          <img
+            src="@/assets/People/Aso.svg"
+            alt="Outgoing Message Profile Icon"
+            class="h-16 w-16"
+          />
+        </div>
+        <div class="message-outgoing flex gap-2 items-center">
+          <div class="message-content outgoing-chat rounded-md p-2 w-11/12">
+            <p class="text-sm text-gray-800">
+              Acepto donde esta ubicado, envieme su ubicacion.
+            </p>
+          </div>
+          <img
+            src="@/assets/People/Aso.svg"
             alt="Outgoing Message Profile Icon"
             class="h-16 w-16"
           />
@@ -226,3 +286,31 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.message-wrap {
+  height: 50vh;
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #b4b1b1 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #b4b1b1;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+  }
+</style>

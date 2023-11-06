@@ -1,28 +1,29 @@
 <template>
   <div class="addProduct mt-6">
     <form class="mx-auto grid items-center gap-3 w-full md:w-2/5">
-      <label for="listado" class="text-gray-500 font-bold w-5/6 mx-auto"
-        >Productos en listado</label
-      >
-      <select
-        name="listado"
-        class="w-5/6 mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
-      >
-        <option selected>Aguacate</option>
-        <option selected>Tomate</option>
-        <option selected>Maiz</option>
-      </select>
-
-      <label for="sugerencia" class="text-gray-500 font-bold w-5/6 mx-auto"
-        >Sugerir Producto</label
-      >
-      <input
-        type="text"
-        name="sugerencia"
-        class="w-5/6 mx-auto bg-transparent border border-2 border-gray-300 rounded-[15px] px-3 py-3 rounded-md text-gray-400"
-        placeholder="Sugerencia"
-      />
-
+      <div class="w-5/6 mx-auto relative">
+        <label for="listado" class="text-gray-500 font-bold w-full mx-auto"
+          >Productos en listado</label
+        >
+        <input
+          type="text"
+          v-model="param" v-if="param == ''"
+          placeholder="Productos en listado"
+          class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
+        />
+        
+        <input
+          type="text"
+          v-model="param" v-else
+          placeholder="Productos en listado"
+          class="w-full mx-auto bg-transparent border-t-2 border-l-2 border-r-2 border-gray-300 px-3 py-3 rounded-t-md text-gray-600"
+        />
+        <span v-if="param != ''" class="border text-gray-600 w-5/6 mx-auto absolute top-20 right-7"></span>
+        <div class="grid gap-1 border-b-2 border-l-2 border-r-2 rounded-b-md border-gray-300 p-2" v-if="param != ''">
+          <p  class="text-gray-600" v-for="product in filteredList()" :key="product" @click="param = product">{{ product }}</p>
+          <p class="text-gray-600" v-if="param && !filteredList().length">No hay resultados!</p>
+        </div>
+      </div>
       <div class="grid relative w-5/6 mx-auto">
         <div class="relative">
           <label
@@ -204,6 +205,8 @@ export default {
       visible: false,
       parametros: false,
       castigos: false,
+      param: "",
+      fruits: ["Aguacate", "Maiz", "Tomate", "Cacao", "Papa", "Arroz"]
     };
   },
   methods: {
@@ -214,6 +217,11 @@ export default {
       // Close the menu by setting menuOpen to false
       this.visible = false;
     },
+    filteredList() {
+      return this.fruits.filter((fruit) =>
+        fruit.toLowerCase().includes(this.param.toLowerCase())
+      );
+    }
   },
 };
 </script>

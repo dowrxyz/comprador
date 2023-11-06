@@ -13,7 +13,7 @@
             type="text"
             id="name"
             class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
-            placeholder="Su nombre"
+            placeholder="Nombre"
           />
         </div>
         <div class="mb-2">
@@ -24,7 +24,7 @@
             type="number"
             id="telf"
             class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
-            placeholder="Numero teléfonico"
+            placeholder="Teléfono"
           />
         </div>
         <div class="mb-2">
@@ -35,7 +35,7 @@
             type="text"
             id="cargo"
             class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
-            placeholder="Su nombre"
+            placeholder="Cargo"
           />
         </div>
         <div class="mb-2">
@@ -46,7 +46,7 @@
             type="email"
             id="correo"
             class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
-            placeholder="Tu correo"
+            placeholder="Correo"
           />
         </div>
       </CAccordionBody>

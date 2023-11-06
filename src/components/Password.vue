@@ -26,7 +26,7 @@
           </p>
         </div>
 
-        <form class="mx-auto grid items-center gap-3 w-full">
+        <form class="mx-auto grid items-center gap-3 w-full md:w-1/3">
           <input
             type="email"
             class="text-gray-400 w-5/6 mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"

@@ -308,8 +308,8 @@ export default {
       comercianteType: [],
       options: [
         { name: "Agricultor", value: "Agricultor" },
+        { name: "Comerciante", value: "Comerciante" },
         { name: "Asóciacion Agricultora", value: "Asóciacion Agricultora" },
-        { name: "Comericiante", value: "Comerciante" },
       ]
     };
   },

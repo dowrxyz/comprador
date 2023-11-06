@@ -22,7 +22,18 @@
         <form
           class="mx-auto items-center gap-3 w-11/12 my-5 md:w-1/2 justify-center grid md:grid-cols-2"
         >
-          <div class="">
+          <div class="col-span-2">
+            <label for="comp" class="text-gray-600 font-bold w-5/6 mx-auto"
+              >Compañía</label
+            >
+            <input
+              type="text"
+              id="comp"
+              class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+              placeholder="Compañía"
+            />
+          </div>
+          <div class="col-span-2">
             <label for="ruc" class="text-gray-600 font-bold w-5/6 mx-auto"
               >RUC</label
             >
@@ -30,7 +41,7 @@
               type="number"
               name="ruc"
               class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
-              placeholder="Tu cedula"
+              placeholder="RUC"
             />
           </div>
           <div class="">
@@ -41,30 +52,31 @@
               type="text"
               id="correo"
               class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
-              placeholder="Tu correo"
+              placeholder="Correo"
             />
           </div>
-          <div class="">
+          <div class="relative">
             <label for="clave" class="text-gray-600 font-bold w-5/6 mx-auto"
               >Clave</label
             >
-            <input
+            <input v-if="visiblePassword"
               type="password"
               id="clave"
+              v-model="password"
               class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
-              placeholder="Contraseña"
+              placeholder="Clave"
             />
-          </div>
-          <div class="">
-            <label for="comp" class="text-gray-600 font-bold w-5/6 mx-auto"
-              >Compañía</label
-            >
-            <input
+            
+            <input v-else
               type="text"
-              id="comp"
+              id="clave"
+              v-model="password"
               class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
-              placeholder="Nombre de Compañía"
+              placeholder="Clave"
             />
+            <button @click="changeVisibility" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" class="absolute bottom-4 mb-0.5 right-2" fill="#a2afbe" height="24" viewBox="0 -960 960 960" width="24"><path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/></svg>
+            </button>
           </div>
 
           <div class="mx-auto grid relative w-full">
@@ -82,14 +94,6 @@
                 <option>Pedro Carbo</option>
                 <option>Milagro</option>
               </select>
-
-              <div class="absolute right-3 top-11">
-                <img
-                  src="@/assets/Search.svg"
-                  alt="Your ubication"
-                  class="h-5 w-5"
-                />
-              </div>
             </div>
           </div>
 
@@ -108,36 +112,39 @@
                 <option>Pedro Carbo</option>
                 <option>Milagro</option>
               </select>
-
-              <div class="absolute right-3 top-11">
-                <img
-                  src="@/assets/Search.svg"
-                  alt="Your ubication"
-                  class="h-5 w-5"
-                />
-              </div>
             </div>
           </div>
           <div class="">
             <label for="dic" class="text-gray-600 font-bold w-5/6 mx-auto"
-              >Direccion</label
+              >Dirección</label
             >
             <input
               type="text"
               id="dic"
               class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
-              placeholder="Tu direccion"
+              placeholder="Dirección"
             />
           </div>
           <div class="">
             <label for="dic" class="text-gray-600 font-bold w-5/6 mx-auto"
-              >Ubicacion</label
+              >Ubicación</label
             >
             <input
               type="text"
               id="dic"
               class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
-              placeholder="GPS"
+              placeholder="Ubicación"
+            />
+          </div>
+          <div class="col-span-2">
+            <label for="telf" class="text-gray-600 font-bold w-5/6 mx-auto"
+              >Teléfono</label
+            >
+            <input
+              type="text"
+              id="telf"
+              class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+              placeholder="Teléfono"
             />
           </div>
 
@@ -146,6 +153,17 @@
           <Contact num="3"/>
 
 
+          <div class="col-span-2">
+            <label for="eco" class="text-gray-600 font-bold w-5/6 mx-auto"
+              >Actividad Económica</label
+            >
+            <input
+              type="text"
+              id="eco"
+              class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+              placeholder="Actividad Económica"
+            />
+          </div>
 
           <div class="mx-auto grid relative w-full col-span-2">
             <div class="relative">
@@ -158,70 +176,54 @@
                 id="negocio"
                 class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
               >
-                <option selected>Asóciacion Agricola</option>
-                <option>Agricultor</option>
+                <option selected>Agricultor</option>
                 <option>Comerciante</option>
+                <option>Asóciacion Agricola</option>
               </select>
-
-              <div class="absolute right-3 top-11">
-                <img
-                  src="@/assets/Search.svg"
-                  alt="Type of your business"
-                  class="h-5 w-5"
-                />
-              </div>
             </div>
           </div>
+          
 
-          <div class="col-span-2 grid">
+          <div class="col-span-2 grid relative">
             <label for="eco" class="text-gray-600 font-bold w-full mx-auto"
               >Productos de Interes</label
             >
             <RouterLink to="/app/add/product/interested" class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 px-3 py-3 rounded-md">Agregar productos</RouterLink>
+            <svg xmlns="http://www.w3.org/2000/svg" class="absolute bottom-4 mb-0.5 right-2" fill="#a2afbe" height="24" viewBox="0 -960 960 960" width="24"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
           </div> 
       
-          <div class="">
-            <label for="eco" class="text-gray-600 font-bold w-5/6 mx-auto"
-              >Actividad Económica</label
-            >
-            <input
-              type="text"
-              id="eco"
-              class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
-              placeholder="Tu actividad"
-            />
-          </div>
-
-          
-          <div class="">
+          <div class="col-span-2">
             <label for="ctm" class="text-gray-600 font-bold w-5/6 mx-auto"
               >Consumo Mes TM</label
             >
             <input
               type="number"
               name="ctm"
+              placeholder="Consumo Mes TM"
               class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
             />
           </div>
           
-          <div class="">
+          <div class="col-span-2">
             <label for="ca" class="text-gray-600 font-bold w-5/6 mx-auto"
               >Consumo Anual</label
             >
             <input
               type="number"
               name="ca"
+              placeholder="Consumo Anual"
               class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
             />
           </div>
 
-          <div class="">
+          <div class="col-span-2">
             <label for="pmes" class="text-gray-600 font-bold w-5/6 mx-auto"
               >Presupuesto por Mes</label
             >
             <input
               type="number"
               name="pmes"
+              placeholder="Presupuesto por Mes"
               class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
             />
           </div>
@@ -276,6 +278,7 @@ export default {
   data() {
     return {
       visible: false,
+      visiblePassword: true,
     };
   },
   methods: {
@@ -286,16 +289,9 @@ export default {
       // Close the menu by setting menuOpen to false
       this.visible = false;
     },
+    changeVisibility () {
+      this.visiblePassword = !this.visiblePassword;
+    }
   },
 };
 </script>
-
-
-<style scoped>
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  text-indent: 1px;
-  text-overflow: '';
-}
-</style>
