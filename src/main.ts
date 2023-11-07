@@ -23,11 +23,13 @@ import VueApexCharts from "vue3-apexcharts";
 /* Theme variables */
 import '@coreui/coreui/dist/css/coreui.min.css'
 import './theme/tailwind.min.css'
+import store from './store/index.js'
 import './theme/variables.css';
 
 const app = createApp(App)
   .use(IonicVue)
   .use(router)
+  .use(store)
   .use(VueApexCharts);
   
 router.isReady().then(() => {

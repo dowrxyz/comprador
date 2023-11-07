@@ -55,7 +55,7 @@
           class="card p-1 w-full h-28 border rounded-md border-gray-300 grid text-center items-center"
         >
           <span class="text-gray-500 text-4xl">5</span>
-          <h1 class="text-gray-500 text-xs font-bold">Ordenes por recibir</h1>
+          <h1 class="text-gray-500 text-xs font-bold">Órdenes por recibir</h1>
         </div>
       </RouterLink>
 
@@ -64,7 +64,7 @@
           class="card p-1 w-full h-28 border rounded-md border-gray-300 grid text-center items-center"
         >
           <span class="text-gray-500 text-4xl">8</span>
-          <h1 class="text-gray-500 text-xs font-bold">Ordenes Recibidas</h1>
+          <h1 class="text-gray-500 text-xs font-bold">Órdenes Recibidas</h1>
         </div>
       </RouterLink>
 

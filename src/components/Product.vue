@@ -6,7 +6,7 @@
         @click="showCantonWrapper"
         class="input-container border-2 mr-2 w-11/12 grid items-end relative h-12 text-gray-500 p-2"
       >
-        <p class="text-left">Canton</p>
+        <p class="text-left">Cantón</p>
         <div class="absolute right-1 top-3">
           <img
             src="@/assets/Search.svg"
@@ -302,7 +302,7 @@ export default {
       options: [
         { name: "Agricultor", value: "Agricultor" },
         { name: "Comerciante", value: "Comerciante" },
-        { name: "Asóciacion Agricultora", value: "Asóciacion Agricultora" },
+        { name: "Asociación de Agricultor", value: "Asociación de Agricultor" },
       ]
     };
   },

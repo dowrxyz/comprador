@@ -77,6 +77,10 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/User/Multi.vue')
       },
       {
+        path: '/app/sugerir',
+        component: () => import('@/views/User/Sugerir.vue')
+      },
+      {
         path: '/app/multiusuarios/crear',
         component: () => import('@/views/User/Multicrear.vue')
       },

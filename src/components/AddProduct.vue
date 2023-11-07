@@ -1,34 +1,52 @@
 <template>
   <div class="addProduct mt-6">
     <form class="mx-auto grid items-center gap-3 w-full md:w-2/5">
-      <label for="listado" class="text-gray-500 font-bold w-5/6 mx-auto"
-        >Productos en listado</label
-      >
-      <select
-        name="listado"
-        class="w-5/6 mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
-      >
-        <option selected>Aguacate</option>
-        <option selected>Tomate</option>
-        <option selected>Maiz</option>
-      </select>
+      <div class="w-5/6 mx-auto relative">
+        <label
+          for="listado"
+          class="text-gray-500 font-bold w-full mx-auto relative"
+          >Productos en listado</label
+        >
+        <input
+          type="text"
+          v-model="param"
+          @input="checkParam"
+          placeholder="Productos en listado"
+          :class="{'w-full': isActive, 'mx-auto': isActive, 'bg-transparent': isActive, 'border-l-2' :!borders, 'border-t-2' :!borders, 'border-r-2' :!borders,  'border-2': borders, 'border-gray-300': isActive, 'px-3': isActive, 'py-3': isActive, 'rounded-t-md': !borders, 'rounded-md': borders, 'text-gray-600': isActive}"
+        />
 
-      <label for="sugerencia" class="text-gray-500 font-bold w-5/6 mx-auto"
-        >Sugerir Producto</label
-      >
-      <input
-        type="text"
-        name="sugerencia"
-        class="w-5/6 mx-auto bg-transparent border border-2 border-gray-300 rounded-[15px] px-3 py-3 rounded-md text-gray-400"
-        placeholder="Sugerencia"
-      />
+        <div class="absolute right-3 top-11">
+          <img
+            src="@/assets/Search.svg"
+            alt="Type of your business"
+            class="h-5 w-5"
+          />
+        </div>
+
+        <div
+          class="grid gap-1 border-b-2 border-l-2 border-r-2 rounded-b-md border-gray-300 p-2"
+          v-if="paramSelected"
+        >
+          <p
+            class="text-gray-600"
+            v-for="product in filteredList()"
+            :key="product"
+            @click="setProduct(product)"
+          >
+            {{ product }}
+          </p>
+          <p class="text-gray-600" v-if="param && !filteredList().length">
+            No hay resultados!
+          </p>
+        </div>
+      </div>
 
       <div class="grid relative w-5/6 mx-auto">
         <div class="relative">
           <label
             for="negocio"
             class="text-gray-500 font-bold w-5/6 mb-3 mx-auto"
-            >¿Párametros de calidad?</label
+            >¿Parámetros de calidad?</label
           >
           <div class="relative">
             <select
@@ -40,13 +58,6 @@
               <option :value="true">Si</option>
             </select>
 
-            <div class="absolute right-3 top-5">
-              <img
-                src="@/assets/Search.svg"
-                alt="Type of your business"
-                class="h-5 w-5"
-              />
-            </div>
           </div>
         </div>
       </div>
@@ -67,14 +78,6 @@
               <option selected :value="false">No</option>
               <option :value="true">Si</option>
             </select>
-
-            <div class="absolute right-3 top-5">
-              <img
-                src="@/assets/Search.svg"
-                alt="Type of your business"
-                class="h-5 w-5"
-              />
-            </div>
           </div>
         </div>
       </div>
@@ -158,7 +161,7 @@
       </div>
 
       <button
-        @click="showModal"
+        @click="sendProduct"
         type="button"
         class="py-3 px-5 default-bar mx-auto mt-3 w-2/3 rounded text-center"
       >
@@ -167,7 +170,7 @@
     </form>
   </div>
 
-  <CModal alignment="center" :visible="visible">
+  <CModal alignment="center" :visible="visible" @close="closeModal">
     <CModalBody>
       <div class="grid w-full gap-3 pb-3">
         <img
@@ -183,8 +186,7 @@
         </h2>
         <div class="mx-auto text-center">
           <p class="text-gray-400 text-sm w-3/4 mx-auto">
-            Agradecemos tu publicación, Agroec listara a los clientes tu
-            publicación.
+            Agroec agregará el producto de interés a la Aplicación.
           </p>
         </div>
       </div>
@@ -192,9 +194,14 @@
   </CModal>
 </template>
 
+
 <script allowJs>
+import { mapGetters, mapActions } from 'vuex';
 import { CModal, CModalBody } from "@coreui/vue";
 export default {
+  computed: {
+    ...mapGetters(['getProducts']),
+  },
   components: {
     CModal,
     CModalBody,
@@ -204,25 +211,42 @@ export default {
       visible: false,
       parametros: false,
       castigos: false,
+      paramSelected: false,
+      param: "",
+      minmax: "",
+      isActive: true,
+      borders: true,
+      fruits: ["Aguacate", "Maiz", "Tomate", "Cacao", "Papa", "Arroz"],
     };
   },
   methods: {
-    showModal() {
+    ...mapActions(['updateProduct']),
+    sendProduct() {
+      if(this.param == "") return;
       this.visible = true;
     },
     closeModal() {
       // Close the menu by setting menuOpen to false
       this.visible = false;
     },
+    filteredList() {
+      return this.fruits.filter((fruit) =>
+        fruit.toLowerCase().includes(this.param.toLowerCase())
+      );
+    },
+    setProduct(product) {
+      this.param = product;
+      this.paramSelected = false;
+        this.borders = true
+    },
+    checkParam(){
+      this.paramSelected = true;
+      if(this.param != ''){
+        this.borders = false
+      }else{
+        this.borders = true
+      }
+    }
   },
 };
 </script>
-
-<style scoped>
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  text-indent: 1px;
-  text-overflow: "";
-}
-</style>

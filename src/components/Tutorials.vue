@@ -5,7 +5,7 @@
         <div class="grid gap-1">
             <div class="tutorial-card flex gap-3 shadow-md p-3 items-center">
                 <img src="@/assets/Play.svg" alt="Play Icon">
-                <p class="text-gray-500 text-sm font-semibold w-3/4">Introduccion a una gestión rural</p>
+                <p class="text-gray-500 text-sm font-semibold w-3/4">Introducción a una gestión rural</p>
             </div>
             <div class="tutorial-card flex gap-3 shadow-md p-3 items-center">
                 <img src="@/assets/Play.svg" alt="Play Icon">
@@ -13,7 +13,7 @@
             </div>
             <div class="tutorial-card flex gap-3 shadow-md p-3 items-center">
                 <img src="@/assets/Play.svg" alt="Play Icon">
-                <p class="text-gray-500 text-sm font-semibold w-3/4">Introduccion a la gestión del maíz amarillo.</p>
+                <p class="text-gray-500 text-sm font-semibold w-3/4">Introducción a la gestión del maíz amarillo.</p>
             </div>
         </div>
         

@@ -77,7 +77,7 @@
 
       <div class="grid mt-3 gap-2">
         <label for="Validez" class="text-gray-500 font-bold text-sm"
-          >Valida hasta:</label
+          >Válida hasta:</label
         >
         <input
           type="date"

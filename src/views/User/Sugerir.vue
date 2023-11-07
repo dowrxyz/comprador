@@ -3,21 +3,23 @@
     <ion-header>
       <ion-toolbar color="primary">
         <div class="flex items-center mx-auto w-11/12">
-          <RouterLink :to="'/licitacion/' + Producto">
+          <RouterLink to="/app/home">
             <img src="@/assets/Arrow.svg" alt="Back" class="w-4 h-4" />
           </RouterLink>
-          <h2 class="text-center mx-auto">Licitación {{ Producto }}</h2>
+          <h2 class="text-center mx-auto">Sugerir Producto</h2>
         </div>
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
-      <ChatLicitacion :Item="Producto" />
+      <Sugerir />
     </ion-content>
+    <BottomBar />
   </ion-page>
 </template>
 
 <script allowJs>
-import ChatLicitacion from "@/components/ChatLicitacion.vue";
+import BottomBar from "@/components/Bottom.vue";
+import Sugerir from "@/components/Sugerir.vue";
 import {
   IonPage,
   IonHeader,
@@ -29,18 +31,14 @@ import {
 
 export default {
   components: {
-    ChatLicitacion,
+    Sugerir,
+    BottomBar,
     IonPage,
     IonHeader,
     IonToolbar,
     IonTitle,
     IonContent,
     IonIcon,
-  },
-  data() {
-    return {
-      Producto: this.$route.params.name,
-    };
   },
 };
 </script>

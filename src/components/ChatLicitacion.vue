@@ -216,7 +216,7 @@
 
       <div class="grid gap-2 text-center">
         <h1 class="text-md font-bold text-gray-500 text-center">
-          Valida hasta:
+          Válida hasta:
         </h1>
         <p class="text-gray-400 text-sm">14/11/23</p>
         <h1 class="text-md font-bold text-gray-500 text-center">
