@@ -1,0 +1,29 @@
+[
+    {"id": 1, "nombre": "Azuay"},
+    {"id": 2, "nombre": "Bolívar"},
+    {"id": 3, "nombre": "Cañar"},
+    {"id": 4, "nombre": "Carchi"},
+    {"id": 5, "nombre": "Cotopaxi"},
+    {"id": 6, "nombre": "Chimborazo"},
+    {"id": 7, "nombre": "El Oro"},
+    {"id": 8, "nombre": "Esmeraldas"},
+    {"id": 9, "nombre": "Guayas"},
+    {"id": 10, "nombre": "Imbabura"},
+    {"id": 11, "nombre": "Loja"},
+    {"id": 12, "nombre": "Los Rios"},
+    {"id": 13, "nombre": "Manabi"},
+    {"id": 14, "nombre": "Morona Santiago"},
+    {"id": 15, "nombre": "Napo"},
+    {"id": 16, "nombre": "Pastaza"},
+    {"id": 17, "nombre": "Pichincha"},
+    {"id": 18, "nombre": "Tungurahua"},
+    {"id": 19, "nombre": "Zamora Chinchipe"},
+    {"id": 20, "nombre": "Galápagos"},
+    {"id": 21, "nombre": "Sucumbíos"},
+    {"id": 22, "nombre": "Orellana"},
+    {"id": 23, "nombre": "Santo Domingo de Los Tsáchilas"},
+    {"id": 24, "nombre": "Santa Elena"},
+    {"id": 25, "nombre": "Zonas No Delimitadas"}
+  ]
+
+  

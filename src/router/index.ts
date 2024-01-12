@@ -19,9 +19,19 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/views/Session/password.vue')
   },
   {
-    path: '/chat/deal/:name',
+    path: '/producto/:name',
     name: 'chatDeals',
     component: () => import('@/views/User/Deal.vue')
+  },
+  {
+    path: '/propuesta/:id',
+    name: 'propuestaDeals',
+    component: () => import('@/views/User/Propuesta.vue')
+  },
+  {
+    path: '/print',
+    name: 'printDetails',
+    component: () => import('@/views/User/Print.vue')
   },
   {
     path: '/licitacion/:name',
@@ -105,7 +115,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/User/LicitacionEditar.vue')
       },
       {
-        path: '/app/add/product/interested',
+        path: '/app/add/product/interested/:from',
         component: () => import('@/views/User/InterestedProduct.vue')
       },
       {
@@ -115,6 +125,10 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/app/notifications',
         component: () => import('@/views/User/Notifications.vue')
+      },
+      {
+        path: '/app/vendedor/:id',
+        component: () => import('@/views/User/PerfilVendedor.vue')
       }
 ]
 

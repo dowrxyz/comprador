@@ -2,7 +2,7 @@
   <ion-page>
     <ion-content>
       <ion-header>
-        <ion-toolbar color="primary">
+        <ion-toolbar color="tertiary">
           <div class="grid grid-cols-3 items-center mx-auto w-11/12">
             <a href="/signin">
               <img src="@/assets/Arrow.svg" alt="Back" class="w-4 h-4" />
@@ -20,49 +20,116 @@
         />
 
         <form
+          v-if="smsVerification"
+          class="mx-auto items-center gap-3 w-11/12 my-5 md:w-1/2 justify-center grid md:grid-cols-2">
+        
+          
+          <div class="col-span-2">
+            <label for="cedula" class="text-gray-600 font-bold w-2/3 mx-auto" v-if="(codigoNumerico != '' || codigoNumerico == '' ) || !showErrors"
+              >Ingresa el Codigo enviado a tu Teléfono (SMS)</label
+            >
+            <label for="cedula" class="text-red-400 font-bold w-2/3 mx-auto"  v-if="codigoNumerico == '' && showErrors"
+              >Debes ingresar el codigo numerico enviado</label
+            >
+            <input
+              type="number"
+              name="cedula"
+              v-model="codigoNumerico"
+              class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+              placeholder="Codigo"
+            />
+          </div>
+
+          <button
+            class="py-3 px-5 default-bar mx-auto mt-3 w-2/3 rounded font-bold col-span-2"
+            @click="confirmVerification"
+            type="button">Completar</button>
+        </form>
+
+
+        <form
+          v-if="!smsVerification"
           class="mx-auto items-center gap-3 w-11/12 my-5 md:w-1/2 justify-center grid md:grid-cols-2"
         >
           <div class="col-span-2">
-            <label for="comp" class="text-gray-600 font-bold w-5/6 mx-auto"
-              >Nombre de la Compañía</label
+            <label for="comp" class="text-gray-600 font-bold w-5/6 mx-auto"  v-if="(razon != '' || razon == '' ) || !showErrors"
+              >Razon Social</label
+            >
+            <label for="comp" class="text-red-400 font-bold w-5/6 mx-auto"  v-if="razon == '' && showErrors"
+              >Ingresa una Razon Social</label
             >
             <input
               type="text"
               id="comp"
+              v-model="razon"
               class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
-              placeholder="Nombre de la Compañía"
+              placeholder="Razon Social"
             />
           </div>
-          <div class="col-span-2">
-            <label for="ruc" class="text-gray-600 font-bold w-5/6 mx-auto"
-              >RUC</label
+          <div class="mx-auto grid relative w-full">
+            <div class="relative">
+              <label
+                for="identificador"
+                class="text-gray-600 font-bold w-5/6 mx-auto"  v-if="(identificacion != '' || identificacion == '' ) || !showErrors"
+                >Tipo de Identificacion</label
+              >
+              <label
+                for="identificador"
+                class="text-red-400 font-bold w-5/6 mx-auto"  v-if="identificacion == '' && showErrors"
+                >Debes seleccionar un Tipo de Identificacion</label
+              >
+              <select
+                id="identificador"
+                v-model="identificacion"
+                class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
+              >
+                <option selected value="RUC">RUC</option>
+                <option value="Cédula">Cédula</option>
+                <option value="Pasaporte">Pasaporte</option>
+              </select>
+            </div>
+          </div>
+          <div class="">
+            <label for="cedula" class="text-gray-600 font-bold w-5/6 mx-auto" v-if="(numeroIdentificacion != '' || numeroIdentificacion == '' ) || !showErrors"
+              >Numero de Identificacion</label
+            >
+            <label for="cedula" class="text-red-400 font-bold w-5/6 mx-auto"  v-if="numeroIdentificacion == '' && showErrors"
+              >Debes ingresar un Numero de Identificacion</label
             >
             <input
               type="number"
-              name="ruc"
+              name="cedula"
+              v-model="numeroIdentificacion"
               class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
-              placeholder="RUC"
+              placeholder="Numero de Identificacion"
             />
           </div>
           <div class="">
-            <label for="correo" class="text-gray-600 font-bold w-5/6 mx-auto"
+            <label for="correo" class="text-gray-600 font-bold w-5/6 mx-auto"  v-if="(email != '' || email == '' ) || !showErrors"
               >Correo</label
             >
+            <label for="correo" class="text-red-400 font-bold w-5/6 mx-auto"  v-if="email == '' && showErrors"
+              >Debes ingresar un Correo</label
+            >
             <input
-              type="text"
+              type="email"
               id="correo"
+              v-model="email"
               class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
               placeholder="Correo"
             />
           </div>
           <div class="relative">
-            <label for="clave" class="text-gray-600 font-bold w-5/6 mx-auto"
+            <label for="clave" class="text-gray-600 font-bold w-5/6 mx-auto" v-if="(password != '' || password == '' ) || !showErrors"
               >Clave</label
+            >
+            <label for="clave" class="text-red-400 font-bold w-5/6 mx-auto" v-if="password == '' && showErrors"
+              >Debes crear tu Clave</label
             >
             <input v-if="visiblePassword"
               type="password"
               id="clave"
-              v-model="password"
+              v-model="password" 
               class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
               placeholder="Clave"
             />
@@ -83,11 +150,17 @@
             <div class="relative">
               <label
                 for="provincia"
-                class="text-gray-600 font-bold w-5/6 mx-auto"
+                class="text-gray-600 font-bold w-5/6 mx-auto"  v-if="(provincia != '' || provincia == '' ) || !showErrors"
                 >Provincia</label
+              >
+              <label
+                for="provincia"
+                class="text-red-400 font-bold w-5/6 mx-auto"  v-if="provincia == '' && showErrors"
+                >Debes seleccionar una Provincia</label
               >
               <select
                 id="provincia"
+                v-model="provincia"
                 class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
               >
                 <option selected>Jaramijó</option>
@@ -101,11 +174,17 @@
             <div class="relative">
               <label
                 for="canton"
-                class="text-gray-600 font-bold w-5/6 mx-auto"
+                class="text-gray-600 font-bold w-5/6 mx-auto" v-if="(canton != '' || canton == '' ) || !showErrors"
                 >Cantón</label
+              >
+              <label
+                for="canton"
+                class="text-red-400 font-bold w-5/6 mx-auto" v-if="canton == '' && showErrors"
+                >Debes seleccionar un Cantón</label
               >
               <select
                 id="canton"
+                v-model="canton"
                 class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
               >
                 <option selected>Jaramijó</option>
@@ -115,34 +194,46 @@
             </div>
           </div>
           <div class="">
-            <label for="dic" class="text-gray-600 font-bold w-5/6 mx-auto"
+            <label for="dic" class="text-gray-600 font-bold w-5/6 mx-auto" v-if="(direccion != '' || direccion == '' ) || !showErrors"
               >Dirección</label
+            >
+            <label for="dic" class="text-red-400 font-bold w-5/6 mx-auto" v-if="direccion == '' && showErrors"
+              >Debes ingresar tu Dirección</label
             >
             <input
               type="text"
               id="dic"
+              v-model="direccion"
               class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
               placeholder="Dirección"
             />
           </div>
           <div class="">
-            <label for="dic" class="text-gray-600 font-bold w-5/6 mx-auto"
+            <label for="dic" class="text-gray-600 font-bold w-5/6 mx-auto" v-if="(ubicacion != '' || ubicacion == '' ) || !showErrors"
               >Ubicación</label
+            >
+            <label for="dic" class="text-red-400 font-bold w-5/6 mx-auto" v-if="ubicacion == '' && showErrors"
+              >Debes ingresar tu Ubicación</label
             >
             <input
               type="text"
-              id="dic"
+              id="ubicacion"
+              v-model="ubicacion"
               class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
               placeholder="Ubicación"
             />
           </div>
           <div class="col-span-2">
-            <label for="telf" class="text-gray-600 font-bold w-5/6 mx-auto"
+            <label for="telf" class="text-gray-600 font-bold w-5/6 mx-auto" v-if="(telefono != '' || telefono == '' ) || !showErrors"
               >Teléfono</label
+            >
+            <label for="telf" class="text-red-400 font-bold w-5/6 mx-auto" v-if="telefono == '' && showErrors"
+              >Debes ingresar un numero de Teléfono</label
             >
             <input
               type="text"
               id="telf"
+              v-model="telefono"
               class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
               placeholder="Teléfono"
             />
@@ -154,12 +245,16 @@
 
 
           <div class="col-span-2">
-            <label for="eco" class="text-gray-600 font-bold w-5/6 mx-auto"
+            <label for="eco" class="text-gray-600 font-bold w-5/6 mx-auto" v-if="(actividadEconomica != '' || actividadEconomica == '' ) || !showErrors"
               >Actividad Económica</label
+            >
+            <label for="eco" class="text-red-400 font-bold w-5/6 mx-auto" v-if="actividadEconomica == '' && showErrors"
+              >Debes ingresar un tipo de Actividad Económica</label
             >
             <input
               type="text"
               id="eco"
+              v-model="actividadEconomica"
               class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
               placeholder="Actividad Económica"
             />
@@ -169,11 +264,17 @@
             <div class="relative">
               <label
                 for="negocio"
-                class="text-gray-600 font-bold w-5/6 mx-auto"
+                class="text-gray-600 font-bold w-5/6 mx-auto" v-if="(tipoNegocio != '' || tipoNegocio == '' ) || !showErrors"
                 >Tipo de Negocio</label
+              >
+              <label
+                for="negocio"
+                class="text-red-400 font-bold w-5/6 mx-auto" v-if="tipoNegocio == '' && showErrors"
+                >Debes ingresar un tipo de Negocio</label
               >
               <select
                 id="negocio"
+                v-model="tipoNegocio"
                 class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
               >
                 <option selected>Agricultor</option>
@@ -188,7 +289,7 @@
             <label for="eco" class="text-gray-600 font-bold w-full mx-auto"
               >Productos de Interés</label
             >
-            <RouterLink to="/app/add/product/interested" class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 px-3 py-3 rounded-md">Agregar productos</RouterLink>
+            <RouterLink to="/app/add/product/interested/signup" class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 px-3 py-3 rounded-md">Agregar productos</RouterLink>
             <svg xmlns="http://www.w3.org/2000/svg" class="absolute bottom-4 mb-0.5 right-2" fill="#a2afbe" height="24" viewBox="0 -960 960 960" width="24"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
           </div> 
 
@@ -216,48 +317,66 @@
           </div>
       
           <div class="col-span-2">
-            <label for="ctm" class="text-gray-600 font-bold w-5/6 mx-auto"
+            <label for="ctm" class="text-gray-600 font-bold w-5/6 mx-auto" v-if="(consumoMesTM != '' || consumoMesTM == '' ) || !showErrors"
               >Consumo Mes TM</label
+            >
+            <label for="ctm" class="text-red-400 font-bold w-5/6 mx-auto" v-if="consumoMesTM == '' && showErrors"
+              >Debes ingresar un consumo por mes</label
             >
             <input
               type="number"
               name="ctm"
               placeholder="Consumo Mes TM"
+              v-model="consumoMesTM"
               class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
             />
           </div>
           
           <div class="col-span-2">
-            <label for="ca" class="text-gray-600 font-bold w-5/6 mx-auto"
+            <label for="ca" class="text-gray-600 font-bold w-5/6 mx-auto" v-if="(consumoAnual != '' || consumoAnual == '' ) || !showErrors"
               >Consumo Anual</label
+            >
+            <label for="ca" class="text-red-400 font-bold w-5/6 mx-auto" v-if="consumoAnual == '' && showErrors"
+              >Debes ingresar un consumo anual</label
             >
             <input
               type="number"
               name="ca"
               placeholder="Consumo Anual"
+              v-model="consumoAnual"
               class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
             />
           </div>
 
           <div class="col-span-2">
-            <label for="pmes" class="text-gray-600 font-bold w-5/6 mx-auto"
+            <label for="pmes" v-if="(presupuestoMes != '' || presupuestoMes == '' ) || !showErrors" class="text-gray-600 font-bold w-5/6 mx-auto"
               >Presupuesto por Mes</label
+            >
+            <label for="pmes" v-if="presupuestoMes == '' && showErrors" class="text-red-400 font-bold w-5/6 mx-auto"
+              >Debes ingresar un presupuesto por Mes</label
             >
             <input
               type="number"
               name="pmes"
               placeholder="Presupuesto por Mes"
+              v-model="presupuestoMes"
               class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
             />
+          </div>
+
+          <div class="col-span-2 inline-flex gap-2">
+            <p class="text-gray-600 font-bold"  v-if="terminos == true || (terminos == false && !showErrors)">Acepto los Términos y Condiciones</p>
+            <p class="text-red-400 font-bold" v-if="terminos == false && showErrors">Debes aceptar los Términos y Condiciones para utilizar la Aplicacion</p>
+            <input type="checkbox" name="terms" id="terms" class="checkbox" v-model="terminos" >
           </div>
 
 
           <button
             class="py-3 px-5 default-bar mx-auto mt-3 w-2/3 rounded font-bold col-span-2"
-            @click="showModal"
+            @click="sendForm"
             type="button"
           >
-            Enviar
+            Registro
           </button>
         </form>
       </div>
@@ -289,6 +408,15 @@
   </ion-page>
 </template>
 
+<style scoped>
+
+.checkbox {
+  accent-color: #a3e635;
+}
+
+
+</style>
+
 <script allowJs>
 import Contact from "@/components/Contacto.vue";
 import { mapGetters, mapActions } from 'vuex';
@@ -307,6 +435,27 @@ export default {
     return {
       visible: false,
       visiblePassword: true,
+
+      codigoNumerico: '',
+      password: '',
+      email: '',
+      razon: '',
+      identificacion: '',
+      numeroIdentificacion: '',
+      provincia: '',
+      canton: '',
+      direccion: '',
+      ubicacion: '',
+      telefono: '',
+      actividadEconomica: '',
+      tipoNegocio: '',
+      productosInteres: '',
+      consumoMesTM: '',
+      consumoAnual: '',
+      presupuestoMes: '',
+      terminos: false,
+      showErrors: false,
+      smsVerification: false,
     };
   },
   methods: {
@@ -319,6 +468,34 @@ export default {
     },
     changeVisibility () {
       this.visiblePassword = !this.visiblePassword;
+    },
+    confirmVerification(){
+      if(this.codigoNumerico != ''){
+        this.showErrors = false;
+        this.showModal();
+      }else{
+        this.showErrors = true;
+      }
+    },
+    sendForm(){
+      console.log(this.validarCampos());
+      if(this.validarCampos()){
+        if(this.terminos){
+          this.showErrors = false;
+          this.smsVerification = true;
+        }else{
+          this.showErrors = true;
+        }
+      }else{
+        this.showErrors = true;
+      }
+    },
+    validarCampos(){
+      if(this.razon.trim() == '' || this.identificacion.trim() == '' || this.numeroIdentificacion == '' || this.email.trim() == '' || this.password.trim() == '' || this.provincia.trim() == '' || this.canton.trim() == '' || this.direccion.trim() == '' || this.ubicacion.trim() == '' || this.telefono == '' || this.actividadEconomica.trim() == '' || this.tipoNegocio.trim() == '' || this.consumoMesTM == '' || this.consumoAnual == '' || this.presupuestoMes == ''){
+        return false;
+      }else{
+        return true;
+      }
     }
   },
 };

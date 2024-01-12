@@ -26,6 +26,9 @@ import './theme/tailwind.min.css'
 import store from './store/index.js'
 import './theme/variables.css';
 
+
+export const bus = createApp(App);
+
 const app = createApp(App)
   .use(IonicVue)
   .use(router)

@@ -24,13 +24,8 @@
         @click="showModal"
       />
       <img
-        src="@/assets/Status/ThirdCheck.svg"
-        v-if="count == 3"
-        @click="changeStatus"
-      />
-      <img
         src="@/assets/Status/AllCheck.svg"
-        v-if="count == 4"
+        v-if="count == 3"
         @click="changeStatus"
       />
 
@@ -56,7 +51,7 @@
           class="bg-red-200 text-left px-4 py-3 rounded-md grid gap-1"
           v-if="!recibido && !esperando"
         >
-          <h2 class="text-md text-gray-700">Recibido Rechazado</h2>
+          <h2 class="text-md text-gray-700">Rechazado</h2>
           <p class="text-sm text-gray-600">Noviembre 19, 2023 4:50 PM</p>
         </div>
         <div
@@ -64,11 +59,6 @@
           v-if="esperando"
         >
           <h2 class="text-md text-gray-700">Recibido Esperando</h2>
-          <p class="text-sm text-gray-600">Noviembre 19, 2023 4:50 PM</p>
-        </div>
-
-        <div class="bg-orange text-left px-4 py-3 rounded-md grid gap-1">
-          <h2 class="text-md text-gray-700">Pagado</h2>
           <p class="text-sm text-gray-600">Noviembre 19, 2023 4:50 PM</p>
         </div>
       </div>
@@ -109,6 +99,18 @@
 
     <div class="deliver-price grid gap-3">
       <div class="grid grid-cols-2">
+        <p class="text-sm text-gray-700 text-left">ID</p>
+        <p class="text-sm text-gray-700 text-right">#346</p>
+      </div>
+      <div class="grid grid-cols-2">
+        <p class="text-sm text-gray-700 text-left">Producto</p>
+        <p class="text-sm text-gray-700 text-right">Maiz</p>
+      </div>
+      <div class="grid grid-cols-2">
+        <p class="text-sm text-gray-700 text-left">Vendedor</p>
+        <p class="text-sm text-gray-700 text-right">Carlos Marin</p>
+      </div>
+      <div class="grid grid-cols-2">
         <p class="text-sm text-gray-700 text-left">Precio</p>
         <p class="text-sm text-gray-700 text-right">$15,50</p>
       </div>
@@ -124,7 +126,7 @@
   </div>
 
   <!-- Alert Modal -->
-  <CModal alignment="center" :visible="delivered">
+  <CModal alignment="center" :visible="delivered" @close="closeModal">
     <CModalBody>
       <div class="grid w-full gap-3 pb-3">
         <img

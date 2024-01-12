@@ -1,7 +1,7 @@
 <template>
   <ion-page>
     <ion-content>
-      <header class="default-bar h-12 w-full grid items-center justify-center">
+      <header class="new-default h-12 w-full grid items-center justify-center">
         <h1>Entrar</h1>
       </header>
 

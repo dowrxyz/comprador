@@ -2,7 +2,7 @@
   <ion-page>
     <ion-content>
       <ion-header>
-        <ion-toolbar color="primary">
+        <ion-toolbar color="tertiary">
           <div class="grid grid-cols-3 items-center mx-auto w-11/12">
             <a href="/signin">
               <img src="@/assets/Arrow.svg" alt="Back" class="w-4 h-4" />

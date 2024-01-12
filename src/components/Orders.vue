@@ -87,4 +87,8 @@
       </RouterLink>
     </div>
   </div>
+
+  <RouterLink to="/print" class="rounded-full p-3 h-14 w-14 dark-bar grid justify-items-center align-items-center absolute right-2 bottom-2">
+    <img src="@/assets/Pdf.svg" alt="Plus Icon" />
+  </RouterLink>
 </template>

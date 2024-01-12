@@ -1,9 +1,9 @@
 <template>
   <ion-page>
     <ion-header>
-      <ion-toolbar color="primary">
+      <ion-toolbar color="tertiary">
         <div class="flex items-center mx-auto w-11/12">
-          <a href="/signup">
+          <a :href="'/' + from">
             <img src="@/assets/Arrow.svg" alt="Back" class="w-4 h-4" />
           </a>
           <h2 class="text-center mx-auto">Agregar Productos de interés</h2>
@@ -36,6 +36,14 @@ export default {
     IonTitle,
     IonContent,
     IonIcon,
+  },
+  data() {
+    return {
+      from: null,
+    };
+  },
+  created: function() {
+    this.from = this.$route.params.from;
   },
 };
 </script>

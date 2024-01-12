@@ -1,26 +1,48 @@
 <template>
   <div class="content w-full mx-auto grid my-5 gap-2">
     <h2 class="text-gray-500 font-bold font-md text-center">Filtra por</h2>
-    <div class="grid grid-cols-2 justify-center items-end mx-auto w-5/6 md:w-2/6">
-      <div
-        @click="showCantonWrapper"
-        class="input-container border-2 mr-2 w-11/12 grid items-end relative h-12 text-gray-500 p-2"
-      >
-        <p class="text-left">Cantón</p>
-        <div class="absolute right-1 top-3">
-          <img
-            src="@/assets/Search.svg"
-            alt="Search by Canton"
-            class="h-6 w-6"
-          />
+    <div
+      class="grid grid-cols-2 justify-center items-end mx-auto w-11/12 gap-2 md:w-3/6"
+    >
+      <div class="mx-auto grid relative w-full col-span-2">
+        <div class="relative">
+          <label
+            for="provincia"
+            class="text-gray-500 font-bold w-full mx-auto"
+            >Provincia</label
+          >
+          <select
+            id="provincia"
+            v-model="ProvinciaSelected"
+            @change="handleCantones"
+            class="w-full mx-auto bg-transparent border-2 input-container rounded-[16px] p-2 rounded-md text-gray-600"
+          >
+            <option :value="Provincia.id" v-for="Provincia in Provincias" :key="Provincia.id">{{ Provincia.nombre }}</option>
+          </select>
+        </div>
+      </div>
+      <div class="mx-auto grid relative w-full col-span-2" v-if="ProvinciaSelected  != null">
+        <div class="relative">
+          <label
+            for="canton"
+            class="text-gray-500 font-bold w-full mx-auto"
+            >Cantón</label
+          >
+          <select
+            id="canton"
+            v-model="CantonSelected"
+            class="w-full mx-auto bg-transparent border-2 input-container rounded-[16px] p-2 rounded-md text-gray-600"
+          >
+            <option :value="Canton.ID" v-for="Canton in Cantones" :key="Canton.ID">{{ Canton.Nombre }}</option>
+          </select>
         </div>
       </div>
 
       <div
         @click="showComercianteWrapper"
-        class="input-container border-2 w-full grid items-end relative h-12 text-gray-500 p-2"
+        class="input-container border-2 w-full grid items-center relative h-12 text-gray-500 p-2 col-span-2"
       >
-        <p class="">Comerciante</p>
+        <p class="text-left text-sm md:text-md">Comerciante</p>
         <div class="absolute right-1 top-3">
           <img
             src="@/assets/Search.svg"
@@ -28,6 +50,27 @@
             class="h-6 w-6"
           />
         </div>
+      </div>
+      <div
+        class="w-full mx-auto h-28 grid items-center p-3 gap-3 rounded col-span-2 shadow-sm"
+      >
+        <div class="grid mx-auto md:mx-0 md:grid-cols-2 justify-between">
+          <label for="range" class="text-gray-500 text-md font-bold"
+            >Distancia</label
+          >
+          <span class="text-gray-800 text-md text-right"
+            >({{ distancia }} km)</span
+          >
+        </div>
+        <input
+          type="range"
+          class="w-full rangeDistancia"
+          min="5"
+          max="150"
+          step="5"
+          name="range"
+          v-model="distancia"
+        />
       </div>
     </div>
 
@@ -196,64 +239,6 @@
     </div>
   </div>
 
-  <!-- Modal para seleccion de canton -->
-  <CModal alignment="center" :visible="selectCanton" @close="closeModal">
-    <CModalBody>
-      <div class="grid w-full gap-3 pb-3">
-        <img
-          src="@/assets/Nav/X.svg"
-          alt="Close alert"
-          @click="closeModal"
-          class="justify-self-end"
-        />
-        <div class="flex">
-          <div class="wrapper w-full">
-            <div
-              class="w-full mx-auto h-24 grid items-center p-3 gap-3 rounded"
-            >
-              <div class="grid mx-auto md:mx-0 md:grid-cols-2 justify-between">
-                <label for="range" class="text-gray-700 text-md font-bold"
-                  >Distancia</label
-                >
-                <span class="text-gray-800 text-md text-right"
-                  >({{ distancia }} km)</span
-                >
-              </div>
-              <input
-                type="range"
-                class="w-full rangeDistancia"
-                min="5"
-                max="150"
-                step="5"
-                name="range"
-                v-model="distancia"
-              />
-            </div>
-
-            <div class="checkboxes mt-3 md:grid-cols-2 grid justify-start"> 
-                <div class="grid grid-cols-2 items-center mb-2 text-sm">
-                  <input type="checkbox" name="City1" class="checkbox" v-model="jaramijo" @change="handleCheckboxChange"/>
-                  <label for="City1" class="text-gray-600 col-span-1">Jaramijó</label>
-                </div>
-                <div class="grid grid-cols-2 items-center mb-2 w-full text-sm">
-                  <input type="checkbox" name="City2" class="checkbox" v-model="pedroCarbo" @change="handleCheckboxChange"/>
-                  <label for="City2" class="text-gray-600">Pedro Carbo</label>
-                </div>
-                <div class="grid grid-cols-2 items-center mb-2 w-full text-sm">
-                  <input type="checkbox" name="City3" class="checkbox" v-model="milagro" @change="handleCheckboxChange"/>
-                  <label for="City3" class="text-gray-600">Milagro</label>
-                </div>
-                <div class="grid grid-cols-2 items-center mb-2 w-full text-sm">
-                  <input type="checkbox" name="City4" class="checkbox" v-model="all" @change="handleCheckboxChange"/>
-                  <label for="City4" class="text-gray-600">Todos</label>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </CModalBody>
-  </CModal>
-
   <!-- Modal para seleccion de comerciante -->
   <CModal alignment="center" :visible="selectSeller" @close="closeModal">
     <CModalBody>
@@ -264,14 +249,24 @@
           @click="closeModal"
           class="justify-self-end"
         />
-        <div
-          class="wrapper w-full"
-        >
+        <div class="wrapper w-full">
           <div class="checkboxes grid">
-              <div class="grid grid-cols-2 items-center mb-2 w-full text-sm" v-for="option in options" :key="option.value">
-                <input type="checkbox" :id="option.name" class="checkbox" v-model="comercianteType" :value="option.value"/>
-                <label :for="option.name" class="text-gray-600">{{option.name}}</label>
-              </div>
+            <div
+              class="grid grid-cols-2 items-center mb-2 w-full text-sm"
+              v-for="option in options"
+              :key="option.value"
+            >
+              <input
+                type="checkbox"
+                :id="option.name"
+                class="checkbox"
+                v-model="comercianteType"
+                :value="option.value"
+              />
+              <label :for="option.name" class="text-gray-600">{{
+                option.name
+              }}</label>
+            </div>
           </div>
         </div>
       </div>
@@ -280,6 +275,8 @@
 </template>
 
 <script allowJs>
+import Provincias from "../assets/JSON/Provincias.json";
+import Cantones from "../assets/JSON/Cantones.json";
 import { CModal, CModalBody } from "@coreui/vue";
 export default {
   components: {
@@ -292,54 +289,31 @@ export default {
   data() {
     return {
       distancia: 5,
-      pedroCarbo: false,
-      jaramijo: false,
-      all: false,
-      milagro: false,
       selectSeller: false,
-      selectCanton: false,
       comercianteType: [],
+      ProvinciaSelected: null,
+      CantonSelected: null,
+      Provincias: Provincias,
+      Cantones: Cantones,
       options: [
         { name: "Agricultor", value: "Agricultor" },
         { name: "Comerciante", value: "Comerciante" },
         { name: "Asociación de Agricultor", value: "Asociación de Agricultor" },
-      ]
+      ],
     };
   },
   methods: {
-    showCantonWrapper() {
-      this.selectCanton = true;
-    },
     showComercianteWrapper() {
       this.selectSeller = true;
     },
     closeModal() {
       this.selectSeller = false;
-      this.selectCanton = false;
     },
-    handleCheckboxChange() {
-      // Implementa la lógica para garantizar que solo uno esté seleccionado
-      if (this.pedroCarbo) {
-        this.jaramijo = false;
-        this.milagro = false;
-        this.all = false;
-      }
-      if (this.jaramijo) {
-        this.pedroCarbo = false;
-        this.milagro = false;
-        this.all = false;
-      }
-      if (this.milagro) {
-        this.jaramijo = false;
-        this.pedroCarbo = false;
-        this.all = false;
-      }
-      if (this.all) {
-        this.jaramijo = false;
-        this.milagro = false;
-        this.pedroCarbo = false;
-      }
-    }
+    handleCantones() {
+      this.Cantones = Cantones.filter(
+        (canton) => canton.Provincia_ID == this.ProvinciaSelected
+      );
+    },
   },
 };
 </script>
