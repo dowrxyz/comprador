@@ -3,7 +3,7 @@
     <ion-header>
       <ion-toolbar color="tertiary">
         <div class="flex items-center mx-auto w-11/12">
-          <RouterLink to="/app/licitaciones">
+          <RouterLink :to="'/app/licitaciones/' + Producto">
             <img src="@/assets/Arrow.svg" alt="Back" class="w-4 h-4" />
           </RouterLink>
           <h2 class="text-center mx-auto">Licitaciones de {{ Producto }}</h2>

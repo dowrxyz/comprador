@@ -61,7 +61,7 @@
             </g>
           </svg>
         </RouterLink>
-        <RouterLink to="/app/licitaciones">
+        <RouterLink to="/app/licitaciones/filter">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="#37474F"

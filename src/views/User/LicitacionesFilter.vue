@@ -3,24 +3,23 @@
       <ion-header>
         <ion-toolbar color="tertiary">
           <div class="flex items-center mx-auto w-11/12">
-            <RouterLink to="/chat/licitacion/Maiz" v-if="this.$route.params.from == 1">
+            <RouterLink to="/app/home">
               <img src="@/assets/Arrow.svg" alt="Back" class="w-4 h-4" />
             </RouterLink>
-            <RouterLink to="/producto/Maiz" v-if="this.$route.params.from == 2">
-              <img src="@/assets/Arrow.svg" alt="Back" class="w-4 h-4" />
-            </RouterLink>
-            <h2 class="text-center mx-auto">Perfil Vendedor</h2>
+            <h2 class="text-center mx-auto">Licitaciones por producto</h2>
           </div>
         </ion-toolbar>
       </ion-header>
       <ion-content :fullscreen="true">
-        <PerfilVendedor/>
+        <LicitacionesFilter />
       </ion-content>
+      <BottomBar/>
     </ion-page>
   </template>
   
   <script allowJs>
-  import PerfilVendedor from "@/components/PerfilVendedor.vue";
+  import BottomBar from '@/components/Bottom.vue';
+  import LicitacionesFilter from "@/components/LicitacionesFilter.vue";
   import {
     IonPage,
     IonHeader,
@@ -32,14 +31,15 @@
   
   export default {
     components: {
-      PerfilVendedor,
+      LicitacionesFilter,
       IonPage,
+      BottomBar,
       IonHeader,
       IonToolbar,
       IonTitle,
       IonContent,
       IonIcon,
-    }
+    },
   };
   </script>
   

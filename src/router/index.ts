@@ -62,6 +62,10 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/User/Insumos.vue')
       },
       {
+        path: '/app/insumos/:id',
+        component: () => import('@/views/User/InsumosInfo.vue')
+      },
+      {
         path: '/app/tutorials',
         component: () => import('@/views/User/Tutorials.vue')
       },
@@ -119,7 +123,11 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/User/InterestedProduct.vue')
       },
       {
-        path: '/app/licitaciones',
+        path: '/app/licitaciones/filter',
+        component: () => import('@/views/User/LicitacionesFilter.vue')
+      },
+      {
+        path: '/app/licitaciones/:name',
         component: () => import('@/views/User/MisLicitaciones.vue')
       },
       {
@@ -127,7 +135,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/User/Notifications.vue')
       },
       {
-        path: '/app/vendedor/:id',
+        path: '/app/vendedor/:id/:from',
         component: () => import('@/views/User/PerfilVendedor.vue')
       }
 ]

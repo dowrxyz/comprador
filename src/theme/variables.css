@@ -275,6 +275,12 @@ http://ionicframework.com/docs/theming/ */
 .default-color {
   color: #a8cf7b;
 }
+.third-color {
+  color: #89cf38;
+}
+.second-color {
+  color: #6c973a;
+}
 .default-bar {
   background-color: #a8cf7b;
 }

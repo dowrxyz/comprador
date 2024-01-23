@@ -3,13 +3,13 @@
     
     <Slider />
     
-    <div class="profilepad inline-flex w-5/6 mx-auto gap-3 items-center md:w-1/2">
+    <RouterLink to="/app/vendedor/1/2" class="profilepad inline-flex w-5/6 mx-auto gap-3 items-center md:w-1/2">
       <img src="@/assets/People/Business.svg" alt="Profile Image" />
       <div class="grid gap-1 items-center">
         <h2 class="text-xl font-bold text-gray-500">Vendedor A</h2>
         <p class="text-sm text-gray-400">Mexicali</p>
       </div>
-    </div>
+    </RouterLink>
 
     <div class="pricepad bg-gray-200 text-center h-28 grid items-center">
       <div class="">

@@ -148,7 +148,8 @@
     v-if="details"
     class="content w-min-screen mx-auto grid my-3 gap-3"
   >
-    <div
+    <RouterLink
+      to="/app/vendedor/1/1"
       class="seller-info w-full mx-auto grid gap-3 shadow-md p-3 items-center justfiy-center"
     >
 
@@ -175,7 +176,7 @@
         <h1 class="text-gray-600 text-sm font-bold">Aso. Agricola</h1>
         <p class="text-gray-500 text-xs">Guayas / Pedro Carbo</p>
       </div>
-    </div>
+    </RouterLink>
 
     <div
       class="product-info w-full mx-auto grid gap-3 shadow-md p-3 items-center justfiy-center mt-3"
@@ -221,98 +222,15 @@
       </div>
 
 
-      <div class="grid relative w-5/6 mx-auto">
-        <div class="relative">
-          <label
-            for="negocio"
-            class="text-gray-500 font-bold w-5/6 mb-3 mx-auto"
-            >¿Parámetros de calidad?</label
-          >
-          <div class="relative">
-            <select
-              v-model="parametros"
-              id="negocio"
-              class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
-            >
-              <option selected :value="false">No</option>
-              <option :value="true">Si</option>
-            </select>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="grid relative w-5/6 mx-auto" v-if="parametros">
-        <div class="relative">
-          <label
-            for="negocio"
-            class="text-gray-500 font-bold w-5/6 mb-3 mx-auto"
-            >¿Aplica tabla de castigos?</label
-          >
-          <div class="relative">
-            <select
-              v-model="castigos"
-              id="negocio"
-              class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
-            >
-              <option selected :value="false">No</option>
-              <option :value="true">Si</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-      <div class="mx-auto w-5/6" v-if="!castigos && parametros">
-        <label for="minmax" class="text-gray-500 font-bold w-full mx-auto"
-          >Registro de ficha mínimos y máximos</label
-        >
-        <input
-          type="text"
-          name="minmax"
-          class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[15px] px-3 py-3 rounded-md text-gray-400"
-          placeholder="Agregar mínimos y máximos"
-        />
-      </div>
-      <div class="mx-auto w-5/6" v-if="castigos && parametros">
-        <label
-          for="castigos"
-          class="text-gray-500 font-bold w-full mx-auto mb-3"
-          >Subir Tabla de castigos (Excel)</label
-        >
-        <label
-          for="uploadCastigo"
-          class="w-full flex justify-between items-center mx-auto bg-transparent border border-2 border-gray-300 rounded-[15px] px-3 py-3 rounded-md text-gray-500 text-left"
-          >Subir excel aquí
-
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            x="0px"
-            y="0px"
-            width="32"
-            height="32"
-            viewBox="0 0 48 48"
-          >
-            <path
-              fill="#4CAF50"
-              d="M41,10H25v28h16c0.553,0,1-0.447,1-1V11C42,10.447,41.553,10,41,10z"
-            ></path>
-            <path
-              fill="#FFF"
-              d="M32 15H39V18H32zM32 25H39V28H32zM32 30H39V33H32zM32 20H39V23H32zM25 15H30V18H25zM25 25H30V28H25zM25 30H30V33H25zM25 20H30V23H25z"
-            ></path>
-            <path fill="#2E7D32" d="M27 42L6 38 6 10 27 6z"></path>
-            <path
-              fill="#FFF"
-              d="M19.129,31l-2.411-4.561c-0.092-0.171-0.186-0.483-0.284-0.938h-0.037c-0.046,0.215-0.154,0.541-0.324,0.979L13.652,31H9.895l4.462-7.001L10.274,17h3.837l2.001,4.196c0.156,0.331,0.296,0.725,0.42,1.179h0.04c0.078-0.271,0.224-0.68,0.439-1.22L19.237,17h3.515l-4.199,6.939l4.316,7.059h-3.74V31z"
-            ></path>
-          </svg>
-        </label>
-        <input type="file" id="uploadCastigo" class="hidden" />
+      <div class="mx-auto w-5/6" >
+        <h1 class="text-md font-bold text-gray-500 text-center">
+          Parametros de calidad:
+        </h1>
 
         <button
-          class="w-full mx-auto bg-transparent text-center text-gray-500 font-bold mt-3 flex justify-center items-center gap-2"
+          class="w-full mx-auto bg-transparent text-center text-gray-400 text-sm mt-3 flex justify-center items-center gap-2"
         >
-          Descargar plantilla de Ejemplo
+          Descargar planilla
           <svg
             fill="#8d919a"
             height="24px"
