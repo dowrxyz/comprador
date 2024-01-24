@@ -316,63 +316,6 @@
         </div>
       </div>
 
-      <div class="col-span-2 grid relative">
-        <label for="eco" class="text-gray-600 font-bold w-full mx-auto"
-          >Productos de Interés</label
-        >
-        <RouterLink
-          to="/app/add/product/interested/profile"
-          class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 px-3 py-3 rounded-md"
-          >Agregar productos</RouterLink
-        >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="absolute bottom-4 mb-0.5 right-2"
-          fill="#a2afbe"
-          height="24"
-          viewBox="0 -960 960 960"
-          width="24"
-        >
-          <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
-        </svg>
-      </div>
-
-      <div class="grid" v-if="getProducts().length > 0">
-        <h1 class="text-gray-600 mb-3 font-bold">Productos Agregados</h1>
-
-        <p
-          class="text-gray-500 flex gap-3 items-center"
-          v-for="item in getProducts()"
-          :key="item.id"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="18"
-            fill="#a2afbe"
-            viewBox="0 -960 960 960"
-            width="18"
-          >
-            <path
-              d="m560-120-57-57 144-143H200v-480h80v400h367L503-544l56-57 241 241-240 240Z"
-            />
-          </svg>
-          {{ item.nombre }}
-
-          <button type="button" v-on:click="deleteProduct(item.id)">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24"
-              viewBox="0 -960 960 960"
-              width="24"
-              fill="#E87C61"
-            >
-              <path
-                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
-              />
-            </svg>
-          </button>
-        </p>
-      </div>
 
       <div class="col-span-2">
         <label

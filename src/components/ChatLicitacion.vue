@@ -113,14 +113,13 @@
         </button>
         <button
           v-if="offerSaw"
-          @click="showModal"
+          @click="openModalDatos"
           class="default-bar px-2 w-full py-1 h-8 rounded-md shadow-md color-white text-xs"
         >
           Aceptar oferta
         </button>
       </div>
 
-      
       <div class="message-form self-center relative">
         <input
           type="text"
@@ -133,7 +132,6 @@
         </button>
       </div>
 
-
       <p
         class="text-xs text-gray-500 font-bold my-2 text-center w-11/12 mx-auto"
       >
@@ -144,15 +142,11 @@
     <!--Navbar Inside chat-->
   </div>
 
-  <div
-    v-if="details"
-    class="content w-min-screen mx-auto grid my-3 gap-3"
-  >
+  <div v-if="details" class="content w-min-screen mx-auto grid my-3 gap-3">
     <RouterLink
       to="/app/vendedor/1/1"
       class="seller-info w-full mx-auto grid gap-3 shadow-md p-3 items-center justfiy-center"
     >
-
       <h1 class="text-xl font-bold text-gray-500 text-center">
         Información de Vendedor
       </h1>
@@ -221,47 +215,128 @@
         <p class="text-gray-400 text-sm">Precio necogiable</p>
       </div>
 
-
-      <div class="mx-auto w-5/6" >
-        <h1 class="text-md font-bold text-gray-500 text-center">
-          Parametros de calidad:
-        </h1>
-
-        <button
-          class="w-full mx-auto bg-transparent text-center text-gray-400 text-sm mt-3 flex justify-center items-center gap-2"
-        >
-          Descargar planilla
-          <svg
-            fill="#8d919a"
-            height="24px"
-            width="24px"
-            version="1.1"
-            id="Capa_1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 0 29.978 29.978"
-            xml:space="preserve"
-          >
-            <g>
-              <path
-                d="M25.462,19.105v6.848H4.515v-6.848H0.489v8.861c0,1.111,0.9,2.012,2.016,2.012h24.967c1.115,0,2.016-0.9,2.016-2.012
-		v-8.861H25.462z"
-              />
-              <path
-                d="M14.62,18.426l-5.764-6.965c0,0-0.877-0.828,0.074-0.828s3.248,0,3.248,0s0-0.557,0-1.416c0-2.449,0-6.906,0-8.723
-		c0,0-0.129-0.494,0.615-0.494c0.75,0,4.035,0,4.572,0c0.536,0,0.524,0.416,0.524,0.416c0,1.762,0,6.373,0,8.742
-		c0,0.768,0,1.266,0,1.266s1.842,0,2.998,0c1.154,0,0.285,0.867,0.285,0.867s-4.904,6.51-5.588,7.193
-		C15.092,18.979,14.62,18.426,14.62,18.426z"
-              />
-            </g>
-          </svg>
-        </button>
+      <h1 class="text-md font-bold text-gray-500 text-center">
+        Parametros de calidad:
+      </h1>
+      <div class="mx-auto w-full overflow-x-scroll">
+        <table class="text-gray-500">
+          <thead>
+            <tr>
+              <th class="text-sm">Imp-Hum</th>
+              <th>1%</th>
+              <th>2%</th>
+              <th>3%</th>
+              <th>4%</th>
+              <th>5%</th>
+              <th>6%</th>
+              <th>7%</th>
+              <th>8%</th>
+              <th>9%</th>
+              <th>10%</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>13.0%</td>
+              <td>15.7%</td>
+              <td>15.3%</td>
+              <td>15.1%</td>
+              <td>14.9%</td>
+              <td>14.7%</td>
+              <td>14.3%</td>
+              <td>14.1%</td>
+              <td>13.7%</td>
+              <td>13.8%</td>
+              <td>13.3%</td>
+            </tr>
+            <tr>
+              <td>13.0%</td>
+              <td>15.7%</td>
+              <td>15.3%</td>
+              <td>15.1%</td>
+              <td>14.9%</td>
+              <td>14.7%</td>
+              <td>14.3%</td>
+              <td>14.1%</td>
+              <td>13.7%</td>
+              <td>13.8%</td>
+              <td>13.3%</td>
+            </tr>
+            <!-- Agrega más filas según sea necesario -->
+          </tbody>
+        </table>
       </div>
-
     </div>
   </div>
 
-  <CModal alignment="center" :visible="visible"  @close="closeModal">
+  <CModal alignment="center" :visible="datos" @close="closeModalDatos">
+    <CModalBody>
+      <div class="grid w-full gap-3 pb-3 justify-center">
+        <img
+          src="@/assets/Nav/X.svg"
+          alt="Close alert"
+          @click="closeModal"
+          class="justify-self-end"
+        />
+        <h2
+          class="text-center text-xl font-bold text-gray-500 w-3/4 mx-auto text-center"
+        >
+          Datos de tu compra
+        </h2>
+        <div class="mx-auto">
+          <p class="text-gray-400 text-sm w-3/4 mx-auto">
+            Puedes confirmar los datos o indicar detalles para recibir tu
+            compra.
+          </p>
+
+          <h3 class="text-gray-400 text-sm mx-auto w-3/4 mt-3">
+            Producto:
+            <span class="text-gray-600 font-bold">{{
+              this.$route.params.name
+            }}</span>
+          </h3>
+          <h3 class="text-gray-400 text-sm mx-auto w-3/4">
+            Cantidad: <span class="text-gray-600 font-bold">100</span>
+          </h3>
+          <h3 class="text-gray-400 text-sm mx-auto w-3/4">
+            Precio Final: <span class="text-gray-600 font-bold">$19.82</span>
+          </h3>
+
+          <div class="grid gap-1 w-3/4 mx-auto mt-3">
+            <label for="entrega" class="text-gray-400 text-sm"
+              >Dirección de entrega</label
+            >
+            <input
+              type="text"
+              id="entrega"
+              class="bg-transparent border-2 rounded-md h-10 w-full text-gray-600 text-sm p-1"
+              placeholder="Balvanera 32, Chiapas"
+            />
+          </div>
+
+          <div class="grid gap-1 w-3/4 mx-auto mt-3">
+            <label for="recepcion" class="text-gray-400 text-sm"
+              >Politicas de recepción</label
+            >
+            <input
+              type="text"
+              id="recepcion"
+              class="bg-transparent border-2 rounded-md h-10 w-full text-gray-600 text-sm p-1"
+            />
+          </div>
+        </div>
+
+        <button
+          class="h-12 w-2/4 default-bar rounded-md text-white text-center mx-auto"
+          @click="showModal"
+        >
+          Confirmar
+        </button>
+      </div>
+    </CModalBody>
+  </CModal>
+
+  <CModal alignment="center" :visible="visible" @close="closeModal">
     <CModalBody>
       <div class="grid w-full gap-3 pb-3">
         <img
@@ -284,8 +359,7 @@
     </CModalBody>
   </CModal>
 
-  
-  <CModal alignment="center" :visible="errorChat"  @close="closeChatModal">
+  <CModal alignment="center" :visible="errorChat" @close="closeChatModal">
     <CModalBody>
       <div class="grid w-full gap-3 pb-3">
         <img
@@ -310,7 +384,7 @@
 </template>
 
 <script allowJs>
-import Event from '../libs/event.js';
+import Event from "../libs/event.js";
 import { CModal, CModalBody } from "@coreui/vue";
 export default {
   components: {
@@ -334,29 +408,36 @@ export default {
       minmax: "",
       isActive: true,
       borders: true,
+      datos: false,
     };
   },
-  created(){
-    Event.on('back-to-details', () => {
+  created() {
+    Event.on("back-to-details", () => {
       this.closeDetails();
     });
   },
   methods: {
+    closeModalDatos() {
+      this.datos = false;
+    },
+    openModalDatos() {
+      this.datos = true;
+    },
     setProduct(product) {
       this.param = product;
       this.paramSelected = false;
-      this.borders = true
+      this.borders = true;
     },
-    checkParam(){
+    checkParam() {
       this.paramSelected = true;
-      if(this.param != ''){
-        this.borders = false
-      }else{
-        this.borders = true
+      if (this.param != "") {
+        this.borders = false;
+      } else {
+        this.borders = true;
       }
     },
     sendProduct() {
-      if(this.param == "") return;
+      if (this.param == "") return;
       this.visible = true;
     },
     sendMessage() {
@@ -375,7 +456,6 @@ export default {
       } else {
         this.messageInput = "";
       }
-
     },
     showDealDetails() {
       this.details = !this.details ? true : false;
@@ -387,6 +467,7 @@ export default {
       this.$emit("back-to-details");
     },
     showModal() {
+      this.datos = false;
       this.visible = true;
     },
     closeChatModal() {
@@ -401,29 +482,45 @@ export default {
 </script>
 
 <style scoped>
-.message-wrap {
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+z .message-wrap {
   height: 50vh;
 }
 
 /* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: #b4b1b1 #ffffff;
-  }
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #b4b1b1 #ffffff;
+}
 
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 8px;
-  }
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
 
-  *::-webkit-scrollbar-track {
-    background: #ffffff;
-  }
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
 
-  *::-webkit-scrollbar-thumb {
-    background-color: #b4b1b1;
-    border-radius: 10px;
-    border: 3px solid #ffffff;
-  }
+*::-webkit-scrollbar-thumb {
+  background-color: #b4b1b1;
+  border-radius: 10px;
+  border: 3px solid #ffffff;
+}
 </style>
