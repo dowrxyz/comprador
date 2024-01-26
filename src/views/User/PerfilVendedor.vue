@@ -12,6 +12,9 @@
             <RouterLink to="/licitacion/Maiz" v-if="this.$route.params.from == 3">
               <img src="@/assets/Arrow.svg" alt="Back" class="w-4 h-4" />
             </RouterLink>
+            <RouterLink to="/app/product/Maiz" v-if="this.$route.params.from == 4">
+              <img src="@/assets/Arrow.svg" alt="Back" class="w-4 h-4" />
+            </RouterLink>
             <h2 class="text-center mx-auto">Perfil Vendedor</h2>
           </div>
         </ion-toolbar>
