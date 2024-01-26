@@ -271,6 +271,8 @@
         </CAccordionItem>
       </CAccordion>
 
+
+      <a href="#" class="text-decoration-none text-center text-white default-bar h-16 my-5 grid items-center rounded-md w-1/2 mx-auto">Contactar</a>
     </div>
   </div>
 </template>

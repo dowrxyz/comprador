@@ -218,7 +218,7 @@
       <h1 class="text-md font-bold text-gray-500 text-center">
         Parametros de calidad:
       </h1>
-      <div class="mx-auto w-full overflow-x-scroll">
+      <div class="mx-auto w-full overflow-x-scroll md:w-5/6">
         <table class="text-gray-500">
           <thead>
             <tr>
@@ -237,30 +237,109 @@
           </thead>
           <tbody>
             <tr>
-              <td>13.0%</td>
-              <td>15.7%</td>
-              <td>15.3%</td>
-              <td>15.1%</td>
-              <td>14.9%</td>
-              <td>14.7%</td>
-              <td>14.3%</td>
-              <td>14.1%</td>
-              <td>13.7%</td>
-              <td>13.8%</td>
-              <td>13.3%</td>
+              <td>
+                <input type="number" value="13.0" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="15.6" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="15.3" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="15.2" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="15.0" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="14.8" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="14.6" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="14.4" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="14.2" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="14.1" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="13.9" class="bg-transparent w-11/12">
+              </td>
             </tr>
             <tr>
-              <td>13.0%</td>
-              <td>15.7%</td>
-              <td>15.3%</td>
-              <td>15.1%</td>
-              <td>14.9%</td>
-              <td>14.7%</td>
-              <td>14.3%</td>
-              <td>14.1%</td>
-              <td>13.7%</td>
-              <td>13.8%</td>
-              <td>13.3%</td>
+              <td>
+                <input type="number" value="13.0" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="15.6" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="15.3" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="15.2" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="15.0" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="14.8" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="14.6" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="14.4" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="14.2" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="14.1" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="13.9" class="bg-transparent w-11/12">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="number" value="13.0" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="15.6" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="15.3" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="15.2" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="15.0" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="14.8" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="14.6" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="14.4" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="14.2" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="14.1" class="bg-transparent w-11/12">
+              </td>
+              <td>
+                <input type="number" value="13.9" class="bg-transparent w-11/12">
+              </td>
             </tr>
             <!-- Agrega más filas según sea necesario -->
           </tbody>
@@ -271,38 +350,52 @@
 
   <CModal alignment="center" :visible="datos" @close="closeModalDatos">
     <CModalBody>
-      <div class="grid w-full gap-3 pb-3 justify-center">
-        <img
-          src="@/assets/Nav/X.svg"
-          alt="Close alert"
-          @click="closeModal"
-          class="justify-self-end"
-        />
+      <div class="grid w-full gap-3 justify-center h-modaldatos overflow-y-scroll">
         <h2
           class="text-center text-xl font-bold text-gray-500 w-3/4 mx-auto text-center"
         >
           Datos de tu compra
         </h2>
-        <div class="mx-auto">
-          <p class="text-gray-400 text-sm w-3/4 mx-auto">
+        <div class="mx-auto md:grid md:grid-cols-2 w-11/12 md:w-3/4 gap-2">
+          <p class="text-gray-400 text-sm mx-auto col-span-2">
             Puedes confirmar los datos o indicar detalles para recibir tu
             compra.
           </p>
 
-          <h3 class="text-gray-400 text-sm mx-auto w-3/4 mt-3">
+          <h3 class="text-gray-400 text-sm mt-3 col-span-2">
             Producto:
             <span class="text-gray-600 font-bold">{{
               this.$route.params.name
             }}</span>
           </h3>
-          <h3 class="text-gray-400 text-sm mx-auto w-3/4">
-            Cantidad: <span class="text-gray-600 font-bold">100</span>
-          </h3>
-          <h3 class="text-gray-400 text-sm mx-auto w-3/4">
-            Precio Final: <span class="text-gray-600 font-bold">$19.82</span>
-          </h3>
+          
+          
+          <div class="grid gap-1 mx-auto mt-3">
+            <label for="entrega" class="text-gray-400 text-sm"
+              >Precio Final</label
+            >
+            <input
+              type="text"
+              id="entrega"
+              class="bg-transparent border-2 rounded-md h-10 w-full text-gray-600 text-sm p-1"
+              placeholder="$16.50"
+            />
+          </div>
 
-          <div class="grid gap-1 w-3/4 mx-auto mt-3">
+          
+          <div class="grid gap-1 mx-auto mt-3">
+            <label for="entrega" class="text-gray-400 text-sm"
+              >Cantidad</label
+            >
+            <input
+              type="text"
+              id="entrega"
+              class="bg-transparent border-2 rounded-md h-10 w-full text-gray-600 text-sm p-1"
+              placeholder="1600 TM"
+            />
+          </div>
+
+          <div class="grid gap-1 mx-auto col-span-2 w-full mt-3">
             <label for="entrega" class="text-gray-400 text-sm"
               >Dirección de entrega</label
             >
@@ -314,7 +407,7 @@
             />
           </div>
 
-          <div class="grid gap-1 w-3/4 mx-auto mt-3">
+          <div class="grid gap-1 mx-auto col-span-2 w-full mt-3">
             <label for="recepcion" class="text-gray-400 text-sm"
               >Politicas de recepción</label
             >
@@ -322,6 +415,29 @@
               type="text"
               id="recepcion"
               class="bg-transparent border-2 rounded-md h-10 w-full text-gray-600 text-sm p-1"
+            />
+          </div>
+
+          <div class="grid gap-1 mx-auto mt-3 col-span-2 w-full">
+            <label for="recepcion" class="text-gray-400 text-sm"
+              >Confirmar principales parámetros de calidad</label
+            >
+            <input
+              type="text"
+              id="recepcion"
+              class="bg-transparent border-2 rounded-md h-10 w-full text-gray-600 text-sm p-1"
+            />
+          </div>
+
+          
+          <div class="inline-flex justify-between mx-auto mt-3 col-span-2 w-11/12">
+            <label for="domicilio" class="text-gray-400 text-sm"
+              >Precio es puesto en domicilio del cliente</label
+            >
+            <input
+              type="checkbox"
+              id="domicilio"
+
             />
           </div>
         </div>
@@ -522,5 +638,18 @@ z .message-wrap {
   background-color: #b4b1b1;
   border-radius: 10px;
   border: 3px solid #ffffff;
+}
+.h-modaldatos{
+  height: 75vh;
+}
+
+@media (min-width: 768px) {
+  .h-modaldatos{
+    height: 65vh;
+  }
+}
+
+#domicilio {
+  accent-color: #a3e635;
 }
 </style>

@@ -19,7 +19,7 @@
           type="number"
           id="cantidad"
           placeholder="En cajas, kilos o bultos."
-          class="bg-gray-50 border p-2 rounded-md"
+          class="bg-gray-50 border p-2 rounded-md text-gray-600"
         />
       </div>
       <div class="form-input grid gap-1">
@@ -30,12 +30,12 @@
           type="text"
           id="calidad"
           placeholder="Indica las caracteristicas de entrega."
-          class="bg-gray-50 border p-2 rounded-md"
+          class="bg-gray-50 border p-2 rounded-md  text-gray-600"
         />
       </div>
       <div class="form-input grid gap-1">
         <label for="rechazo" class="text-gray-700">Motivos de rechazo</label>
-        <textarea name="rechazo" id="rechazo" cols="30" rows="5" class="bg-gray-50 border p-2 rounded-md" placeholder="Causas, por las que rechazarias el pedido."></textarea>
+        <textarea name="rechazo" id="rechazo" cols="30" rows="5" class="bg-gray-50 border p-2 rounded-md text-gray-600" placeholder="Causas, por las que rechazarias el pedido."></textarea>
       </div>
       <div class="form-input grid gap-1">
         <label for="precio" class="text-gray-700">Precio sugerido</label>
@@ -43,7 +43,7 @@
           type="number"
           id="precio"
           placeholder="Precio x unidad minima."
-          class="bg-gray-50 border p-2 rounded-md"
+          class="bg-gray-50 border p-2 rounded-md text-gray-600"
         />
       </div>
       <div class="form-input grid gap-1">
@@ -52,7 +52,7 @@
           type="text"
           id="delivery"
           placeholder="Indica Pais, Estado y Municipio."
-          class="bg-gray-50 border p-2 rounded-md"
+          class="bg-gray-50 border p-2 rounded-md text-gray-600"
         />
       </div>
     </form>

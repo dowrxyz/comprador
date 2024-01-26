@@ -54,11 +54,11 @@
     </div>
 
     <div class="grid gap-1">
-      <RouterLink :to="'/chat/licitacion/' + Item">
+      <div>
         <div class="tutorial-card w-full shadow-md p-2">
           <div class="w-11/12 mx-auto flex gap-3 justify-between">
             <div class="inline-flex gap-4">
-              <div class="Profile grid items-center text-center justify-center">
+              <RouterLink to="/app/vendedor/1/3" class="Profile grid items-center text-center justify-center w-16">
                 <img
                   src="@/assets/People/Farmer.svg"
                   alt="Seller Profile Icon"
@@ -91,84 +91,81 @@
                     class="w-3 h-3"
                   />
                 </div>
-              </div>
+              </RouterLink>
 
-              <div class="Profile-Text">
+              <RouterLink :to="'/chat/licitacion/' + Item" class="Profile-Text w-48">
                 <h1 class="text-gray-600 text-sm font-bold">Agricultor</h1>
                 <p class="text-gray-500 text-xs">Guayas / Pedro Carbo</p>
                 <p class="text-gray-500 text-xs">Cant: 200qq</p>
                 <p class="text-gray-500 text-xs">En sacos de 100 libras</p>
-              </div>
+              </RouterLink>
             </div>
 
-            <div class="Product-Price text-right flex flex-col mt-2">
+            <RouterLink :to="'/chat/licitacion/' + Item" class="Profile-Text text-right w-full">
               <h1 class="text-yellow-400 text-md font-bold">$18.50</h1>
               <p class="text-yellow-400 text-md font-bold">Hum 17%</p>
+            </RouterLink>
+          </div>
+        </div>
+
+        <div class="tutorial-card w-full shadow-md p-2">
+            <div class="w-11/12 mx-auto flex gap-3 justify-between">
+              <div class="inline-flex gap-4">
+                <RouterLink to="/app/vendedor/1/3" class="Profile grid items-center text-center justify-center w-16">
+                  <img
+                    src="@/assets/People/Aso.svg"
+                    alt="Seller Profile Icon"
+                    class="h-16 w-16 mx-auto"
+                  />
+                  <div class="flex items-center justfiy-center">
+                    <img
+                      src="@/assets/Star.svg"
+                      alt="Star Icon"
+                      class="w-3 h-3"
+                    />
+                    <img
+                      src="@/assets/Star.svg"
+                      alt="Star Icon"
+                      class="w-3 h-3"
+                    />
+                    <img
+                      src="@/assets/Star.svg"
+                      alt="Star Icon"
+                      class="w-3 h-3"
+                    />
+                    <img
+                      src="@/assets/Star.svg"
+                      alt="Star Icon"
+                      class="w-3 h-3"
+                    />
+                    <img
+                      src="@/assets/Star.svg"
+                      alt="Star Icon"
+                      class="w-3 h-3"
+                    />
+                  </div>
+                </RouterLink>
+
+                <RouterLink :to="'/chat/licitacion/' + Item" class="Profile-Text w-48">
+                  <h1 class="text-gray-600 text-sm font-bold">Aso Agrícola</h1>
+                  <p class="text-gray-500 text-xs">Guayas / Pedro Carbo</p>
+                  <p class="text-gray-500 text-xs">Cant: 200qq</p>
+                  <p class="text-gray-500 text-xs">En sacos de 100 libras</p>
+                </RouterLink>
+              </div>
+
+              <RouterLink :to="'/chat/licitacion/' + Item" class="Profile-Text text-right w-full">
+                <h1 class="text-yellow-400 text-md font-bold">$18.50</h1>
+                <p class="text-yellow-400 text-md font-bold">Hum 17%</p>
+              </RouterLink>
             </div>
           </div>
         </div>
-      </RouterLink>
 
-      <RouterLink :to="'/chat/licitacion/' + Item">
         <div class="tutorial-card w-full shadow-md p-2">
           <div class="w-11/12 mx-auto flex gap-3 justify-between">
             <div class="inline-flex gap-4">
-              <div class="Profile grid items-center text-center justify-center">
-                <img
-                  src="@/assets/People/Aso.svg"
-                  alt="Seller Profile Icon"
-                  class="h-16 w-16 mx-auto"
-                />
-                <div class="flex items-center justfiy-center">
-                  <img
-                    src="@/assets/Star.svg"
-                    alt="Star Icon"
-                    class="w-3 h-3"
-                  />
-                  <img
-                    src="@/assets/Star.svg"
-                    alt="Star Icon"
-                    class="w-3 h-3"
-                  />
-                  <img
-                    src="@/assets/Star.svg"
-                    alt="Star Icon"
-                    class="w-3 h-3"
-                  />
-                  <img
-                    src="@/assets/Star.svg"
-                    alt="Star Icon"
-                    class="w-3 h-3"
-                  />
-                  <img
-                    src="@/assets/Star.svg"
-                    alt="Star Icon"
-                    class="w-3 h-3"
-                  />
-                </div>
-              </div>
-
-              <div class="Profile-Text">
-                <h1 class="text-gray-600 text-sm font-bold">Aso. Agrícola</h1>
-                <p class="text-gray-500 text-xs">Guayas / Pedro Carbo</p>
-                <p class="text-gray-500 text-xs">Cant: 200qq</p>
-                <p class="text-gray-500 text-xs">En sacos de 100 libras</p>
-              </div>
-            </div>
-
-            <div class="Product-Price text-right flex flex-col mt-2">
-              <h1 class="text-yellow-400 text-md font-bold">$18.50</h1>
-              <p class="text-yellow-400 text-md font-bold">Hum 17%</p>
-            </div>
-          </div>
-        </div>
-      </RouterLink>
-
-      <RouterLink :to="'/chat/licitacion/' + Item">
-        <div class="tutorial-card w-full shadow-md p-2">
-          <div class="w-11/12 mx-auto flex gap-3 justify-between">
-            <div class="inline-flex gap-4">
-              <div class="Profile grid items-center text-center justify-center">
+              <RouterLink to="/app/vendedor/1/3" class="Profile grid items-center text-center justify-center w-16">
                 <img
                   src="@/assets/People/Business.svg"
                   alt="Seller Profile Icon"
@@ -201,23 +198,22 @@
                     class="w-3 h-3"
                   />
                 </div>
-              </div>
+              </RouterLink>
 
-              <div class="Profile-Text">
+              <RouterLink :to="'/chat/licitacion/' + Item" class="Profile-Text w-48">
                 <h1 class="text-gray-600 text-sm font-bold">Comerciante</h1>
                 <p class="text-gray-500 text-xs">Guayas / Pedro Carbo</p>
                 <p class="text-gray-500 text-xs">Cant: 200qq</p>
                 <p class="text-gray-500 text-xs">En sacos de 100 libras</p>
-              </div>
+              </RouterLink>
             </div>
 
-            <div class="Product-Price text-right flex flex-col mt-2">
+            <RouterLink :to="'/chat/licitacion/' + Item" class="Profile-Text text-right w-full">
               <h1 class="text-yellow-400 text-md font-bold">$18.50</h1>
               <p class="text-yellow-400 text-md font-bold">Hum 17%</p>
-            </div>
+            </RouterLink>
           </div>
         </div>
-      </RouterLink>
     </div>
   </div>
 
