@@ -415,7 +415,7 @@
               type="text"
               id="entrega"
               class="bg-transparent border-2 rounded-md h-10 w-full text-gray-600 text-sm p-1"
-              placeholder="Balvanera 32, Chiapas"
+              placeholder="Balvanera 32, Pedro Carbo"
             />
           </div>
 

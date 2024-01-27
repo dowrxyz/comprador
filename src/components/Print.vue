@@ -20,7 +20,7 @@
           </div>
 
           
-        <button class="dark-bar p-2 h-14 w-full mx-auto text-center text-white rounded mt-3">Generar Factura</button>
+        <button class="dark-bar p-2 h-14 w-full mx-auto text-center text-white rounded mt-3">Generar Orden</button>
       </form>
 
     </div>
