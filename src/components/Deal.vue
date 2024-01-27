@@ -7,14 +7,14 @@
       <img src="@/assets/People/Business.svg" alt="Profile Image" />
       <div class="grid gap-1 items-center">
         <h2 class="text-xl font-bold text-gray-500">Vendedor A</h2>
-        <p class="text-sm text-gray-400">Mexicali</p>
+        <p class="text-sm text-gray-400">Produagri</p>
       </div>
     </RouterLink>
 
     <div class="pricepad bg-gray-200 text-center h-28 grid items-center">
       <div class="">
         <h2 class="text-sm font-bold text-gray-900">Precio con transacción protegida</h2>
-        <p class="text-3xl font-bold text-gray-700">MXN $100.00 x KG</p>
+        <p class="text-3xl font-bold text-gray-700">USD $50.00 x KG</p>
       </div>
     </div>
 
@@ -31,7 +31,7 @@
         <p>Premium</p>
         <p>Estandar</p>
         <p>500</p>
-        <p>Mercado Mexicali Centro</p>
+        <p>Mercado</p>
       </div>
     </div>
 

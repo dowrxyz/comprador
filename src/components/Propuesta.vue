@@ -6,7 +6,7 @@
       <img src="@/assets/People/Business.svg" alt="Profile Image" />
       <div class="grid gap-1 items-center">
         <h2 class="text-xl font-bold text-gray-500">Vendedor A</h2>
-        <p class="text-sm text-gray-400">Mexicali</p>
+        <p class="text-sm text-gray-400">Produagri</p>
       </div>
     </div>
 
@@ -51,7 +51,7 @@
         <input
           type="text"
           id="delivery"
-          placeholder="Indica Pais, Estado y Municipio."
+          placeholder="Balvanera 32, Pedro Carbo"
           class="bg-gray-50 border p-2 rounded-md text-gray-600"
         />
       </div>
@@ -81,7 +81,7 @@
     
     <RouterLink
         class="default-bar p-3 rounded-md text-center text-zinc-50 w-5/6 mx-auto mb-4 md:w-1/2"
-        :to="{ name: 'propuestaDeals', params: { id: '1' } }"
+        to="/chat/licitacion/Maiz"
         >Enviar propuesta de compra</RouterLink
       >
   </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="licitacion my-5 w-full md:w-5/6 mx-auto grid">
+  <div class="licitacion my-2 w-full md:w-5/6 mx-auto grid">
     <form
       class="mx-auto flex items-center gap-3 w-11/12 md:w-1/2 mt-3 justify-evenly"
     >
@@ -67,12 +67,93 @@
       </div>
     </div>
 
+    <div class="mx-auto w-11/12 mt-3  md:w-4/6" v-if="showTendencia">
+        <table class="text-gray-500">
+          <thead>
+            <tr>
+              <th class="text-sm text-gray-50">Estado</th>
+              <th class="text-sm text-gray-50">Rango Precio (USD x KG)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Pedro Carbo
+              </td>
+              <td>
+                <div class="inline-flex justify-center items-center gap-2">
+                  
+                $25 - $35
+                <svg fill="#2db412" class="rotate" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                  width="14px" height="14px" viewBox="0 0 123.959 123.959"
+                  xml:space="preserve">
+                <g>
+                  <path d="M85.742,1.779l-56,56c-2.3,2.3-2.3,6.1,0,8.401l56,56c3.801,3.8,10.2,1.1,10.2-4.2v-112
+                    C95.942,0.679,89.543-2.021,85.742,1.779z"/>
+                </g>
+                </svg>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Guayas
+              </td>
+              <td>
+                <div class="inline-flex justify-center items-center gap-2">
+                  
+                $55 - $75
+                <svg fill="#ff4961" class="rotateminor" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                  width="14px" height="14px" viewBox="0 0 123.959 123.959"
+                  xml:space="preserve">
+                <g>
+                  <path d="M85.742,1.779l-56,56c-2.3,2.3-2.3,6.1,0,8.401l56,56c3.801,3.8,10.2,1.1,10.2-4.2v-112
+                    C95.942,0.679,89.543-2.021,85.742,1.779z"/>
+                </g>
+                </svg>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Azuay
+              </td>
+              <td>
+                <div class="inline-flex justify-center items-center gap-2">
+                  
+                $35 - $45
+                <span class="bg-indigo-500 rounded-full text-gray-50 text-xs p-1">MAX</span>
+                </div>
+              </td>
+            </tr>
+            <!-- Agrega más filas según sea necesario -->
+          </tbody>
+        </table>
+      </div>
+
+    <div class="grid md:grid-cols-2 md:w-2/3 mx-auto md:gap-4">
+      
     <button
       @click="showModal"
-      class="default-bar p-3 h-16 rounded-md text-center text-white mx-auto mt-4"
+      class="default-bar p-3 h-16 rounded-md text-center text-white mt-4"
     >
       Desbloquear más reportes
     </button>
+
+    
+    <button
+      @click="manageTendencias" v-if="!showTendencia"
+      class="default-bar p-3 h-16 rounded-md text-center text-white mt-4"
+    >
+      Mostrar tendencia de precios
+    </button>
+    <button
+      @click="manageTendencias" v-if="showTendencia"
+      class="default-bar p-3 h-16 rounded-md text-center text-white mt-4"
+    >
+      Ocultar tendencia de precios
+    </button>
+    </div>
   </div>
 
   <CModal alignment="center" :visible="visible" @close="closeModal">
@@ -253,9 +334,13 @@ export default {
       tipo: null,
       graficoExtendido: null,
       grafico: false,
+      showTendencia: false
     };
   },
   methods: {
+    manageTendencias(){
+      this.showTendencia = (this.showTendencia) ? false : true;
+    },
     show() {
       this.grafico = true;
     },
@@ -271,3 +356,33 @@ export default {
   },
 };
 </script>
+
+
+<style scoped>
+
+.rotate {
+  transform: rotate(90deg);
+
+}
+
+.rotateminor {
+  transform: rotate(-90deg);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background-color: #a8cf7b;
+  text-align: left;
+}
+</style>

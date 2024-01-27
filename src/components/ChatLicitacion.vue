@@ -395,6 +395,18 @@
             />
           </div>
 
+          
+          <div class="grid gap-1 mx-auto mt-3 col-span-2 w-full">
+            <label for="recepcion" class="text-gray-400 text-sm"
+              >Fecha de entrega</label
+            >
+            <input
+              type="date"
+              id="recepcion"
+              class="bg-transparent border-2 rounded-md h-10 w-full text-gray-400 text-sm p-1"
+            />
+          </div>
+
           <div class="grid gap-1 mx-auto col-span-2 w-full mt-3">
             <label for="entrega" class="text-gray-400 text-sm"
               >Dirección de entrega</label
@@ -407,9 +419,10 @@
             />
           </div>
 
-          <div class="grid gap-1 mx-auto col-span-2 w-full mt-3">
+          
+          <div class="grid gap-1 mx-auto mt-3 col-span-2 w-full">
             <label for="recepcion" class="text-gray-400 text-sm"
-              >Politicas de recepción</label
+              >Confirmar principales parámetros de calidad</label
             >
             <input
               type="text"
@@ -418,9 +431,9 @@
             />
           </div>
 
-          <div class="grid gap-1 mx-auto mt-3 col-span-2 w-full">
+          <div class="grid gap-1 mx-auto col-span-2 w-full mt-3">
             <label for="recepcion" class="text-gray-400 text-sm"
-              >Confirmar principales parámetros de calidad</label
+              >Politicas de recepción</label
             >
             <input
               type="text"
