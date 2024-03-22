@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="!details"
-    class="content w-11/12 mx-auto grid my-5 gap-4 justify-center min-h-full"
+    class="content w-11/12 mx-auto grid mb-5 gap-4 justify-center min-h-full"
   >
     <div class="mx-auto w-11/12 mt-2 message-wrap overflow-y-scroll">
       <div class="messages grid gap-3 p-2">

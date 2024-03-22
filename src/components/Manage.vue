@@ -30,7 +30,7 @@
         @click="show"
         class="statistic-card pt-6 pb-2 border border-gray-200 h-auto rounded-md grid gap-2"
       >
-        <Analytic type="line" class="mx-auto"></Analytic>
+        <Analytic type="line"></Analytic>
         <p class="text-gray-400 font-bold text-sm text-center w-5/6 mx-auto">
           Evolución de tu precio Agricultor
         </p>
@@ -40,7 +40,7 @@
         @click="show"
         class="statistic-card pt-6 pb-2 border border-gray-200 h-auto rounded-md grid gap-2"
       >
-        <Analytic type="line" class="mx-auto"></Analytic>
+        <Analytic type="line"></Analytic>
         <p class="text-gray-400 font-bold text-sm text-center w-5/6 mx-auto">
           Evolución de tu precio Comerciante
         </p>
@@ -50,7 +50,7 @@
         @click="show"
         class="statistic-card pt-6 pb-2 border border-gray-200 h-auto rounded-md grid gap-2"
       >
-        <Analytic type="bar" class="mx-auto"></Analytic>
+        <Analytic type="bar"></Analytic>
         <p class="text-gray-400 font-bold text-sm text-center w-5/6 mx-auto">
           Cantidad comprada por tipo de cliente (tm)
         </p>
@@ -60,7 +60,7 @@
         @click="show"
         class="statistic-card pt-6 pb-2 border border-gray-200 h-auto rounded-md grid gap-2"
       >
-        <Analytic type="bar" class="mx-auto"></Analytic>
+        <Analytic type="bar"></Analytic>
         <p class="text-gray-400 font-bold text-sm text-center w-5/6 mx-auto">
           Cantidad comprada por zona (Cantón)
         </p>
@@ -71,8 +71,8 @@
         <table class="text-gray-500">
           <thead>
             <tr>
-              <th class="text-sm text-gray-50">Estado</th>
-              <th class="text-sm text-gray-50">Rango Precio (USD x KG)</th>
+              <th class="text-sm text-gray-50">Provincia</th>
+              <th class="text-sm text-gray-50">Rango Precio (USD x QQ)</th>
             </tr>
           </thead>
           <tbody>

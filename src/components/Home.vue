@@ -102,7 +102,7 @@
         <h1 class="text-gray-500 text-xs font-bold">Tu Calificación</h1>
       </div>
 
-      <RouterLink to="/app/home">
+      <RouterLink to="/app/propuestas/filter">
         <div
           class="card w-full h-28 border rounded-md border-gray-300 grid text-center items-center"
         >

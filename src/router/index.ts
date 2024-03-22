@@ -119,6 +119,14 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/User/LicitacionEditar.vue')
       },
       {
+        path: '/app/propuestas/filter',
+        component: () => import('@/views/User/PropuestasProductoFilter.vue')
+      },
+      {
+        path: '/app/propuestas/:product',
+        component: () => import('@/views/User/PropuestasProducto.vue')
+      },
+      {
         path: '/app/add/product/interested/:from',
         component: () => import('@/views/User/InterestedProduct.vue')
       },

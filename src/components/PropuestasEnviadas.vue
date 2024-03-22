@@ -3,12 +3,12 @@
     <div class="grid gap-1">
       <div class="tutorial-card w-full shadow-md p-2 gap-2 grid">
         <p class="text-gray-700 w-11/12 mx-auto my-2">
-          (*) Has recibido 3 propuestas de tu licitación {{Item}} $17.50; 500QQ
+          (*) Has recibido 3 mensajes de tu propuesta {{Item}} $17.50; 500QQ
         </p>
         <div class="w-11/12 mx-auto flex gap-3 justify-between">
           <RouterLink
             class="message-incoming flex gap-2 items-center"
-            :to="'/chat/licitacion/' + Item"
+            :to="'/app/chat/oferta/' + Item"
           >
             <img
               src="@/assets/People/Factory.svg"
@@ -25,7 +25,7 @@
         <div class="w-11/12 mx-auto flex gap-3 justify-between">
           <RouterLink
             class="message-outgoing flex gap-2 items-center"
-            :to="'/chat/licitacion/' + Item"
+            :to="'/app/chat/oferta/' + Item"
           >
             <img
               src="@/assets/People/Factory.svg"
@@ -42,7 +42,7 @@
         <div class="w-11/12 mx-auto flex gap-3 justify-between">
           <RouterLink
             class="message-incoming flex gap-2 items-center"
-            :to="'/chat/licitacion/' + Item"
+            :to="'/app/chat/oferta/' + Item"
           >
             <img
               src="@/assets/People/Business.svg"
@@ -61,12 +61,12 @@
     <div class="grid gap-1">
       <div class="tutorial-card w-full shadow-md p-2 gap-2 grid">
         <p class="text-gray-700 w-11/12 mx-auto my-2">
-          (*) Has recibido 2 propuestas de tu licitación Maiz $16.50; 300QQ
+          (*) Has recibido 2 mensajes de tu propuesta Maiz $16.50; 300QQ
         </p>
         <div class="w-11/12 mx-auto flex gap-3 justify-between">
           <RouterLink
             class="message-incoming flex gap-2 items-center"
-            :to="'/chat/licitacion/' + Item"
+            :to="'/app/chat/oferta/' + Item"
           >
             <img
               src="@/assets/People/Aso.svg"
@@ -83,7 +83,7 @@
         <div class="w-11/12 mx-auto flex gap-3 justify-between">
           <RouterLink
             class="message-outgoing flex gap-2 items-center"
-            :to="'/chat/licitacion/' + Item"
+            :to="'/app/chat/oferta/' + Item"
           >
             <img
               src="@/assets/People/Factory.svg"
@@ -154,7 +154,7 @@ export default {
       CantonSelected: null,
       Provincias: Provincias,
       Cantones: Cantones,
-      Item: this.$route.params.name,
+      Item: this.$route.params.product,
       options: [
         { name: "Agricultor", value: "Agricultor" },
         { name: "Comerciante", value: "Comerciante" },

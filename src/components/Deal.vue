@@ -14,7 +14,7 @@
     <div class="pricepad bg-gray-200 text-center h-28 grid items-center">
       <div class="">
         <h2 class="text-sm font-bold text-gray-900">Precio con transacción protegida</h2>
-        <p class="text-3xl font-bold text-gray-700">USD $50.00 x KG</p>
+        <p class="text-3xl font-bold text-gray-700">USD $50.00 x QQ</p>
       </div>
     </div>
 
@@ -22,15 +22,17 @@
       <div class="titles grid gap-2 text-gray-400">
         <p>Producto</p>
         <p>Calidad</p>
-        <p>Tamaño</p>
-        <p>KG disponibles</p>
-        <p>Mercado</p>
+        <p>Provincia y cantón</p>
+        <p>Presentación de entrega</p>
+        <p>Fecha de entrega</p>
+        <p>Informacion adicional</p>
       </div>
       <div class="titles grid gap-2 text-gray-700">
         <p>Cafe Tostado Colombia</p>
         <p>Premium</p>
-        <p>Estandar</p>
-        <p>500</p>
+        <p>Guayas, Pedro Carbo</p>
+        <p>En sacos</p>
+        <p>24/7/2024</p>
         <p>Mercado</p>
       </div>
     </div>

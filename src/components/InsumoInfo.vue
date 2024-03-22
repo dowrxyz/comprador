@@ -1,11 +1,11 @@
 <template>
-  <div class="content w-full mx-auto grid my-5 gap-2" v-if="!details">
+  <div class="content w-full mx-auto grid mb-5 gap-2 md:w-1/2" v-if="!details">
     <div
-      class="p-2 mx-auto w-full items-center h-20 flex border-bottom-2 border-top-2"
+      class="p-1 mx-auto w-full items-center h-20 flex border-bottom-2 border-top-2"
       @click="openDetails"
     >
-      <div class="w-11/12 mx-auto flex items-center">
-        <h1 class="text-gray-800 font-bold text-sm">1,4 SIGHT</h1>
+      <div class="w-full flex items-center">
+        <img src="@/assets/fertlizante.webp" class="h-20 w-20" alt="Insumo Icon">
         <p class="text-gray-500 text-md font-semibold w-3/4 ml-3">1,4 SIGHT</p>
       </div>
       <svg
@@ -26,8 +26,8 @@
       class="p-2 mx-auto w-full items-center h-20 flex border-bottom-2"
       @click="openDetails"
     >
-      <div class="w-11/12 mx-auto flex items-center">
-        <h1 class="text-gray-800 font-bold text-sm">PICLORAM</h1>
+      <div class="w-full flex items-center">
+        <img src="@/assets/fertlizante.webp" class="h-20 w-20" alt="Insumo Icon">
         <p class="text-gray-500 text-md font-semibold w-3/4 ml-3">
           2,4D (240) PICLORAM
         </p>
@@ -50,8 +50,8 @@
       class="p-2 mx-auto w-full items-center h-20 flex border-bottom-2"
       @click="openDetails"
     >
-      <div class="w-11/12 mx-auto flex items-center">
-        <h1 class="text-gray-800 font-bold text-sm">AMINA</h1>
+      <div class="w-full flex items-center">
+        <img src="@/assets/fertlizante.webp" class="h-20 w-20" alt="Insumo Icon">
         <p class="text-gray-500 text-md font-semibold w-3/4 ml-3">
           2,4D AMINA CCAB
         </p>
@@ -74,8 +74,8 @@
       class="p-2 mx-auto w-full items-center h-20 flex border-bottom-2"
       @click="openDetails"
     >
-      <div class="w-11/12 mx-auto flex items-center">
-        <h1 class="text-gray-800 font-bold text-sm">806 RN</h1>
+      <div class="w-full flex items-center">
+        <img src="@/assets/fertlizante.webp" class="h-20 w-20" alt="Insumo Icon">
         <p class="text-gray-500 text-md font-semibold w-3/4 ml-3">
           2,4D 806 RN
         </p>
@@ -98,8 +98,8 @@
       class="p-2 mx-auto w-full items-center h-20 flex border-bottom-2"
       @click="openDetails"
     >
-      <div class="w-11/12 mx-auto flex items-center">
-        <h1 class="text-gray-800 font-bold text-sm">806 SL</h1>
+      <div class="w-full flex items-center">
+        <img src="@/assets/fertlizante.webp" class="h-20 w-20" alt="Insumo Icon">
         <p class="text-gray-500 text-md font-semibold w-3/4 ml-3">
           2,4D 806 SL ALAMOS
         </p>
@@ -120,13 +120,11 @@
     </div>
   </div>
 
-  <div v-if="details" class="content w-min-screen mx-auto grid my-3 gap-3">
+  <div v-if="details" class="content w-min-screen mx-auto grid mb-3 gap-3 md:w-1/2">
+    <img src="@/assets/fertlizante.webp" class="md:mx-auto h-64 w-full md:h-96">
     <div
       class="seller-info w-full mx-auto grid gap-3 shadow-md p-3 items-center justfiy-center"
     >
-      <h1 class="text-2xl font-bold text-gray-800 text-center h-32">
-        1,4 SIGHT
-      </h1>
 
       <div class="card-info border-bottom-1 pb-2">
         <h1 class="text-gray-400">Nombre Comercial</h1>

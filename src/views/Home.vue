@@ -10,6 +10,7 @@
           </div>
 
           <RouterLink to="/app/notifications" class="justify-self-end text-end">
+          <span class="h-4 w-4 bg-red-600 rounded-full p-0.5 absolute grid items-center justify-center ml-4">3</span>
           <img src="@/assets/Notifications.svg" alt="Notifications" class="h-8 w-8">
           </RouterLink>
         </div>
@@ -60,3 +61,9 @@ export default {
 
 }
 </script>
+
+<style scoped>
+span {
+  font-size: 9px;
+}
+</style>

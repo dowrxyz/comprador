@@ -1,17 +1,31 @@
 <template>
-  <apexcharts v-if="!extended"
+  <apexcharts
+    v-if="!extended && !smallSize"
     :width="chartWidth"
+    class="mx-auto"
     :height="chartHeight"
     :type="type"
     :options="chartOptions"
     :series="series"
   ></apexcharts>
-  <apexcharts v-else
+  <apexcharts
+    v-if="extended"
+    class="mx-auto"
     :width="extendedWidth"
     :height="extendedHeight"
     :type="type"
     :options="chartOptions"
-    :series="series"></apexcharts>
+    :series="series"
+  ></apexcharts>
+  <apexcharts
+    v-if="!extended && smallSize"
+    :width="chartWidthSmall"
+    class="mx-auto"
+    :height="chartHeightSmall"
+    :type="type"
+    :options="chartOptions"
+    :series="series"
+  ></apexcharts>
 </template>
 
 <script>
@@ -47,11 +61,19 @@ export default {
       ],
       extendedWidth: 350,
       extendedHeight: 300,
-      chartWidth: window.innerWidth >= 768 ? 400 : 185, // Ancho del gráfico en píxeles
-      chartHeight: window.innerWidth >= 768 ? 300 : 120, // Alto del gráfico en píxeles
+      chartWidth: 400, // Ancho del gráfico en píxeles
+      chartHeight: 300, // Alto del gráfico en píxeles
+      chartWidthSmall: 185, // Ancho del gráfico en píxeles
+      chartHeightSmall: 120, // Alto del gráfico en píxeles
+      smallSize: false,
     };
   },
   created() {
+    if (window.innerWidth < 768) {
+      this.smallSize = true;
+    } else {
+      this.smallSize = false;
+    }
     window.addEventListener("resize", this.handleResize);
   },
   destroyed() {
@@ -59,8 +81,11 @@ export default {
   },
   methods: {
     handleResize() {
-      this.chartWidth = window.innerWidth >= 768 ? 400 : 120;
-      this.chartHeight = window.innerWidth >= 768 ? 300 : 130;
+      if (window.innerWidth < 768) {
+        this.smallSize = true;
+      } else {
+        this.smallSize = false;
+      }
     },
   },
 };

@@ -14,6 +14,15 @@
       <h3 class="text-gray-700 font-bold">Propuesta de compra al vendedor</h3>
 
       <div class="form-input grid gap-1">
+        <label for="precio" class="text-gray-700">Precio</label>
+        <input
+          type="number"
+          id="precio"
+          placeholder="Precio."
+          class="bg-gray-50 border p-2 rounded-md text-gray-600"
+        />
+      </div>
+      <div class="form-input grid gap-1">
         <label for="cantidad" class="text-gray-700">Cantidad</label>
         <input
           type="number"
@@ -24,7 +33,7 @@
       </div>
       <div class="form-input grid gap-1">
         <label for="calidad" class="text-gray-700"
-          >Calidad, tamaño y presentacion</label
+          >Presentación de entrega</label
         >
         <input
           type="text"
@@ -34,25 +43,42 @@
         />
       </div>
       <div class="form-input grid gap-1">
-        <label for="rechazo" class="text-gray-700">Motivos de rechazo</label>
-        <textarea name="rechazo" id="rechazo" cols="30" rows="5" class="bg-gray-50 border p-2 rounded-md text-gray-600" placeholder="Causas, por las que rechazarias el pedido."></textarea>
+        <label for="ubicacion" class="text-gray-700"
+          >Ubicación</label
+        >
+        <input
+          type="text"
+          id="ubicacion"
+          placeholder="Indica la ubicación."
+          class="bg-gray-50 border p-2 rounded-md  text-gray-600"
+        />
       </div>
       <div class="form-input grid gap-1">
-        <label for="precio" class="text-gray-700">Precio sugerido</label>
+        <label for="Horarios" class="text-gray-700"
+          >Horarios</label
+        >
         <input
-          type="number"
-          id="precio"
-          placeholder="Precio x unidad minima."
+          type="text"
+          id="Horarios"
+          placeholder="Indica los horarios de recepción."
+          class="bg-gray-50 border p-2 rounded-md  text-gray-600"
+        />
+      </div>
+      <div class="form-input grid gap-1">
+        <label for="delivery" class="text-gray-700">Válida hasta</label>
+        <input
+          type="date"
+          id="delivery"
           class="bg-gray-50 border p-2 rounded-md text-gray-600"
         />
       </div>
       <div class="form-input grid gap-1">
-        <label for="delivery" class="text-gray-700">¿En dónde deseas recibir el producto?</label>
+        <label for="infoextra" class="text-gray-700">Información Adicional</label>
         <input
           type="text"
-          id="delivery"
-          placeholder="Balvanera 32, Pedro Carbo"
+          id="infoextra"
           class="bg-gray-50 border p-2 rounded-md text-gray-600"
+          placeholder="Detalles adicionales."
         />
       </div>
     </form>
