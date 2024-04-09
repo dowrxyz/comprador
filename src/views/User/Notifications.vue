@@ -12,7 +12,10 @@
           class="mx-auto w-full text-center mt-3 mr-3 inline-flex justify-center gap-1"
         >
           <ion-segment value="buttons" class="tabs">
-            <ion-segment-button value="maiz" class="buttonmaiz">
+            <ion-segment-button value="all" class="buttonmain">
+              <ion-label>Todos</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="maiz" class="button">
               <ion-label>Maiz</ion-label>
             </ion-segment-button>
             <ion-segment-button value="cacao" class="button">
@@ -71,11 +74,11 @@ export default {
 </script>
 
 <style scoped>
-.buttonmaiz {
+.buttonmain {
   width: 20%;
   font-size: 10px;
   padding: 2px;
-  margin-left: 140px;
+  margin-left: 260px;
 }
 .button {
   width: 20%;
@@ -98,7 +101,7 @@ export default {
     padding: 2px;
   }
 
-  .buttonmaiz {
+  .buttonmain {
     width: 100%;
     font-size: 10px;
     padding: 2px;

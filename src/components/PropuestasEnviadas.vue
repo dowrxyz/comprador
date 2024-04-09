@@ -1,99 +1,173 @@
 <template>
   <div class="content w-full mx-auto grid my-2 gap-2">
     <div class="grid gap-1">
-      <div class="tutorial-card w-full shadow-md p-2 gap-2 grid">
-        <p class="text-gray-700 w-11/12 mx-auto my-2">
-          (*) Has recibido 3 mensajes de tu propuesta {{Item}} $17.50; 500QQ
-        </p>
+      <div class="tutorial-card w-full p-2 gap-2 grid">
         <div class="w-11/12 mx-auto flex gap-3 justify-between">
           <RouterLink
-            class="message-incoming flex gap-2 items-center"
-            :to="'/app/chat/oferta/' + Item"
+            class="message-incoming flex gap-2 items-center w-full"
+            :to="'/chat/licitacion/' + Item"
           >
-            <img
-              src="@/assets/People/Factory.svg"
-              alt="Incoming Message Profile Icon"
-              class="h-16 w-16"
-            />
-            <div class="message-content incoming-chat rounded-md p-2 w-11/12">
-              <p class="text-sm text-gray-800">
-                Me intereso, te ofrezco $17.50, puesto en mi planta.
-              </p>
+            <div
+              class="grid gap-2 items-center justify-center text-center text-gray-700 text-sm"
+            >
+              <img
+                src="@/assets/People/Factory.svg"
+                alt="Incoming Message Profile Icon"
+                class="h-16 w-16 mx-auto"
+              />
+            </div>
+            <div class="grid gap-2 w-full">
+              <div class="grid text-gray-600">
+                <h1 class="font-bold">Aso. Agricola</h1>
+                <p class="text-sm">Guayas, Pedro Carbo</p>
+              </div>
+              <div
+                class="message-content incoming-chat rounded-md p-2 w-full relative"
+              >
+                <p class="text-sm text-gray-800 font-bold">
+                  Me intereso, te ofrezco $17.50, puesto en mi planta.
+                </p>
+                <span
+                  class="text-gray-700 text-sm absolute right-2 xs:top-2 sm:top-4 md:top-2 top-8 md:mr-2 hour-text"
+                  >Hoy 09:21 AM</span
+                >
+              </div>
             </div>
           </RouterLink>
         </div>
         <div class="w-11/12 mx-auto flex gap-3 justify-between">
           <RouterLink
-            class="message-outgoing flex gap-2 items-center"
-            :to="'/app/chat/oferta/' + Item"
+            class="message-outgoing flex gap-2 items-center w-full"
+            :to="'/chat/licitacion/' + Item"
           >
-            <img
-              src="@/assets/People/Factory.svg"
-              alt="Incoming Message Profile Icon"
-              class="h-16 w-16"
-            />
-            <div class="message-content outgoing-chat rounded-md p-2 w-11/12">
-              <p class="text-sm text-gray-800">
-                Me intereso, te ofrezco $17.50, puesto en mi planta.
-              </p>
+            <div
+              class="grid gap-2 items-center justify-center text-center text-gray-700 text-sm"
+            >
+              <img
+                src="@/assets/People/Factory.svg"
+                alt="Incoming Message Profile Icon"
+                class="h-16 w-16 mx-auto"
+              />
+            </div>
+            <div class="grid gap-2 w-full">
+              <div class="grid text-gray-600">
+                <h1 class="font-bold">Aso. Agricola</h1>
+                <p class="text-sm">Guayas, Pedro Carbo</p>
+              </div>
+              <div
+                class="message-content outgoing-chat rounded-md p-2 w-full relative"
+              >
+                <p class="text-sm text-gray-800">
+                  Me intereso, te ofrezco $17.50, puesto en mi planta.
+                </p>
+                <span
+                  class="text-gray-700 text-sm absolute right-2 xs:top-2 sm:top-4 md:top-2 top-8 md:mr-2 hour-text"
+                  >Hoy 07:21 AM</span
+                >
+              </div>
             </div>
           </RouterLink>
         </div>
         <div class="w-11/12 mx-auto flex gap-3 justify-between">
           <RouterLink
-            class="message-incoming flex gap-2 items-center"
-            :to="'/app/chat/oferta/' + Item"
+            class="message-incoming flex gap-2 items-center w-full"
+            :to="'/chat/licitacion/' + Item"
           >
-            <img
-              src="@/assets/People/Business.svg"
-              alt="Incoming Message Profile Icon"
-              class="h-16 w-16"
-            />
-            <div class="message-content incoming-chat rounded-md p-2 w-11/12">
-              <p class="text-sm text-gray-800">
-                Me intereso, te ofrezco $17.50, puesto en mi planta.
-              </p>
+            <div
+              class="grid gap-2 items-center justify-center text-center text-gray-700 text-sm"
+            >
+              <img
+                src="@/assets/People/Farmer.svg"
+                alt="Incoming Message Profile Icon"
+                class="h-16 w-16 mx-auto"
+              />
+            </div>
+
+            <div class="grid gap-2 w-full">
+              <div class="grid text-gray-600">
+                <h1 class="font-bold">Agricultor</h1>
+                <p class="text-sm">Guayas, Pedro Carbo</p>
+              </div>
+              <div
+                class="message-content outgoing-chat rounded-md p-2 w-full relative"
+              >
+                <p class="text-sm text-gray-800">
+                  Me intereso, te ofrezco $17.50, puesto en mi planta.
+                </p>
+                <span
+                  class="text-gray-700 text-sm absolute right-2 xs:top-2 sm:top-4 md:top-2 top-8 md:mr-2 hour-text"
+                  >Ayer 09:21 PM</span
+                >
+              </div>
             </div>
           </RouterLink>
         </div>
       </div>
-    </div>
-    <div class="grid gap-1">
-      <div class="tutorial-card w-full shadow-md p-2 gap-2 grid">
-        <p class="text-gray-700 w-11/12 mx-auto my-2">
-          (*) Has recibido 2 mensajes de tu propuesta Maiz $16.50; 300QQ
-        </p>
+
+      <div class="tutorial-card w-full p-2 gap-2 grid">
         <div class="w-11/12 mx-auto flex gap-3 justify-between">
           <RouterLink
-            class="message-incoming flex gap-2 items-center"
-            :to="'/app/chat/oferta/' + Item"
+            class="message-incoming flex gap-2 items-center w-full"
+            :to="'/chat/licitacion/' + Item"
           >
-            <img
-              src="@/assets/People/Aso.svg"
-              alt="Incoming Message Profile Icon"
-              class="h-16 w-16"
-            />
-            <div class="message-content incoming-chat rounded-md p-2 w-11/12">
-              <p class="text-sm text-gray-800">
-                Me intereso, te ofrezco $16.50, puesto en mi planta.
-              </p>
+            <div
+              class="grid gap-2 items-center justify-center text-center text-gray-700 text-sm"
+            >
+              <img
+                src="@/assets/People/Business.svg"
+                alt="Incoming Message Profile Icon"
+                class="h-16 w-16 mx-auto"
+              />
+            </div>
+            <div class="grid gap-2 w-full">
+              <div class="grid text-gray-600">
+                <h1 class="font-bold">Comerciante</h1>
+                <p class="text-sm">Guayas, Pedro Carbo</p>
+              </div>
+              <div
+                class="message-content outgoing-chat rounded-md p-2 w-full relative"
+              >
+                <p class="text-sm text-gray-800">
+                  Me intereso, te ofrezco $17.50, puesto en mi planta.
+                </p>
+                <span
+                  class="text-gray-700 text-sm absolute right-2 xs:top-2 sm:top-4 md:top-2 top-8 md:mr-2 hour-text"
+                  >3/4/2024 10:21 AM</span
+                >
+              </div>
             </div>
           </RouterLink>
         </div>
         <div class="w-11/12 mx-auto flex gap-3 justify-between">
           <RouterLink
-            class="message-outgoing flex gap-2 items-center"
-            :to="'/app/chat/oferta/' + Item"
+            class="message-incoming flex gap-2 items-center w-full"
+            :to="'/chat/licitacion/' + Item"
           >
-            <img
-              src="@/assets/People/Factory.svg"
-              alt="Incoming Message Profile Icon"
-              class="h-16 w-16"
-            />
-            <div class="message-content outgoing-chat rounded-md p-2 w-11/12">
-              <p class="text-sm text-gray-800">
-                Me intereso, te ofrezco $16.50, puesto en mi planta.
-              </p>
+            <div
+              class="grid gap-2 items-center justify-center text-center text-gray-700 text-sm"
+            >
+              <img
+                src="@/assets/People/Business.svg"
+                alt="Incoming Message Profile Icon"
+                class="h-16 w-16 mx-auto"
+              />
+            </div>
+            <div class="grid gap-2 w-full">
+              <div class="grid text-gray-600">
+                <h1 class="font-bold">Comerciante</h1>
+                <p class="text-sm">Guayas, Pedro Carbo</p>
+              </div>
+              <div
+                class="message-content outgoing-chat rounded-md p-2 w-full relative"
+              >
+                <p class="text-sm text-gray-800">
+                  Me intereso, te ofrezco $17.50, puesto en mi planta.
+                </p>
+                <span
+                  class="text-gray-700 text-sm absolute right-2 xs:top-2 sm:top-4 md:top-2 top-8 md:mr-2 hour-text"
+                  >2/4/2024 09:21 AM</span
+                >
+              </div>
             </div>
           </RouterLink>
         </div>
@@ -211,5 +285,9 @@ export default {
   border-bottom-left-radius: 0px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+}
+
+.hour-text {
+  opacity: 0.8;
 }
 </style>

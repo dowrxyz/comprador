@@ -8,19 +8,22 @@
           </RouterLink>
           <h2 class="text-center mx-auto">Mis Licitaciones</h2>
         </div>
-        <div class="mx-auto w-full text-center mt-3 grid grid-cols-2 justify-center gap-2">
-          <a v-if="status" class="text-sm text-gray-50 border-bottom-2 border-gray-50 p-3">
-            Abiertas
-          </a>
-          <a v-if="status" class="text-sm text-gray-50 p-3" @click="changeStatus">
-            Cerradas
-          </a>
-          <a v-if="!status" class="text-sm text-gray-50 p-3" @click="changeStatus">
-            Abiertas
-          </a>
-          <a v-if="!status" class="text-sm text-gray-50 border-bottom-2 border-gray-50 p-3">
-            Cerradas
-          </a>
+        <div 
+          class="mx-auto w-full text-center gap-1">
+          <ion-segment value="buttons" class="tabs">
+            <ion-segment-button value="1" class="button" @click="selectStatus(1)">
+              <ion-label>Abiertas</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="2" class="button" @click="selectStatus(2)">
+              <ion-label>Cerradas</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="3" class="button" @click="selectStatus(3)">
+              <ion-label>Caducadas</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="4" class="button" @click="selectStatus(4)">
+              <ion-label>Cumplidas</ion-label>
+            </ion-segment-button>
+          </ion-segment>
         </div>
       </ion-toolbar>
     </ion-header>
@@ -32,7 +35,6 @@
 </template>
 
 <script allowJs>
-import BottomBar from "@/components/Bottom.vue";
 import MisLicitaciones from "@/components/MisLicitaciones.vue";
 import {
   IonPage,
@@ -40,7 +42,10 @@ import {
   IonToolbar,
   IonTitle,
   IonContent,
-  IonIcon
+  IonIcon,
+  IonSegment,
+  IonLabel,
+  IonSegmentButton,
 } from "@ionic/vue";
 
 export default {
@@ -50,19 +55,29 @@ export default {
     IonHeader,
     IonToolbar,
     IonTitle,
-    BottomBar,
+    IonSegment,
+    IonLabel,
+    IonSegmentButton,
     IonContent,
     IonIcon,
   },
   data(){
     return{
-      status: true
+      status: 1
     }
   },
   methods:{
-    changeStatus(){
-      this.status = !this.status
+    selectStatus(x){
+      this.status = x;
     }
   }
 };
 </script>
+
+
+<style scoped>
+.button {
+  width: 100%;
+  font-size: 10px;
+}
+</style>

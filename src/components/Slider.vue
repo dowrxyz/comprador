@@ -1,12 +1,12 @@
 <template>
   <Splide
-    :options="{ rewind: true, wheel: true, arrows: false }"
+    :options="{ rewind: true, wheel: true, arrows: false, gap: '15px' }"
     aria-label="Vue Splide Example"
-    class="my-3"
+    class="my-3 inline-flex gap-2"
   >
     <SplideSlide>
       <div
-        class="bg-blue-400 w-11/12 h-32 md:h-48 p-3  grid grid-cols-2  items-center justify-items-center mx-auto rounded-xl"
+        class="bg-blue-400 w-full h-48 md:h-64 p-3  grid grid-cols-2  items-center justify-items-center mx-auto rounded-xl"
       >
         <div class="grid">
           <h1 class="font-bold">No data</h1>
@@ -19,7 +19,7 @@
     </SplideSlide>
     <SplideSlide>
       <div
-        class="default-bar w-11/12 h-32 md:h-48 p-3 grid grid-cols-2 items-center justify-items-center mx-auto rounded-xl"
+        class="default-bar w-full h-48 md:h-64 p-3 grid grid-cols-2 items-center justify-items-center mx-auto rounded-xl"
       >
         <div class="grid">
           <h1 class="font-bold">No data</h1>
@@ -31,7 +31,7 @@
     </SplideSlide>
     <SplideSlide class="grid place-center">
       <div
-        class="bg-indigo-600 w-11/12 h-32 md:h-48 p-3 grid grid-cols-2  items-center justify-items-center mx-auto rounded-xl"
+        class="bg-indigo-600 w-full h-48 md:h-64 p-3 grid grid-cols-2  items-center justify-items-center mx-auto rounded-xl"
       >
         <div class="grid">
           <h1 class="font-bold">Evita estafas</h1>

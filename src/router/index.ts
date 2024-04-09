@@ -42,8 +42,21 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/views/User/ChatLicitacion.vue')
   },
   {
+    path: '/chat/oferta/:name',
+    name: 'chatOferta',
+    component: () => import('@/views/User/ChatOferta.vue')
+  },
+  {
+    path: '/review/:name',
+    component: () => import('@/views/User/ReviewOferta.vue')
+  },
+  {
     path: '/orders',
     component: () => import('@/views/User/Orders.vue')
+  },
+  {
+    path: '/filtered/orders',
+    component: () => import('@/views/User/FilteredOrders.vue')
   },
   {
     path: '/profile',
@@ -52,6 +65,10 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/status',
     component: () => import('@/views/User/OrderStatus.vue')
+  },
+  {
+    path: '/status/unpaid',
+    component: () => import('@/views/User/OrderStatusUnpaid.vue')
   },
       {
         path: '/app/home',
@@ -68,6 +85,10 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/app/tutorials',
         component: () => import('@/views/User/Tutorials.vue')
+      },
+      {
+        path: '/app/filter/tutorials',
+        component: () => import('@/views/User/Categorias.vue')
       },
       {
         path: '/app/market',
@@ -99,8 +120,24 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/User/Multicrear.vue')
       },
       {
+        path: '/app/multiusuarios/rol',
+        component: () => import('@/views/User/Multiroles.vue')
+      },
+      {
         path: '/app/multiusuarios/editar',
         component: () => import('@/views/User/Multieditar.vue')
+      },
+      {
+        path: '/app/transacciones',
+        component: () => import('@/views/User/Transacciones.vue')
+      },
+      {
+        path: '/app/garantias',
+        component: () => import('@/views/User/Garantias.vue')
+      },
+      {
+        path: '/app/recargar',
+        component: () => import('@/views/User/Recargar.vue')
       },
       {
         path: '/app/manage/:name',

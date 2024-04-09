@@ -7,6 +7,14 @@
             <img src="@/assets/Arrow.svg" alt="Back" class="w-4 h-4" />
           </RouterLink>
           <h2 class="text-center mx-auto">Ofertas del Mercado</h2>
+          <button>
+            <img
+            src="@/assets/Nav/Xred.svg"
+            alt="Back"
+            class="w-4 h-4"
+            v-on:click="deleteProduct"
+          />
+          </button>
         </div>
       </ion-toolbar>
     </ion-header>
@@ -20,6 +28,7 @@
 <script allowJs>
 import BottomBar from '@/components/Bottom.vue';
 import MarketDeals from "@/components/MarketDeals.vue";
+import event from "../../libs/event.js";
 import {
   IonPage,
   IonHeader,
@@ -39,6 +48,16 @@ export default {
     IonTitle,
     IonContent,
     IonIcon,
+  },
+  data() {
+    return {
+      deleteProducts: false,
+    };
+  },
+  methods: {
+    deleteProduct(){
+      event.emit("change-deleteProduct");
+    },
   },
 };
 </script>

@@ -6,13 +6,21 @@
       class="h-48 w-48 mx-auto"
     />
   </div>
-  <div class="content w-11/12 mx-auto grid my-5 gap-2 md:w-3/4">
-
+  <div class="content w-11/12 mx-auto grid mb-5 mt-2 gap-2 md:w-3/4">
     <Slider />
 
-    <div class="content-message grid gap-2 text-left">
-      <h1 class="font-bold text-md text-gray-600">Hola, Santiago</h1>
-      <p class="text-md text-gray-400">Bienvenido a Agroec</p>
+    <div class="inline-flex my-1">
+      <div class="content-message grid gap-2 text-left w-full items-center">
+        <h1 class="font-bold text-md text-gray-600">Hola, Santiago</h1>
+        <p class="text-md text-gray-400">Bienvenido a Agroec</p>
+      </div>
+
+      <div class="w-11/12 mx-auto text-right grid gap-2">
+        <h1 class="text-gray-600 font-bold text-md text-right">
+          Saldo Total
+        </h1>
+        <h1 class="text-green font-bold text-md text-right">$36</h1>
+      </div>
     </div>
 
     <div
@@ -32,7 +40,7 @@
         </div>
       </RouterLink>
 
-      <RouterLink to="/app/tutorials">
+      <RouterLink to="/app/filter/tutorials">
         <div
           class="card p-1 w-full h-28 border rounded-md border-gray-300 grid text-center items-center"
         >
@@ -60,7 +68,7 @@
       <!--TOP GRID-->
 
       <!--MIDDLE GRID-->
-      <RouterLink to="/app/home">
+      <RouterLink to="/filtered/orders">
         <div
           class="card p-1 w-full h-28 border rounded-md border-gray-300 grid text-center items-center"
         >
@@ -83,7 +91,9 @@
           class="card p-1 w-full h-28 border rounded-md border-gray-300 grid text-center items-center"
         >
           <span class="text-green-new text-4xl font-bold">7</span>
-          <h1 class="text-gray-500 text-xs font-bold">Ofertas Recibidas</h1>
+          <h1 class="text-gray-500 text-xs font-bold">
+            Propuestas de vendedores
+          </h1>
         </div>
       </RouterLink>
       <!--MIDDLE GRID-->
@@ -106,7 +116,7 @@
         <div
           class="card w-full h-28 border rounded-md border-gray-300 grid text-center items-center"
         >
-          <span class="text-green-new text-4xl font-bold">8</span>
+          <span class="text-white text-4xl font-bold bg-red-600 rounded-full h-14 md:h-16 md:w-1/5 w-1/2 grid items-center mx-auto">8</span>
           <p class="text-gray-500 text-xs font-bold">Negociaciones Abiertas</p>
         </div>
       </RouterLink>
@@ -116,9 +126,7 @@
           class="card w-full h-28 border rounded-md border-gray-300 grid text-center items-center"
         >
           <span class="text-green-new text-4xl font-bold">7</span>
-          <h1 class="text-gray-500 text-xs font-bold">
-            Licitaciones de producto
-          </h1>
+          <h1 class="text-gray-500 text-xs font-bold">Licitaciones activas</h1>
         </div>
       </RouterLink>
       <!--BOTTOM GRID-->
@@ -132,10 +140,12 @@
     </RouterLink>
 
     <div
-      class="mt-5 p-3 h-24 border-gray-300 rounded-md border-2 grid items-center grid-cols-2 md:w-3/4 mx-auto gap-2 justify-items-center" 
+      class="mt-5 p-3 h-24 border-gray-300 rounded-md border-2 grid items-center grid-cols-2 md:w-3/4 mx-auto gap-2 justify-items-center"
     >
       <h1 class="font-bold text-gray-600">Contacta a un Asesor</h1>
-      <button class="rounded-md p-2 h-12 default-bar md:w-3/4 mx-auto flex gap-2 items-center justify-center ">
+      <button
+        class="rounded-md p-2 h-12 default-bar md:w-3/4 mx-auto flex gap-2 items-center justify-center"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="24"
@@ -154,15 +164,14 @@
 </template>
 
 <script>
-import Slider from '@/components/Slider.vue';
+import Slider from "@/components/Slider.vue";
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
-    Slider
-  }
-}
+    Slider,
+  },
+};
 </script>
-
 
 <style scoped>
 .portait {

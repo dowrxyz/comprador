@@ -7,17 +7,19 @@
             <img src="@/assets/Arrow.svg" alt="Back" class="w-4 h-4" />
           </RouterLink>
           <h2 class="text-center mx-auto">Tu gestión en {{ Producto }}</h2>
+          <div class="inline-flex">
           <img
             src="@/assets/Statistics/Informative.svg"
             alt="Back"
-            class="w-4 h-4 mt-1"
+            class="w-4 h-4"
             v-on:click="showModal"
           />
+          </div>
         </div>
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
-      <CModal alignment="center" :visible="visible">
+      <CModal alignment="center" :visible="visible" @close="closeModal">
         <CModalBody>
           <div class="grid w-full gap-3 pb-2">
             <img
@@ -26,7 +28,7 @@
               @click="closeModal"
               class="justify-self-end"
             />
-            <h2 class="text-center text-xl font-bold text-gray-500 w-3/4 mx-auto text-center">
+            <h2 class="text-center text-xl font-bold text-gray-500 w-3/4 mx-auto">
               Quieres ver mas reportes?
             </h2>
             <div class="mx-auto text-center">
@@ -77,11 +79,15 @@ export default {
     return {
       Producto: this.$route.params.name,
       visible: false,
+      excel: false,
     };
   },
   methods: {
     showModal() {
       this.visible = true;
+    },
+    downloadExcel(){
+      this.excel = !this.excel;
     },
     closeModal() {
       // Close the menu by setting menuOpen to false

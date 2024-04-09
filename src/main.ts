@@ -22,7 +22,7 @@ import '@ionic/vue/css/display.css';
 import VueApexCharts from "vue3-apexcharts";
 /* Theme variables */
 import '@coreui/coreui/dist/css/coreui.min.css'
-import './theme/tailwind.min.css'
+import './theme/main.css';
 import store from './store/index.js'
 import './theme/variables.css';
 

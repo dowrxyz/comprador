@@ -1,5 +1,10 @@
 <template>
-  <div class="content w-full mx-auto grid my-5 gap-2">
+  <div class="content w-full mx-auto grid my-2 gap-2">
+    <div class="grid gap-2 w-11/12 mx-auto mt-2">
+      <p class="text-gray-500 font-bold text-md">Si deseas comercializar insumos contactarse al 0987778886</p>
+      <button class="default-bar h-12 rounded-md p-2 text-center text-white font-bold">Contactar</button>
+    </div>
+
     <RouterLink to="/app/insumos/1" class="p-2 mx-auto w-full items-center shadow-md h-16 flex">
       <div class="w-11/12 mx-auto flex items-center">
         <img src="@/assets/Fertilizer.svg" alt="Fertilizer Icon" />

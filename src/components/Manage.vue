@@ -3,6 +3,40 @@
     <form
       class="mx-auto flex items-center gap-3 w-11/12 md:w-1/2 mt-3 justify-evenly"
     >
+      <div class="grid mt-3 gap-2 relative w-full">
+        <label for="filtroUnidad" class="text-gray-500 font-bold text-sm"
+          >Filtrar por unidad</label
+        >
+        <select
+          id="filtroUnidad"
+          name="filtroUnidad"
+          class="w-full text-gray-500 bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md"
+        >
+          <option value="0" selected disabled>Unidad</option>
+          <option value="1">QQ</option>
+          <option value="2">KG</option>
+        </select>
+      </div>
+      <div class="grid mt-3 gap-2 relative w-full">
+        <label for="filtroVendedor" class="text-gray-500 font-bold text-sm"
+          >Filtrar por vendedor</label
+        >
+        <select
+          id="filtroVendedor"
+          name="filtroVendedor"
+          class="w-full text-gray-500 bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md"
+        >
+          <option value="0" selected disabled>Vendedor</option>
+          <option value="1">Agricultor</option>
+          <option value="2">Asociación de Agricultor</option>
+          <option value="3">Agroquimica</option>
+          <option value="4">Comerciante</option>
+        </select>
+      </div>
+    </form>
+    <form
+      class="mx-auto flex items-center gap-3 w-11/12 md:w-1/2 mt-3 justify-evenly"
+    >
       <div class="grid mt-3 gap-2 relative">
         <label for="Inicio" class="text-gray-500 font-bold text-sm"
           >Fecha: Desde</label
@@ -10,7 +44,7 @@
         <input
           type="date"
           name="Inicio"
-          class="w-full text-gray-500 bg-transparent border border-2 border-gray-300 px-3 py-3 rounded-md"
+          class="w-full text-gray-500 bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md"
         />
       </div>
       <div class="grid mt-3 gap-2 relative">
@@ -20,7 +54,7 @@
         <input
           type="date"
           name="Fin"
-          class="w-full text-gray-500 bg-transparent border border-2 border-gray-300 px-3 py-3 rounded-md"
+          class="w-full text-gray-500 bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md"
         />
       </div>
     </form>
@@ -67,107 +101,121 @@
       </div>
     </div>
 
-    <div class="mx-auto w-11/12 mt-3  md:w-4/6" v-if="showTendencia">
-        <table class="text-gray-500">
-          <thead>
-            <tr>
-              <th class="text-sm text-gray-50">Provincia</th>
-              <th class="text-sm text-gray-50">Rango Precio (USD x QQ)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                Pedro Carbo
-              </td>
-              <td>
-                <div class="inline-flex justify-center items-center gap-2">
-                  
+    <div class="mx-auto w-11/12 mt-3 md:w-4/6" v-if="showTendencia">
+      <table class="text-gray-500">
+        <thead>
+          <tr>
+            <th class="text-sm text-gray-50">Provincia</th>
+            <th class="text-sm text-gray-50">Rango Precio (USD x QQ)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pedro Carbo</td>
+            <td>
+              <div class="inline-flex justify-center items-center gap-2">
                 $25 - $35
-                <svg fill="#2db412" class="rotate" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-                  width="14px" height="14px" viewBox="0 0 123.959 123.959"
-                  xml:space="preserve">
-                <g>
-                  <path d="M85.742,1.779l-56,56c-2.3,2.3-2.3,6.1,0,8.401l56,56c3.801,3.8,10.2,1.1,10.2-4.2v-112
-                    C95.942,0.679,89.543-2.021,85.742,1.779z"/>
-                </g>
+                <svg
+                  fill="#2db412"
+                  class="rotate"
+                  version="1.1"
+                  id="Capa_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="14px"
+                  height="14px"
+                  viewBox="0 0 123.959 123.959"
+                  xml:space="preserve"
+                >
+                  <g>
+                    <path
+                      d="M85.742,1.779l-56,56c-2.3,2.3-2.3,6.1,0,8.401l56,56c3.801,3.8,10.2,1.1,10.2-4.2v-112
+                    C95.942,0.679,89.543-2.021,85.742,1.779z"
+                    />
+                  </g>
                 </svg>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Guayas
-              </td>
-              <td>
-                <div class="inline-flex justify-center items-center gap-2">
-                  
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Guayas</td>
+            <td>
+              <div class="inline-flex justify-center items-center gap-2">
                 $55 - $75
-                <svg fill="#ff4961" class="rotateminor" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-                  width="14px" height="14px" viewBox="0 0 123.959 123.959"
-                  xml:space="preserve">
-                <g>
-                  <path d="M85.742,1.779l-56,56c-2.3,2.3-2.3,6.1,0,8.401l56,56c3.801,3.8,10.2,1.1,10.2-4.2v-112
-                    C95.942,0.679,89.543-2.021,85.742,1.779z"/>
-                </g>
+                <svg
+                  fill="#ff4961"
+                  class="rotateminor"
+                  version="1.1"
+                  id="Capa_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="14px"
+                  height="14px"
+                  viewBox="0 0 123.959 123.959"
+                  xml:space="preserve"
+                >
+                  <g>
+                    <path
+                      d="M85.742,1.779l-56,56c-2.3,2.3-2.3,6.1,0,8.401l56,56c3.801,3.8,10.2,1.1,10.2-4.2v-112
+                    C95.942,0.679,89.543-2.021,85.742,1.779z"
+                    />
+                  </g>
                 </svg>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Azuay
-              </td>
-              <td>
-                <div class="inline-flex justify-center items-center gap-2">
-                  
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Azuay</td>
+            <td>
+              <div class="inline-flex justify-center items-center gap-2">
                 $35 - $45
-                <span class="bg-indigo-500 rounded-full text-gray-50 text-xs p-1">MAX</span>
-                </div>
-              </td>
-            </tr>
-            <!-- Agrega más filas según sea necesario -->
-          </tbody>
-        </table>
-      </div>
+                <span
+                  class="bg-indigo-500 rounded-full text-gray-50 text-xs p-1"
+                  >MAX</span
+                >
+              </div>
+            </td>
+          </tr>
+          <!-- Agrega más filas según sea necesario -->
+        </tbody>
+      </table>
+    </div>
 
     <div class="grid md:grid-cols-2 md:w-2/3 mx-auto md:gap-4">
-      
-    <button
-      @click="showModal"
-      class="default-bar p-3 h-16 rounded-md text-center text-white mt-4"
-    >
-      Desbloquear más reportes
-    </button>
+      <button
+        @click="showModal"
+        class="default-bar p-3 h-16 rounded-md text-center text-white mt-4"
+      >
+        Desbloquear más reportes
+      </button>
 
-    
-    <button
-      @click="manageTendencias" v-if="!showTendencia"
-      class="default-bar p-3 h-16 rounded-md text-center text-white mt-4"
-    >
-      Mostrar tendencia de precios
-    </button>
-    <button
-      @click="manageTendencias" v-if="showTendencia"
-      class="default-bar p-3 h-16 rounded-md text-center text-white mt-4"
-    >
-      Ocultar tendencia de precios
-    </button>
+      <button
+        @click="manageTendencias"
+        v-if="!showTendencia"
+        class="default-bar p-3 h-16 rounded-md text-center text-white mt-4"
+      >
+        Mostrar tendencia de precios
+      </button>
+      <button
+        @click="manageTendencias"
+        v-if="showTendencia"
+        class="default-bar p-3 h-16 rounded-md text-center text-white mt-4"
+      >
+        Ocultar tendencia de precios
+      </button>
     </div>
   </div>
 
   <CModal alignment="center" :visible="visible" @close="closeModal">
     <CModalBody>
-      <div class="grid w-full gap-3 pb-3">
+      <div class="grid w-full gap-3 pb-3 h-modal md:h-96 overflow-y-scroll">
         <img
           src="@/assets/Nav/X.svg"
           alt="Close alert"
           @click="closeModal"
           class="justify-self-end"
         />
-        <h2
-          class="text-center text-xl font-bold text-gray-500 w-5/6 mx-auto text-center"
-        >
+        <h2 class="text-center text-xl font-bold text-gray-500 w-5/6 mx-auto">
           ¿Quieres ver más reportes?
         </h2>
         <div class="mx-auto text-center">
@@ -194,7 +242,7 @@
                 Tus precios vs mercado
               </li>
               <hr />
-              
+
               <li class="inline-flex gap-2 items-center">
                 <svg
                   width="15"
@@ -208,9 +256,10 @@
                     fill="#9CA3AF"
                   />
                 </svg>
-                 Precio por zona</li>
+                Precio por zona
+              </li>
               <hr />
-              
+
               <li class="inline-flex gap-2 items-center">
                 <svg
                   width="15"
@@ -224,9 +273,10 @@
                     fill="#9CA3AF"
                   />
                 </svg>
-                 Información demográfica</li>
+                Información demográfica
+              </li>
               <hr />
-              
+
               <li class="inline-flex gap-2 items-center">
                 <svg
                   width="15"
@@ -240,9 +290,10 @@
                     fill="#9CA3AF"
                   />
                 </svg>
-                 Demanda del mercado</li>
+                Demanda del mercado
+              </li>
               <hr />
-              
+
               <li class="inline-flex gap-2 items-center">
                 <svg
                   width="15"
@@ -256,23 +307,27 @@
                     fill="#9CA3AF"
                   />
                 </svg>
-                 Precio por estacionalidad</li>
+                Precio por estacionalidad
+              </li>
             </ul>
           </div>
-
           <div class="grid mt-4 w-3/4 mx-auto">
             <label for="canton" class="text-gray-500 text-left font-bold"
               >Plan</label
             >
-            <select
-              id="canton"
-              v-model="tipo"
-              class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] p-2 rounded-md text-gray-600"
-            >
-              <option value="9.99" selected>Mensual</option>
-              <option value="29.99">Trimestral</option>
-              <option value="119.99">Anual</option>
-            </select>
+
+            <div class="custom-select bg-transparent text-gray-500 border-2 border-gray-200 rounded-md" @click="toggleDropdown">
+              <div class="select-selected border-">{{ selectedOption.name }}</div>
+              <div v-if="isOpen" class="select-items">
+                <div
+                  v-for="option in options"
+                  :key="option"
+                  @click="selectOption(option)"
+                >
+                  {{ option.name }}
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="grid mt-3 w-3/4 mx-auto" v-if="tipo != null">
@@ -286,6 +341,7 @@
 
           <button
             class="default-bar p-2 w-3/4 h-16 rounded-md text-center text-white mx-auto mt-4"
+            @click="procederPago"
           >
             Realizar pago
           </button>
@@ -294,18 +350,50 @@
     </CModalBody>
   </CModal>
 
-  <CModal alignment="center" :visible="grafico" @close="closeGrafico">
+  <CModal alignment="center" :visible="excel" @close="downloadExcel">
     <CModalBody>
-      <div class="grid w-full gap-3 pb-3">
+      <div class="grid w-full gap-3 pb-2">
         <img
           src="@/assets/Nav/X.svg"
           alt="Close alert"
-          @click="closeGrafico"
+          @click="downloadExcel"
           class="justify-self-end"
         />
-        <h2
-          class="text-center text-xl font-bold text-gray-500 w-5/6 mx-auto text-center"
+        <h2 class="text-center text-xl font-bold text-gray-500 w-3/4 mx-auto">
+          Exportación de gráficos en Excel
+        </h2>
+        <div class="mx-auto text-center">
+          <p class="text-gray-400">
+            Descarga una planilla, con los datos de tus gráficos actuales.
+          </p>
+        </div>
+        <button
+          class="default-bar rounded-md py-1 shadow-md w-1/2 mx-auto text-center text-white font-bold"
         >
+          Confirmar
+        </button>
+      </div>
+    </CModalBody>
+  </CModal>
+
+  <CModal alignment="center" :visible="grafico" @close="closeGrafico">
+    <CModalBody>
+      <div class="grid w-full gap-3 pb-3">
+        <div class="inline-flex justify-between">
+          <img
+            src="@/assets/ExcelBlack.svg"
+            alt="Back"
+            class="w-6 h-6 mr-2"
+            v-on:click="downloadExcel"
+          />
+          <img
+            src="@/assets/Nav/X.svg"
+            alt="Close alert"
+            @click="closeGrafico"
+            class="justify-self-end"
+          />
+        </div>
+        <h2 class="text-center text-xl font-bold text-gray-500 w-5/6 mx-auto">
           Grafico
         </h2>
         <div class="mx-auto text-center">
@@ -314,16 +402,52 @@
       </div>
     </CModalBody>
   </CModal>
+
+  <CModal alignment="center" :visible="pagarSuscripcion" @close="procederPago">
+    <CModalBody
+      ><div class="grid w-full gap-3 pb-3">
+        <img
+          src="@/assets/Nav/X.svg"
+          alt="Close alert"
+          @click="closeModal"
+          class="justify-self-end"
+        />
+        <h2 class="text-center text-xl font-bold text-gray-500 mx-auto">
+          Metodo de pago
+        </h2>
+        <div class="mx-auto text-center">
+          <div class="grid mt-4">
+            <select
+              id="paymentMethod"
+              v-model="paymentMethod"
+              class="w-full mx-auto bg-transparent border-2 border-gray-300 p-2 rounded-md text-gray-600"
+            >
+              <option value="0" selected disabled>Metodo</option>
+              <option value="1">TC/TD</option>
+              <option value="2">Transferencia Bancaria</option>
+            </select>
+          </div>
+
+          <button
+            class="default-bar p-2 w-3/4 h-12 rounded-md text-center text-white mx-auto mt-4"
+          >
+            Pagar
+          </button>
+        </div>
+      </div>
+    </CModalBody>
+  </CModal>
 </template>
 
 <script allowJs>
 import Analytic from "@/components/Analytic.vue";
-import { CModal, CModalBody } from "@coreui/vue";
+import { CModal, CModalBody, CFormSelect } from "@coreui/vue";
 export default {
   components: {
     CModal,
     Analytic,
     CModalBody,
+    CFormSelect,
   },
   props: {
     Item: String,
@@ -334,15 +458,41 @@ export default {
       tipo: null,
       graficoExtendido: null,
       grafico: false,
-      showTendencia: false
+      showTendencia: false,
+      pagarSuscripcion: false,
+      excel: false,
+      isOpen: false,
+      selectedOption: "Selecciona una opción",
+      options: [{name: "Trimestral", price: 9.99}, {name: "Semestral", price: 49.99}, {name: "Anual", price: 109.99}], // Agrega aquí tus opciones
     };
   },
   methods: {
-    manageTendencias(){
-      this.showTendencia = (this.showTendencia) ? false : true;
+    toggleDropdown() {
+      this.isOpen = !this.isOpen;
+    },
+    selectOption(option) {
+      this.selectedOption = option;
+      this.tipo = option.price;
+      this.toggleDropdown()
+    },
+    closeDropdown(event) {
+      if (!this.$el.contains(event.target)) {
+        this.isOpen = false;
+      }
+    },
+    downloadExcel() {
+      this.closeGrafico();
+      this.excel = !this.excel;
+    },
+    manageTendencias() {
+      this.showTendencia = this.showTendencia ? false : true;
     },
     show() {
       this.grafico = true;
+    },
+    procederPago() {
+      this.closeModal();
+      this.pagarSuscripcion = !this.pagarSuscripcion;
     },
     closeGrafico() {
       this.grafico = false;
@@ -357,12 +507,55 @@ export default {
 };
 </script>
 
-
 <style scoped>
+.custom-select {
+  position: relative;
+  display: inline-block;
+}
+
+.select-selected {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.select-items {
+  position: absolute;
+  background-color: #f1f1f1;
+  width: 100%;
+  z-index: 1;
+}
+
+.select-items div {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.select-items div:hover {
+  background-color: #ccc;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #b4b1b1 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 2px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #b4b1b1;
+  border-radius: 2px;
+  border: 1px solid #ffffff;
+}
 
 .rotate {
   transform: rotate(90deg);
-
 }
 
 .rotateminor {
@@ -384,5 +577,9 @@ td {
 th {
   background-color: #a8cf7b;
   text-align: left;
+}
+
+.h-modal {
+  height: 70vh;
 }
 </style>

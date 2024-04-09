@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'agroec.rui.dev',
-  appName: 'Agroec',
+  appId: 'agroec.comprador.dev',
+  appName: 'Agroec Comprador',
   webDir: 'dist',
   server: {
     androidScheme: 'https'

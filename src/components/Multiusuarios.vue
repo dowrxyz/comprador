@@ -12,6 +12,13 @@
         </div>
 
         <div class="justify-end flex items-center gap-1">
+          <RouterLink to="/app/multiusuarios/rol" class="bg-yellow-400 rounded-md p-2 h-8 w-8 grid items-center">
+            <img
+              src="@/assets/Licitaciones/Magic.svg"
+              class="mx-auto"
+              alt="Rol edit"
+            />
+          </RouterLink>
           <RouterLink to="/app/multiusuarios/editar" class="default-bar rounded-md p-2 h-8 w-8 grid items-center">
             <img
               src="@/assets/Licitaciones/Lapiz.svg"
@@ -41,6 +48,13 @@
         </div>
 
         <div class="justify-end flex items-center gap-1">
+          <RouterLink to="/app/multiusuarios/rol" class="bg-yellow-400 rounded-md p-2 h-8 w-8 grid items-center">
+            <img
+              src="@/assets/Licitaciones/Magic.svg"
+              class="mx-auto"
+              alt="Rol edit"
+            />
+          </RouterLink>
           <RouterLink to="/app/multiusuarios/editar" class="default-bar rounded-md p-2 h-8 w-8 grid items-center">
             <img
               src="@/assets/Licitaciones/Lapiz.svg"
@@ -70,6 +84,13 @@
         </div>
 
         <div class="justify-end flex items-center gap-1">
+          <RouterLink to="/app/multiusuarios/rol" class="bg-yellow-400 rounded-md p-2 h-8 w-8 grid items-center">
+            <img
+              src="@/assets/Licitaciones/Magic.svg"
+              class="mx-auto"
+              alt="Rol edit"
+            />
+          </RouterLink>
           <RouterLink to="/app/multiusuarios/editar" class="default-bar rounded-md p-2 h-8 w-8 grid items-center">
             <img
               src="@/assets/Licitaciones/Lapiz.svg"

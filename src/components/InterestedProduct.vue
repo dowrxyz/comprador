@@ -12,7 +12,21 @@
           v-model="param"
           @input="checkParam"
           placeholder="Productos en listado"
-          :class="{'w-full': isActive, 'mx-auto': isActive, 'bg-transparent': isActive, 'border-l-2' :!borders, 'border-t-2' :!borders, 'border-r-2' :!borders,  'border-2': borders, 'border-gray-300': isActive, 'px-3': isActive, 'py-3': isActive, 'rounded-t-md': !borders, 'rounded-md': borders, 'text-gray-600': isActive}"
+          :class="{
+            'w-full': isActive,
+            'mx-auto': isActive,
+            'bg-transparent': isActive,
+            'border-l-2': !borders,
+            'border-t-2': !borders,
+            'border-r-2': !borders,
+            'border-2': borders,
+            'border-gray-300': isActive,
+            'px-3': isActive,
+            'py-3': isActive,
+            'rounded-t-md': !borders,
+            'rounded-md': borders,
+            'text-gray-600': isActive,
+          }"
         />
 
         <div class="absolute right-3 top-11">
@@ -41,7 +55,6 @@
         </div>
       </div>
 
-
       <div class="grid relative w-5/6 mx-auto">
         <div class="relative">
           <label
@@ -53,13 +66,111 @@
             <select
               v-model="parametros"
               id="negocio"
-              class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
+              class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
             >
               <option selected :value="false">No</option>
               <option :value="true">Si</option>
             </select>
           </div>
         </div>
+      </div>
+
+      <div class="grid relative w-5/6 mx-auto" v-if="parametros">
+        <div class="inline-flex gap-2 w-full items-center">
+          <label for="" class="text-gray-500 font-bold w-full"
+            >Agregar Parámetros de Calidad</label
+          >
+          <button
+            type="button"
+            class="default-bar h-10 p-2 text-white font-bold rounded-md"
+            @click="addParametro"
+          >
+            +
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3 gap-1 w-5/6 mx-auto" v-if="parametroData">
+        <div class="grid gap-1 w-full items-center">
+          <label for="nombreParametro" class="text-gray-500 font-bold w-full"
+            >Nombre</label
+          >
+          <input
+            v-model="nombreParametro"
+            id="nombreParametro"
+            placeholder="Nombre"
+            type="text"
+            class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
+          />
+        </div>
+        <div class="grid gap-1 w-full items-center">
+          <label for="minParametro" class="text-gray-500 font-bold w-full"
+            >Min</label
+          >
+          <input
+            v-model="minParametro"
+            placeholder="2%"
+            id="minParametro"
+            type="number"
+            class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
+          />
+        </div>
+        <div class="grid gap-1 w-full items-center">
+          <label for="maxParametro" class="text-gray-500 font-bold w-full"
+            >Max</label
+          >
+          <input
+            v-model="maxParametro"
+            placeholder="No Max"
+            id="maxParametro"
+            type="number"
+            class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
+          />
+        </div>
+        <button
+          type="button"
+          class="col-span-3 text-center text-white font-bold default-bar h-12 rounded-md p-2 mt-1"
+          @click="newParametro"
+        >
+          Agregar
+        </button>
+      </div>
+
+      <div class="grid gap-1 w-5/6 mx-auto" v-if="newParametros.length > 0">
+        <h1 class="text-gray-600 mb-3 font-bold">Parametros Agregados</h1>
+
+        <p
+          class="text-gray-500 flex gap-3 items-center"
+          v-for="item in newParametros"
+          :key="item"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="18"
+            fill="#a2afbe"
+            viewBox="0 -960 960 960"
+            width="18"
+          >
+            <path
+              d="m560-120-57-57 144-143H200v-480h80v400h367L503-544l56-57 241 241-240 240Z"
+            />
+          </svg>
+          {{ item.nombre }}, Min: {{ minParametro }}%, Max: {{ maxParametro }}%
+
+          <button type="button" v-on:click="deleteParametro(item)">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24"
+              viewBox="0 -960 960 960"
+              width="24"
+              fill="#E87C61"
+            >
+              <path
+                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+              />
+            </svg>
+          </button>
+        </p>
       </div>
 
       <div class="grid relative w-5/6 mx-auto" v-if="parametros">
@@ -73,7 +184,7 @@
             <select
               v-model="castigos"
               id="negocio"
-              class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
+              class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
             >
               <option selected :value="false">No</option>
               <option :value="true">Si</option>
@@ -82,18 +193,6 @@
         </div>
       </div>
 
-      <div class="mx-auto w-5/6" v-if="!castigos && parametros">
-        <label for="minmax" class="text-gray-500 font-bold w-full mx-auto"
-          >Registro de ficha mínimos y máximos</label
-        >
-        <input
-          type="text"
-          name="minmax"
-          v-model="minmax"
-          class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[15px] px-3 py-3 rounded-md text-gray-400"
-          placeholder="Agregar mínimos y máximos"
-        />
-      </div>
       <div class="mx-auto w-5/6" v-if="castigos && parametros">
         <label
           for="castigos"
@@ -102,7 +201,7 @@
         >
         <label
           for="uploadCastigo"
-          class="w-full flex justify-between items-center mx-auto bg-transparent border border-2 border-gray-300 rounded-[15px] px-3 py-3 rounded-md text-gray-500 text-left"
+          class="w-full flex justify-between items-center mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-500 text-left"
           >Subir excel aquí
 
           <svg
@@ -180,9 +279,7 @@
           @click="closeModal"
           class="justify-self-end"
         />
-        <h2
-          class="text-center text-xl font-bold text-gray-500 w-5/6 mx-auto text-center"
-        >
+        <h2 class="text-center text-xl font-bold text-gray-500 w-5/6 mx-auto">
           Agregado con éxito
         </h2>
         <div class="mx-auto text-center">
@@ -196,11 +293,11 @@
 </template>
 
 <script allowJs>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions } from "vuex";
 import { CModal, CModalBody } from "@coreui/vue";
 export default {
   computed: {
-    ...mapGetters(['getProducts']),
+    ...mapGetters(["getProducts"]),
   },
   components: {
     CModal,
@@ -216,19 +313,45 @@ export default {
       minmax: "",
       isActive: true,
       borders: true,
+      parametroData: false,
+      minParametro: 0,
+      maxParametro: 0,
+      nombreParametro: "",
       fruits: ["Aguacate", "Maiz", "Tomate", "Cacao", "Papa", "Arroz"],
+      newParametros: [],
     };
   },
   methods: {
-    ...mapActions(['updateProduct']),
+    ...mapActions(["updateProduct"]),
     sendProduct() {
-      if(this.param == "") return;
-      this.updateProduct({nombre: this.param, parametros: this.parametros, castigos: this.castigos});
+      if (this.param == "") return;
+      this.updateProduct({
+        nombre: this.param,
+        parametros: this.parametros,
+        castigos: this.castigos,
+      });
       this.visible = true;
     },
     closeModal() {
       // Close the menu by setting menuOpen to false
       this.visible = false;
+    },
+    deleteParametro(x){
+      return this.newParametros = this.newParametros.filter(y => y != x);
+    },
+    newParametro() {
+      if (
+        this.nombreParametro != "" &&
+        this.minParametro != "" &&
+        this.maxParametro != ""
+      ) {
+        this.newParametros.push({
+          nombre: this.nombreParametro,
+          min: this.minParametro,
+          max: this.maxParametro,
+        });
+        return;
+      }
     },
     filteredList() {
       return this.fruits.filter((fruit) =>
@@ -238,16 +361,19 @@ export default {
     setProduct(product) {
       this.param = product;
       this.paramSelected = false;
-        this.borders = true
+      this.borders = true;
     },
-    checkParam(){
+    checkParam() {
       this.paramSelected = true;
-      if(this.param != ''){
-        this.borders = false
-      }else{
-        this.borders = true
+      if (this.param != "") {
+        this.borders = false;
+      } else {
+        this.borders = true;
       }
-    }
+    },
+    addParametro() {
+      this.parametroData = !this.parametroData;
+    },
   },
 };
 </script>

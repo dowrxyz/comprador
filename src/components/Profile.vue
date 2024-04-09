@@ -316,6 +316,53 @@
         </div>
       </div>
 
+      <div class="grid gap-1 mx-auto mt-3 col-span-2 w-full">
+        <label for="" class="text-gray-600 font-bold"
+          >Matriz y puntos de recepción</label
+        >
+        <label for="nombreMatriz" class="text-gray-500">Nombre Matriz</label>
+        <input
+          type="text"
+          id="nombreMatriz"
+          placeholder="Nombre"
+          class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
+        />
+        <label for="direccionMatriz" class="text-gray-500">Dirección</label>
+        <input
+          type="text"
+          id="direccionMatriz"
+          placeholder="Direccion"
+          class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
+        />
+        <label for="ubicacionMatriz" class="text-gray-500">Ubicación</label>
+        <div class="inline-flex justify-between gap-2">
+          <input
+            type="text"
+            id="ubicacionMatriz"
+            placeholder="Ubicacion"
+            class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
+          />
+          <button
+            class="default-bar text-white font-bold grid items-center h-full p-2 rounded-md"
+          >
+            <img src="@/assets/Status/LocationPin.svg" alt="Pin Ubication" />
+          </button>
+        </div>
+        <label for="puntos" class="text-gray-500">Puntos de recepción</label>
+        <div class="inline-flex justify-between gap-2">
+          <input
+            type="text"
+            id="puntos"
+            placeholder="Agregar punto de recepción"
+            class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
+          />
+          <button
+            class="default-bar text-white font-bold grid items-center h-full p-2 rounded-md"
+          >
+            +
+          </button>
+        </div>
+      </div>
 
       <div class="col-span-2">
         <label
@@ -383,6 +430,33 @@
         />
       </div>
 
+      <div class="col-span-2">
+        <label
+          for="politicasRecepcion"
+          v-if="
+            politicasRecepcion != '' || politicasRecepcion == '' || !showErrors
+          "
+          class="text-gray-600 font-bold w-5/6 mx-auto"
+          >Politicas de recepción</label
+        >
+        <label
+          for="politicasRecepcion"
+          v-if="politicasRecepcion == '' && showErrors"
+          class="text-red-400 font-bold w-5/6 mx-auto"
+          >Debes ingresar tus politicas de recepción</label
+        >
+        <textarea
+          type="text"
+          id="politicasRecepcion"
+          name="politicasRecepcion"
+          placeholder="Politicas de recepción"
+          v-model="politicasRecepcion"
+          cols="20"
+          rows="10"
+          class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+        ></textarea>
+      </div>
+
       <button
         type="button"
         @click="showModal"
@@ -426,7 +500,7 @@
 
 <script allowJs>
 import Contact from "@/components/Contacto.vue";
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions } from "vuex";
 import { CModal, CModalBody } from "@coreui/vue";
 export default {
   components: {
@@ -435,8 +509,8 @@ export default {
     CModalBody,
   },
   computed: {
-    ...mapGetters(['getProducts']),
-    ...mapGetters(['deleteProduct']),
+    ...mapGetters(["getProducts"]),
+    ...mapGetters(["deleteProduct"]),
   },
   data() {
     return {
@@ -453,12 +527,12 @@ export default {
       ubicacion: "",
       telefono: "",
       actividadEconomica: "",
+      politicasRecepcion: "",
       tipoNegocio: "Agricultor",
       consumoMesTM: "",
       consumoAnual: "",
       presupuestoMes: "",
       showErrors: false,
-
     };
   },
   methods: {
@@ -469,7 +543,7 @@ export default {
       // Close the menu by setting menuOpen to false
       this.visible = false;
     },
-    changeVisibility () {
+    changeVisibility() {
       this.visiblePassword = !this.visiblePassword;
     },
   },

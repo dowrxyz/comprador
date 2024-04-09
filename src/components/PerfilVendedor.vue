@@ -7,12 +7,12 @@
     />
 
     <div class="grid gap-2 text-center">
-      <h1 class="font-bold text-md text-gray-600">Vendedor SA</h1>
+      <h1 class="font-bold text-md text-gray-600">Agricultor</h1>
       <p class="text-md text-gray-400">Cultivando S.A</p>
     </div>
   </div>
   <div
-    class="content w-11/12 mx-auto grid my-5 gap-2 md:w-3/4 bg-gray-100 p-2 rounded-md items-center"
+    class="content w-11/12 mx-auto grid mt-5 gap-2 md:w-3/4 bg-gray-100 p-2 rounded-md items-center"
   >
     <div class="content-message grid gap-2 text-left">
       <h1 class="font-bold text-md text-gray-600">Informacion Comercial</h1>
@@ -72,11 +72,148 @@
           class="card p-1 w-full h-28 border rounded-md border-gray-300 grid text-center items-center"
         >
           <span class="text-green-new text-4xl font-bold">8</span>
-          <h1 class="text-gray-500 text-xs md:text-md font-bold">Publicaciones</h1>
+          <h1 class="text-gray-500 text-xs md:text-md font-bold">
+            Publicaciones
+          </h1>
         </div>
       </RouterLink>
       <!--TOP GRID-->
     </div>
+  </div>
+  <div
+    class="content w-11/12 mx-auto grid mb-3 mt-3 gap-2 md:w-3/4 bg-gray-100 p-2 rounded-md items-center"
+  >
+    <div class="content-message grid gap-2 text-left">
+      <h1 class="font-bold text-md text-gray-600">Catálogo</h1>
+    </div>
 
+    <ion-segment value="buttons" class="tabs">
+      <ion-segment-button value="maiz" class="buttonmaiz">
+        <ion-label class="text-gray-800">Maiz</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="cacao" class="button">
+        <ion-label class="text-gray-800">Cacao</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="tomate" class="button">
+        <ion-label class="text-gray-800">Tomate</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="maracuya" class="button">
+        <ion-label class="text-gray-800">Maracuya</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="arroz" class="button">
+        <ion-label class="text-gray-800">Arroz</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="polvillo" class="button">
+        <ion-label class="text-gray-800">Pólvillo</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    <div class="content-cards grid grid-cols-2 gap-2 items-center">
+      <div class="flex gap-1">
+        <img
+          src="@/assets/maracuya.webp"
+          alt="Incoming Message Profile Icon"
+          class="h-24 w-24 p-1 rounded-lg"
+        />
+
+        <div class="mx-auto grid items-center justify-start py-2">
+          <p class="text-gray-800 text-sm">Maracuya</p>
+          <h1 class="font-bold text-gray-600">$13.50</h1>
+          <p class="text-gray-400">200 KG</p>
+        </div>
+      </div>
+      <div class="flex gap-1">
+        <img
+          src="@/assets/maiz.webp"
+          alt="Incoming Message Profile Icon"
+          class="h-24 w-24 p-1 rounded-lg"
+        />
+
+        <div class="mx-auto grid items-center justify-start py-2">
+          <p class="text-gray-800 text-sm">Maiz</p>
+          <h1 class="font-bold text-gray-600">$17.50</h1>
+          <p class="text-gray-400">300 QQ</p>
+        </div>
+      </div>
+      <div class="flex gap-1">
+        <img
+          src="@/assets/cacao.webp"
+          alt="Incoming Message Profile Icon"
+          class="h-24 w-24 p-1 rounded-lg"
+        />
+
+        <div class="mx-auto grid items-center justify-start py-2">
+          <p class="text-gray-800 text-sm">Cacao</p>
+          <h1 class="font-bold text-gray-600">$16.50</h1>
+          <p class="text-gray-400">50 KG</p>
+        </div>
+      </div>
+      <!--TOP GRID-->
+    </div>
   </div>
 </template>
+
+<script>
+import {
+  IonPage,
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonIcon,
+  IonSegment,
+  IonLabel,
+  IonSegmentButton,
+} from "@ionic/vue";
+
+export default {
+  components: {
+    IonPage,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonSegment,
+    IonLabel,
+    IonSegmentButton,
+    IonContent,
+    IonIcon,
+  },
+};
+</script>
+
+<style scoped>
+.buttonmaiz {
+  width: 20%;
+  font-size: 10px;
+  padding: 2px;
+  margin-left: 170px;
+}
+.button {
+  width: 20%;
+  font-size: 10px;
+  padding: 2px;
+}
+
+.tabs {
+  overflow-x: scroll;
+}
+
+@media (min-width: 768px) {
+  .tabs {
+    width: 50%;
+    overflow: hidden;
+  }
+  .button {
+    width: 100%;
+    font-size: 10px;
+    padding: 2px;
+    color: black;
+  }
+
+  .buttonmaiz {
+    width: 100%;
+    font-size: 10px;
+    padding: 2px;
+    margin-left: 0px;
+  }
+}
+</style>

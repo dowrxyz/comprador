@@ -1,5 +1,21 @@
 <template>
   <div class="content w-full mx-auto grid my-5 gap-2">
+    <div
+      class="border-2 w-11/12 mx-auto rounded grid items-center relative h-12 text-gray-500 md:w-1/3"
+    >
+      <input
+        placeholder="Filtrar por ID"
+        class="text-left text-sm md:text-md bg-transparent h-full p-2"
+      />
+      <div class="absolute right-1 top-2.5">
+        <img
+          src="@/assets/Search.svg"
+          alt="Search by Comerciante"
+          class="h-6 w-6"
+        />
+      </div>
+    </div>
+    
     <div class="grid gap-1">
       <RouterLink to="/status">
         <div class="order-card flex md:grid md:grid-cols-2 gap-3 shadow-md p-2">

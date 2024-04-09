@@ -121,7 +121,7 @@
   </div>
 
   <div v-if="details" class="content w-min-screen mx-auto grid mb-3 gap-3 md:w-1/2">
-    <img src="@/assets/fertlizante.webp" class="md:mx-auto h-64 w-full md:h-96">
+    <Slider/>
     <div
       class="seller-info w-full mx-auto grid gap-3 shadow-md p-3 items-center justfiy-center"
     >
@@ -276,6 +276,7 @@
 </template>
 
 <script>
+import Slider from './SliderInsumos.vue';
 import Event from "../libs/event.js";
 import {
   CAccordion,
@@ -285,6 +286,7 @@ import {
 } from "@coreui/vue";
 export default {
   components: {
+    Slider,
     CAccordion,
     CAccordionItem,
     CAccordionHeader,

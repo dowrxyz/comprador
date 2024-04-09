@@ -3,7 +3,7 @@
   <div
     v-if="menuOpen"
     id="drawer-navigation"
-    class="fixed top-0 left-0 z-40 w-68 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white dark:bg-gray-800"
+    class="fixed top-0 left-0 z-40 w-68 h-screen p-4 overflow-y-auto transition-transform bg-white dark:bg-gray-800"
     tabindex="-1"
     aria-labelledby="drawer-navigation-label"
   >
@@ -40,7 +40,7 @@
         <li>
           <RouterLink
             to="/profile"
-            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-200 group"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -57,13 +57,13 @@
                 />
               </g>
             </svg>
-            <span class="ml-3">Mi Perfil</span>
+            <span class="ml-3 text-gray-500">Mi Perfil</span>
           </RouterLink>
         </li>
         <li>
           <RouterLink
             to="/orders"
-            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-300 group"
           >
             <svg
               height="24px"
@@ -113,13 +113,77 @@
                 />
               </g>
             </svg>
-            <span class="flex-1 ml-3 whitespace-nowrap">Mis Órdenes</span>
+            <span class="flex-1 ml-3 text-gray-500 whitespace-nowrap">Mis Órdenes</span>
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink
+            to="/app/transacciones"
+            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-300 group"
+            ><svg
+              height="24px"
+              width="24px"
+              version="1.1"
+              id="Capa_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 235.517 235.517"
+              xml:space="preserve"
+            >
+              <g>
+                <path
+                  style="fill: #a2afbe"
+                  d="M118.1,235.517c7.898,0,14.31-6.032,14.31-13.483c0-7.441,0-13.473,0-13.473
+		c39.069-3.579,64.932-24.215,64.932-57.785v-0.549c0-34.119-22.012-49.8-65.758-59.977V58.334c6.298,1.539,12.82,3.72,19.194,6.549
+		c10.258,4.547,22.724,1.697,28.952-8.485c6.233-10.176,2.866-24.47-8.681-29.654c-11.498-5.156-24.117-8.708-38.095-10.236V8.251
+		c0-4.552-6.402-8.251-14.305-8.251c-7.903,0-14.31,3.514-14.31,7.832c0,4.335,0,7.843,0,7.843
+		c-42.104,3.03-65.764,25.591-65.764,58.057v0.555c0,34.114,22.561,49.256,66.862,59.427v33.021
+		c-10.628-1.713-21.033-5.243-31.623-10.65c-11.281-5.755-25.101-3.72-31.938,6.385c-6.842,10.1-4.079,24.449,7.294,30.029
+		c16.709,8.208,35.593,13.57,54.614,15.518v13.755C103.79,229.36,110.197,235.517,118.1,235.517z M131.301,138.12
+		c14.316,4.123,18.438,8.257,18.438,15.681v0.555c0,7.979-5.776,12.651-18.438,14.033V138.12z M86.999,70.153v-0.549
+		c0-7.152,5.232-12.657,18.71-13.755v29.719C90.856,81.439,86.999,77.305,86.999,70.153z"
+                />
+              </g>
+            </svg>
+            <span class="flex-1 ml-3 text-gray-500 whitespace-nowrap">Mi Billetera</span>
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink
+            to="/app/garantias"
+            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-300 group"
+            ><svg
+              height="24px"
+              width="24px"
+              version="1.1"
+              id="Capa_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 235.517 235.517"
+              xml:space="preserve"
+            >
+              <g>
+                <path
+                  style="fill: #a2afbe"
+                  d="M118.1,235.517c7.898,0,14.31-6.032,14.31-13.483c0-7.441,0-13.473,0-13.473
+		c39.069-3.579,64.932-24.215,64.932-57.785v-0.549c0-34.119-22.012-49.8-65.758-59.977V58.334c6.298,1.539,12.82,3.72,19.194,6.549
+		c10.258,4.547,22.724,1.697,28.952-8.485c6.233-10.176,2.866-24.47-8.681-29.654c-11.498-5.156-24.117-8.708-38.095-10.236V8.251
+		c0-4.552-6.402-8.251-14.305-8.251c-7.903,0-14.31,3.514-14.31,7.832c0,4.335,0,7.843,0,7.843
+		c-42.104,3.03-65.764,25.591-65.764,58.057v0.555c0,34.114,22.561,49.256,66.862,59.427v33.021
+		c-10.628-1.713-21.033-5.243-31.623-10.65c-11.281-5.755-25.101-3.72-31.938,6.385c-6.842,10.1-4.079,24.449,7.294,30.029
+		c16.709,8.208,35.593,13.57,54.614,15.518v13.755C103.79,229.36,110.197,235.517,118.1,235.517z M131.301,138.12
+		c14.316,4.123,18.438,8.257,18.438,15.681v0.555c0,7.979-5.776,12.651-18.438,14.033V138.12z M86.999,70.153v-0.549
+		c0-7.152,5.232-12.657,18.71-13.755v29.719C90.856,81.439,86.999,77.305,86.999,70.153z"
+                />
+              </g>
+            </svg>
+            <span class="flex-1 ml-3 text-gray-500 whitespace-nowrap">Garantías</span>
           </RouterLink>
         </li>
         <li>
           <RouterLink
             to="/app/licitaciones/filter"
-            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-300 group"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -133,13 +197,13 @@
               />
             </svg>
 
-            <span class="flex-1 ml-3 whitespace-nowrap">Mis Licitaciones</span>
+            <span class="flex-1 ml-3 text-gray-500 whitespace-nowrap">Mis Licitaciones</span>
           </RouterLink>
         </li>
         <li>
           <RouterLink
             to="/app/sugerir"
-            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-300 group"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -152,13 +216,13 @@
                 d="M480-80q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM320-200v-80h320v80H320Zm10-120q-69-41-109.5-110T180-580q0-125 87.5-212.5T480-880q125 0 212.5 87.5T780-580q0 81-40.5 150T630-320H330Zm24-80h252q45-32 69.5-79T700-580q0-92-64-156t-156-64q-92 0-156 64t-64 156q0 54 24.5 101t69.5 79Zm126 0Z"
               />
             </svg>
-            <span class="flex-1 ml-3 whitespace-nowrap">Sugerir Producto</span>
+            <span class="flex-1 ml-3 text-gray-500 whitespace-nowrap">Sugerir Producto</span>
           </RouterLink>
         </li>
         <li>
           <RouterLink
             to="/app/multiusuarios"
-            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-300 group"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -172,13 +236,13 @@
               />
             </svg>
 
-            <span class="flex-1 ml-3 whitespace-nowrap">Multiusuarios</span>
+            <span class="flex-1 ml-3 text-gray-500 whitespace-nowrap">Multiusuarios</span>
           </RouterLink>
         </li>
         <li>
           <RouterLink
             to="/app/multiusuarios"
-            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-300 group"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -192,13 +256,13 @@
               />
             </svg>
 
-            <span class="flex-1 ml-3 whitespace-nowrap">Soporte WhatsApp</span>
+            <span class="flex-1 ml-3 text-gray-500 whitespace-nowrap">Soporte WhatsApp</span>
           </RouterLink>
         </li>
         <li>
           <RouterLink
-            to="/app/terms"
-            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            to="/app/home"
+            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-300 group"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -215,7 +279,7 @@
                 />
               </g>
             </svg>
-            <span class="flex-1 ml-3 whitespace-nowrap"
+            <span class="flex-1 ml-3 text-gray-500 whitespace-nowrap"
               >Términos y Condiciones</span
             >
           </RouterLink>
@@ -223,7 +287,7 @@
         <li>
           <a
             href="/signin"
-            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-300 group"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -236,7 +300,7 @@
                 d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
               />
             </svg>
-            <span class="flex-1 ml-3 whitespace-nowrap">Cerrar Sesión</span>
+            <span class="flex-1 ml-3 text-gray-500 whitespace-nowrap">Cerrar Sesión</span>
           </a>
         </li>
       </ul>

@@ -3,7 +3,7 @@
     <ion-header>
       <ion-toolbar color="tertiary">
         <div class="grid grid-cols-3 items-center mx-auto w-11/12">
-          <RouterLink to="/app/home">
+          <RouterLink to="/app/filter/tutorials">
             <img src="@/assets/Arrow.svg" alt="Back" class="w-4 h-4" />
           </RouterLink>
           <h2 class="text-center">Tutoriales</h2>

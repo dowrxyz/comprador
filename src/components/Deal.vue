@@ -21,15 +21,15 @@
     <div class="detailspad inline-flex w-5/6 mx-auto gap-6 md:w-1/2">
       <div class="titles grid gap-2 text-gray-400">
         <p>Producto</p>
-        <p>Calidad</p>
+        <p>Cantidad</p>
         <p>Provincia y cantón</p>
         <p>Presentación de entrega</p>
         <p>Fecha de entrega</p>
         <p>Informacion adicional</p>
       </div>
       <div class="titles grid gap-2 text-gray-700">
-        <p>Cafe Tostado Colombia</p>
-        <p>Premium</p>
+        <p>Maiz</p>
+        <p>200 QQ</p>
         <p>Guayas, Pedro Carbo</p>
         <p>En sacos</p>
         <p>24/7/2024</p>
@@ -40,7 +40,7 @@
     <hr class="text-gray-700 my-3">
 
     <div class="descripcionpad my -2 w-5/6 mx-auto text-left text-gray-700 text-sm md:w-1/2">
-      <p>Este Café esta premiado como uno de los mejores de la región, con un horneado justo y preciso que aplica un sabor fuerte e intenso.</p>
+      <p>Este Maiz esta premiado como uno de los mejores de la región, con una genetica justa y precisa que aplica un sabor fuerte e intenso.</p>
     </div>
 
     <div class="propuestapad grid bg-gray-200 items-center gap-3 h-48 p-3">

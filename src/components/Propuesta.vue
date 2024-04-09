@@ -13,23 +13,38 @@
     <form class="detailspad grid w-5/6 mx-auto gap-6 md:w-1/2">
       <h3 class="text-gray-700 font-bold">Propuesta de compra al vendedor</h3>
 
+      
       <div class="form-input grid gap-1">
         <label for="precio" class="text-gray-700">Precio</label>
         <input
           type="number"
           id="precio"
-          placeholder="Precio."
+          placeholder="Precio"
           class="bg-gray-50 border p-2 rounded-md text-gray-600"
         />
+        <select
+          name="unidadPrecio"
+          class="w-full mx-auto bg-gray-50 border rounded-[16px] p-2 rounded-md text-gray-600"
+        >
+          <option selected class="text-gray-600">QQ</option>
+          <option class="text-gray-600">KG</option>
+        </select>
       </div>
       <div class="form-input grid gap-1">
         <label for="cantidad" class="text-gray-700">Cantidad</label>
         <input
           type="number"
           id="cantidad"
-          placeholder="En cajas, kilos o bultos."
+          placeholder="Cantidad"
           class="bg-gray-50 border p-2 rounded-md text-gray-600"
         />
+        <select
+          name="unidadCantidad"
+          class="w-full mx-auto bg-gray-50 border rounded-[16px] p-2 rounded-md text-gray-600"
+        >
+          <option selected class="text-gray-600">QQ</option>
+          <option class="text-gray-600">KG</option>
+        </select>
       </div>
       <div class="form-input grid gap-1">
         <label for="calidad" class="text-gray-700"
@@ -107,7 +122,7 @@
     
     <RouterLink
         class="default-bar p-3 rounded-md text-center text-zinc-50 w-5/6 mx-auto mb-4 md:w-1/2"
-        to="/chat/licitacion/Maiz"
+        to="/chat/oferta/Maiz"
         >Enviar propuesta de compra</RouterLink
       >
   </div>
