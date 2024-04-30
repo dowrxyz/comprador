@@ -7,6 +7,11 @@
             <img src="@/assets/Arrow.svg" alt="Back" class="w-4 h-4" />
           </RouterLink>
           <h2 class="text-center">Estado</h2>
+          <div class="inline-flex justify-self-end">
+            <RouterLink to="/chat/oferta/Maiz">
+              <img src="@/assets/Chat.svg" alt="Chat" class="w-4 h-4" />
+            </RouterLink>
+          </div>
         </div>
       </ion-toolbar>
     </ion-header>

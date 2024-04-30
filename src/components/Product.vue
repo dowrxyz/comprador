@@ -15,7 +15,7 @@
             id="provincia"
             v-model="ProvinciaSelected"
             @change="handleCantones"
-            class="w-full mx-auto bg-transparent border-2 input-container rounded-[16px] p-2 rounded-md text-gray-600"
+            class="w-full mx-auto bg-transparent border-2 input-container p-2 rounded-md text-gray-600"
           >
             <option :value="Provincia.id" v-for="Provincia in Provincias" :key="Provincia.id">{{ Provincia.nombre }}</option>
           </select>
@@ -31,7 +31,7 @@
           <select
             id="canton"
             v-model="CantonSelected"
-            class="w-full mx-auto bg-transparent border-2 input-container rounded-[16px] p-2 rounded-md text-gray-600"
+            class="w-full mx-auto bg-transparent border-2 input-container p-2 rounded-md text-gray-600"
           >
             <option :value="Canton.ID" v-for="Canton in Cantones" :key="Canton.ID">{{ Canton.Nombre }}</option>
           </select>
@@ -112,7 +112,7 @@
             class="Profile-Text text-right w-full"
           >
             <h1 class="text-yellow-400 text-md font-bold">$18.50</h1>
-            <p class="text-yellow-400 text-md font-bold">Hum 17%</p>
+            <p class="text-yellow-400 text-md font-bold">Humedad 14-17%</p>
           </RouterLink>
         </div>
       </div>
@@ -154,7 +154,7 @@
             class="Profile-Text text-right w-full"
           >
             <h1 class="text-yellow-400 text-md font-bold">$18.50</h1>
-            <p class="text-yellow-400 text-md font-bold">Hum 17%</p>
+            <p class="text-yellow-400 text-md font-bold">Humedad 14-17%</p>
           </RouterLink>
         </div>
       </div>
@@ -197,7 +197,7 @@
           class="Profile-Text text-right w-full"
         >
           <h1 class="text-yellow-400 text-md font-bold">$18.50</h1>
-          <p class="text-yellow-400 text-md font-bold">Hum 17%</p>
+            <p class="text-yellow-400 text-md font-bold">Humedad 14-17%</p>
         </RouterLink>
       </div>
     </div>

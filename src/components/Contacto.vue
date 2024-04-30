@@ -5,47 +5,47 @@
         <p class="text-gray-500 text-sm font-semibold w-3/4 ml-3">Contacto {{ num }}</p>
       </CAccordionHeader>
       <CAccordionBody>
-        <div class="mb-2">
+        <div class="mb-2 visible">
           <label for="name" class="text-gray-600 font-bold w-5/6 mx-auto"
             >Nombre</label
           >
           <input
             type="text"
             id="name"
-            class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+            class="text-gray-400 w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md"
             placeholder="Nombre"
           />
         </div>
-        <div class="mb-2">
+        <div class="mb-2 visible">
           <label for="telf" class="text-gray-600 font-bold w-5/6 mx-auto"
             >Teléfono</label
           >
           <input
             type="number"
             id="telf"
-            class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+            class="text-gray-400 w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md"
             placeholder="Teléfono"
           />
         </div>
-        <div class="mb-2">
+        <div class="mb-2 visible">
           <label for="cargo" class="text-gray-600 font-bold w-5/6 mx-auto"
             >Cargo</label
           >
           <input
             type="text"
             id="cargo"
-            class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+            class="text-gray-400 w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md"
             placeholder="Cargo"
           />
         </div>
-        <div class="mb-2">
+        <div class="mb-2 visible">
           <label for="correo" class="text-gray-600 font-bold w-5/6 mx-auto"
             >Correo</label
           >
           <input
             type="email"
             id="correo"
-            class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+            class="text-gray-400 w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md"
             placeholder="Correo"
           />
         </div>

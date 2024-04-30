@@ -25,7 +25,6 @@
         <p>Provincia y cantón</p>
         <p>Presentación de entrega</p>
         <p>Fecha de entrega</p>
-        <p>Informacion adicional</p>
       </div>
       <div class="titles grid gap-2 text-gray-700">
         <p>Maiz</p>
@@ -33,14 +32,18 @@
         <p>Guayas, Pedro Carbo</p>
         <p>En sacos</p>
         <p>24/7/2024</p>
-        <p>Mercado</p>
       </div>
     </div>
 
     <hr class="text-gray-700 my-3">
 
     <div class="descripcionpad my -2 w-5/6 mx-auto text-left text-gray-700 text-sm md:w-1/2">
-      <p>Este Maiz esta premiado como uno de los mejores de la región, con una genetica justa y precisa que aplica un sabor fuerte e intenso.</p>
+      <h1 class="font-bold text-xl mb-2 text-center">Parámetros de Calidad</h1>
+      <ul class="grid gap-1">
+        <li class="text-base">Humedad: min 14% max 17%</li>
+        <li class="text-base">Impureza: min 0% max 5%</li>
+        <li class="text-base">Aflaxtoxinas: min 0% max 3 %</li>
+      </ul>
     </div>
 
     <div class="propuestapad grid bg-gray-200 items-center gap-3 h-48 p-3">

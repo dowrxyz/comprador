@@ -13,7 +13,6 @@
     <form class="detailspad grid w-5/6 mx-auto gap-6 md:w-1/2">
       <h3 class="text-gray-700 font-bold">Propuesta de compra al vendedor</h3>
 
-      
       <div class="form-input grid gap-1">
         <label for="precio" class="text-gray-700">Precio</label>
         <input
@@ -24,7 +23,7 @@
         />
         <select
           name="unidadPrecio"
-          class="w-full mx-auto bg-gray-50 border rounded-[16px] p-2 rounded-md text-gray-600"
+          class="w-full mx-auto bg-gray-50 border p-2 rounded-md text-gray-600"
         >
           <option selected class="text-gray-600">QQ</option>
           <option class="text-gray-600">KG</option>
@@ -40,7 +39,7 @@
         />
         <select
           name="unidadCantidad"
-          class="w-full mx-auto bg-gray-50 border rounded-[16px] p-2 rounded-md text-gray-600"
+          class="w-full mx-auto bg-gray-50 border p-2 rounded-md text-gray-600"
         >
           <option selected class="text-gray-600">QQ</option>
           <option class="text-gray-600">KG</option>
@@ -54,29 +53,45 @@
           type="text"
           id="calidad"
           placeholder="Indica las caracteristicas de entrega."
-          class="bg-gray-50 border p-2 rounded-md  text-gray-600"
+          class="bg-gray-50 border p-2 rounded-md text-gray-600"
         />
       </div>
       <div class="form-input grid gap-1">
-        <label for="ubicacion" class="text-gray-700"
-          >Ubicación</label
-        >
-        <input
-          type="text"
-          id="ubicacion"
-          placeholder="Indica la ubicación."
-          class="bg-gray-50 border p-2 rounded-md  text-gray-600"
-        />
+        <label for="ubicacion" class="text-gray-700">Ubicación</label>
+        <div class="inline-flex gap-2">
+          <select
+            type="text"
+            id="ubicacion"
+            v-model="location"
+            placeholder="Indica la ubicación."
+            class="bg-gray-50 border p-2 rounded-md text-gray-600 w-full"
+          >
+            <option :value="location" selected v-if="!Object.values(location).includes('')">
+              {{ location.nombre }}
+            </option>
+            <option value="" selected disabled v-if="Object.values(location).includes('')">
+              Ubicación
+            </option>
+            <option :value="{nombre: 'Loc 1', direccion: '23', ubicacion: '3w3223'}">Loc 1</option>
+            <option :value="{nombre: 'Loc 2', direccion: '32', ubicacion: '3232ss'}">Loc 2</option>
+            <option :value="{nombre: 'Loc 3', direccion: '23', ubicacion: '3232323s'}">Loc 3</option>
+          </select>
+          <button
+            type="button"
+            @click="addNewLocation"
+            class="default-bar p-1 text-center text-white font-bold rounded-md"
+          >
+            +
+          </button>
+        </div>
       </div>
       <div class="form-input grid gap-1">
-        <label for="Horarios" class="text-gray-700"
-          >Horarios</label
-        >
+        <label for="Horarios" class="text-gray-700">Horarios</label>
         <input
           type="text"
           id="Horarios"
           placeholder="Indica los horarios de recepción."
-          class="bg-gray-50 border p-2 rounded-md  text-gray-600"
+          class="bg-gray-50 border p-2 rounded-md text-gray-600"
         />
       </div>
       <div class="form-input grid gap-1">
@@ -88,7 +103,9 @@
         />
       </div>
       <div class="form-input grid gap-1">
-        <label for="infoextra" class="text-gray-700">Información Adicional</label>
+        <label for="infoextra" class="text-gray-700"
+          >Información Adicional</label
+        >
         <input
           type="text"
           id="infoextra"
@@ -100,7 +117,9 @@
 
     <hr class="text-gray-700 my-3" />
 
-    <div class="propuestapad inline-flex bg-gray-200 items-center gap-3 h-48 p-3 w-5/6 mx-auto justify-center md:w-1/3">
+    <div
+      class="propuestapad inline-flex bg-gray-200 items-center gap-3 h-48 p-3 w-5/6 mx-auto justify-center md:w-1/3"
+    >
       <svg
         width="48"
         height="48"
@@ -119,12 +138,11 @@
       </div>
     </div>
 
-    
     <RouterLink
-        class="default-bar p-3 rounded-md text-center text-zinc-50 w-5/6 mx-auto mb-4 md:w-1/2"
-        to="/chat/oferta/Maiz"
-        >Enviar propuesta de compra</RouterLink
-      >
+      class="default-bar p-3 rounded-md text-center text-zinc-50 w-5/6 mx-auto mb-4 md:w-1/2"
+      to="/chat/oferta/Maiz"
+      >Enviar propuesta de compra</RouterLink
+    >
   </div>
 
   <CModal alignment="center" :visible="visible">
@@ -136,15 +154,59 @@
           @click="closeModal"
           class="justify-self-end"
         />
-        <h2
-          class="text-center text-xl font-bold text-gray-500 w-3/4 mx-auto text-center"
-        >
+        <h2 class="text-center text-xl font-bold text-gray-500 w-3/4 mx-auto">
           Confirmación
         </h2>
         <div class="mx-auto text-center">
           <p class="text-gray-400 text-sm w-3/4 mx-auto">
             Agradecemos el presente acuerdo, Agroec respaldará todo el proceso.
           </p>
+        </div>
+      </div>
+    </CModalBody>
+  </CModal>
+  <CModal alignment="center" :visible="locationModal" @close="addNewLocation">
+    <CModalBody>
+      <div class="grid w-full gap-3 pb-3">
+        <img
+          src="@/assets/Nav/X.svg"
+          alt="Close alert"
+          @click="addNewLocation"
+          class="justify-self-end"
+        />
+        <h2 class="text-center text-xl font-bold text-gray-500 w-3/4 mx-auto">
+          Agregar Ubicación
+        </h2>
+        <div class="flex flex-col gap-3 w-11/12 mx-auto text-center">
+          <div class="grid grid-cols-3 gap-2 col-span-2">
+            <input
+              type="text"
+              id="nombrePunto"
+              v-model="nombrePunto"
+              placeholder="Nombre"
+              class="w-full mx-auto bg-transparent border-2 border-gray-300 p-2 rounded-md text-gray-600"
+            />
+            <input
+              type="text"
+              id="direccionPunto"
+              v-model="direccionPunto"
+              placeholder="Dirección"
+              class="w-full mx-auto bg-transparent border-2 border-gray-300 p-2 rounded-md text-gray-600"
+            />
+            <input
+              type="text"
+              id="ubicacionPunto"
+              v-model="ubicacionPunto"
+              placeholder="Ubicación"
+              class="w-full mx-auto bg-transparent border-2 border-gray-300 p-2 rounded-md text-gray-600"
+            />
+          </div>
+          <button
+            class="default-bar p-2 text-center w-full text-white font-bold rounded-md"
+            @click="saveNewLocation"
+          >
+            Guardar
+          </button>
         </div>
       </div>
     </CModalBody>
@@ -167,6 +229,11 @@ export default {
       details: false,
       offerSaw: false,
       visible: false,
+      locationModal: false,
+      location: {nombre: "", direccion: "", ubicacion: ""},
+      nombrePunto: "",
+      direccionPunto: "",
+      ubicacionPunto: ""
     };
   },
   created() {
@@ -179,6 +246,15 @@ export default {
       this.details = !this.detailsStatus ? true : false;
       this.$emit("back-to-details");
       this.offerSaw = true;
+    },
+    addNewLocation() {
+      this.locationModal = !this.locationModal;
+    },
+    saveNewLocation() {
+      this.location.nombre = this.nombrePunto
+      this.location.direccion = this.direccionPunto
+      this.location.ubicacion = this.ubicacionPunto
+      this.addNewLocation();
     },
     closeDetails() {
       this.details = this.details ? false : true;

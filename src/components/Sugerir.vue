@@ -10,7 +10,7 @@
           <input
             type="text"
             placeholder="Sugerir Producto"
-            class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
+            class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
           />
         </div>
   
@@ -21,7 +21,7 @@
               class="text-gray-500 font-bold w-5/6 mb-3 mx-auto"
               >Cantidad a comprar</label
             >
-            <input type="number" placeholder="Cantidad" class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600">
+            <input type="number" placeholder="Cantidad" class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600">
           </div>
         </div>
   
@@ -45,7 +45,7 @@
             class="justify-self-end"
           />
           <h2
-            class="text-center text-xl font-bold text-gray-500 w-5/6 mx-auto text-center"
+            class="text-center text-xl font-bold text-gray-500 w-5/6 mx-auto"
           >
            Sugerencia enviada
           </h2>

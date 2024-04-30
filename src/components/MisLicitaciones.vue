@@ -37,10 +37,6 @@
               <p class="text-gray-500 text-xs">En sacos: 100 libras</p>
               <h1 class="text-yellow-400 text-xs font-bold mt-1">$17.50</h1>
               <h1 class="text-yellow-400 text-xs font-bold">QQ</h1>
-              <h1 class="second-color text-xs font-bold">Prom: $250</h1>
-              <h1 class="third-color text-xs font-bold">
-                Cant. Negociada: 300
-              </h1>
             </div>
           </RouterLink>
 
@@ -195,6 +191,10 @@
               <p class="text-gray-500 text-xs">En sacos: 100 libras</p>
               <h1 class="text-yellow-400 text-xs font-bold mt-1">$17.50</h1>
               <h1 class="text-yellow-400 text-xs font-bold">QQ</h1>
+              <h1 class="second-color text-xs font-bold">Prom: $250</h1>
+              <h1 class="third-color text-xs font-bold">
+                Cant. Negociada: 300
+              </h1>
             </div>
           </RouterLink>
 
@@ -249,7 +249,7 @@
           class="justify-self-end"
         />
         <h2
-          class="text-center text-xl font-bold text-gray-500 w-3/4 mx-auto text-center"
+          class="text-center text-xl font-bold text-gray-500 w-3/4 mx-auto"
         >
           Cerrar Licitación
         </h2>
@@ -277,9 +277,8 @@
           @click="closeDeleteModal"
           class="justify-self-end"
         />
-        <h2
-          class="text-center text-xl font-bold text-gray-500 w-3/4 mx-auto text-center"
-        >
+        <h2>
+          class="text-center text-xl font-bold text-gray-500 w-3/4 mx-auto"
           Confirmación
         </h2>
         <div class="mx-auto text-center">

@@ -292,6 +292,10 @@ http://ionicframework.com/docs/theming/ */
   background-color: #a8cf7b;
 }
 
+.replied-incoming-title {
+  color: rgb(235, 171, 53); /* Color aclarado al 33% */
+}
+
 .dark-bar {
   background-color: #5C832F;
 }
@@ -304,6 +308,14 @@ http://ionicframework.com/docs/theming/ */
   background-color: rgba(168, 207, 123, 0.33); /* Color aclarado al 33% */
 }
 
+
+.replied-outgoing-chat {
+  background-color: rgba(168, 207, 123, 0.22); /* Color aclarado al 33% */
+}
+
+.replied-incoming-chat {
+  background-color: rgba(249, 191, 83, 0.22); /* Color aclarado al 33% */
+}
 
 
 .text-lime{

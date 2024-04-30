@@ -1,6 +1,5 @@
 <template>
-  <div class="grid gap-3 mb-3">
-    <Slider />
+  <div class="grid gap-3 my-3">
 
     <RouterLink
       to="/app/vendedor/1/2"
@@ -43,13 +42,14 @@
 
     <hr class="text-gray-700 my-3" />
 
-    <div
-      class="descripcionpad my -2 w-5/6 mx-auto text-left text-gray-700 text-sm md:w-1/2"
-    >
-      <p>
-        Este Maiz esta premiado como uno de los mejores de la región, con una
-        genetica justa y precisa que aplica un sabor fuerte e intenso.
-      </p>
+    
+    <div class="descripcionpad my -2 w-5/6 mx-auto text-left text-gray-700 text-sm md:w-1/2">
+      <h1 class="font-bold text-xl mb-2 text-center">Parámetros de Calidad</h1>
+      <ul class="grid gap-1">
+        <li class="text-base">Humedad: min 14% max 17%</li>
+        <li class="text-base">Impureza: min 0% max 5%</li>
+        <li class="text-base">Aflaxtoxinas: min 0% max 3 %</li>
+      </ul>
     </div>
 
   </div>

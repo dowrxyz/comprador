@@ -1,5 +1,5 @@
 {
-  "name": "agroapp",
+  "name": "Agroec Comprador",
   "private": true,
   "version": "0.0.1",
   "type": "module",
@@ -25,7 +25,9 @@
     "apexcharts": "^3.44.0",
     "flowbite": "^2.2.1",
     "flowbite-vue": "^0.1.2",
+    "i": "^0.3.7",
     "ionicons": "^7.0.0",
+    "npm": "^10.5.1",
     "remove": "^0.1.5",
     "vue": "^3.2.45",
     "vue-localstorage": "^0.6.2",
@@ -34,6 +36,7 @@
     "vue-slick-carousel": "^1.0.6",
     "vue-sweetalert2": "^5.0.5",
     "vue3-apexcharts": "^1.4.4",
+    "vuedraggable": "^4.1.0",
     "vuex": "^4.1.0"
   },
   "devDependencies": {

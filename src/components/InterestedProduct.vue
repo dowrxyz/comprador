@@ -83,14 +83,14 @@
           <button
             type="button"
             class="default-bar h-10 p-2 text-white font-bold rounded-md"
-            @click="addParametro"
+            @click="newParametro"
           >
             +
           </button>
         </div>
       </div>
 
-      <div class="grid grid-cols-3 gap-1 w-5/6 mx-auto" v-if="parametroData">
+      <div class="grid grid-cols-3 gap-1 w-5/6 mx-auto" v-if="parametros">
         <div class="grid gap-1 w-full items-center">
           <label for="nombreParametro" class="text-gray-500 font-bold w-full"
             >Nombre</label
@@ -127,17 +127,10 @@
             class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
           />
         </div>
-        <button
-          type="button"
-          class="col-span-3 text-center text-white font-bold default-bar h-12 rounded-md p-2 mt-1"
-          @click="newParametro"
-        >
-          Agregar
-        </button>
       </div>
 
       <div class="grid gap-1 w-5/6 mx-auto" v-if="newParametros.length > 0">
-        <h1 class="text-gray-600 mb-3 font-bold">Parametros Agregados</h1>
+        <h1 class="text-gray-600 mb-3 font-bold">Parámetros Agregados</h1>
 
         <p
           class="text-gray-500 flex gap-3 items-center"
@@ -259,6 +252,265 @@
           </svg>
         </button>
       </div>
+      <div class="mx-auto w-11/12 overflow-x-scroll md:w-5/6" v-if="castigos && parametros">
+          <table class="text-gray-500">
+            <thead>
+              <tr>
+                <th class="text-sm">Imp-Hum</th>
+                <th>1%</th>
+                <th>2%</th>
+                <th>3%</th>
+                <th>4%</th>
+                <th>5%</th>
+                <th>6%</th>
+                <th>7%</th>
+                <th>8%</th>
+                <th>9%</th>
+                <th>10%</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <input
+                    type="number"
+                    value="13.0"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="15.6"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="15.3"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="15.2"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="15.0"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="14.8"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="14.6"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="14.4"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="14.2"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="14.1"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="13.9"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input
+                    type="number"
+                    value="13.0"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="15.6"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="15.3"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="15.2"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="15.0"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="14.8"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="14.6"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="14.4"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="14.2"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="14.1"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="13.9"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input
+                    type="number"
+                    value="13.0"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="15.6"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="15.3"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="15.2"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="15.0"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="14.8"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="14.6"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="14.4"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="14.2"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="14.1"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value="13.9"
+                    class="bg-transparent w-11/12"
+                  />
+                </td>
+              </tr>
+              <!-- Agrega más filas según sea necesario -->
+            </tbody>
+          </table>
+        </div>
 
       <button
         @click="sendProduct"
@@ -291,6 +543,26 @@
     </CModalBody>
   </CModal>
 </template>
+
+<style scoped>
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+</style>
 
 <script allowJs>
 import { mapGetters, mapActions } from "vuex";
@@ -336,8 +608,8 @@ export default {
       // Close the menu by setting menuOpen to false
       this.visible = false;
     },
-    deleteParametro(x){
-      return this.newParametros = this.newParametros.filter(y => y != x);
+    deleteParametro(x) {
+      return (this.newParametros = this.newParametros.filter((y) => y != x));
     },
     newParametro() {
       if (

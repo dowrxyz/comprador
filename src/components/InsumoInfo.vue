@@ -130,6 +130,18 @@
         <h1 class="text-gray-400">Nombre Comercial</h1>
         <p class="text-gray-800 text-md font-semibold">1,4 SIGHT</p>
       </div>
+      <div class="card-info border-bottom-1 pb-2">
+        <h1 class="text-gray-400">Precio Agroec (Precio más IVA o incluído IVA)</h1>
+        <p class="text-gray-800 text-md font-semibold"><span class="text-lime-700">$</span>2.299</p>
+      </div>
+      <div class="card-info border-bottom-1 pb-2">
+        <h1 class="text-gray-400">Precio punto de venta</h1>
+        <p class="text-gray-800 text-md font-semibold"><span class="text-lime-700">$</span>2.099</p>
+      </div>
+      <div class="card-info border-bottom-1 pb-2">
+        <h1 class="text-gray-400">Stock</h1>
+        <p class="text-gray-800 text-md font-semibold">33</p>
+      </div>
 
       <CAccordion flush class="border-bottom-1">
         <CAccordionItem class="pb-2">
@@ -137,7 +149,7 @@
             <p class="text-gray-800 text-md font-semibold">Composicion</p>
           </CAccordionHeader>
           <CAccordionBody>
-            <div class="grid gap-2">
+            <div class="grid gap-2 visible">
               <span>1,4 diffentamina 98,77%</span>
               <span>Otros ingredientes 1,63%</span>
             </div>
@@ -151,7 +163,7 @@
             <p class="text-gray-800 text-md font-semibold">Clase</p>
           </CAccordionHeader>
           <CAccordionBody>
-            <div class="grid gap-2">
+            <div class="grid gap-2 visible">
               <span>Data del Insumo</span>
             </div>
           </CAccordionBody>
@@ -164,7 +176,7 @@
             <p class="text-gray-800 text-md font-semibold">Tipo de Formula</p>
           </CAccordionHeader>
           <CAccordionBody>
-            <div class="grid gap-2">
+            <div class="grid gap-2 visible">
               <span>Data del Insumo</span>
             </div>
           </CAccordionBody>
@@ -177,7 +189,7 @@
             <p class="text-gray-800 text-md font-semibold">Titular</p>
           </CAccordionHeader>
           <CAccordionBody>
-            <div class="grid gap-2">
+            <div class="grid gap-2 visible">
               <span>Data del Insumo</span>
             </div>
           </CAccordionBody>
@@ -190,7 +202,7 @@
             <p class="text-gray-800 text-md font-semibold">Clasificación</p>
           </CAccordionHeader>
           <CAccordionBody>
-            <div class="grid gap-2">
+            <div class="grid gap-2 visible">
               <span>Data del Insumo</span>
             </div>
           </CAccordionBody>
@@ -205,7 +217,7 @@
             </p>
           </CAccordionHeader>
           <CAccordionBody>
-            <div class="grid gap-2">
+            <div class="grid gap-2 visible">
               <span>Data del Insumo</span>
             </div>
           </CAccordionBody>
@@ -220,7 +232,7 @@
             </p>
           </CAccordionHeader>
           <CAccordionBody>
-            <div class="grid gap-2">
+            <div class="grid gap-2 visible">
               <span>Data del Insumo</span>
             </div>
           </CAccordionBody>
@@ -235,7 +247,7 @@
             </p>
           </CAccordionHeader>
           <CAccordionBody>
-            <div class="grid gap-2">
+            <div class="grid gap-2 visible">
               <span>Data del Insumo</span>
             </div>
           </CAccordionBody>
@@ -248,7 +260,7 @@
             <p class="text-gray-800 text-md font-semibold">Link</p>
           </CAccordionHeader>
           <CAccordionBody>
-            <div class="grid gap-2">
+            <div class="grid gap-2 visible">
               <span>Data del Insumo</span>
             </div>
           </CAccordionBody>
@@ -262,7 +274,7 @@
             <p class="text-gray-800 text-md font-semibold">Atención</p>
           </CAccordionHeader>
           <CAccordionBody>
-            <div class="grid gap-2">
+            <div class="grid gap-2 visible">
               <span>Data del Insumo</span>
             </div>
           </CAccordionBody>

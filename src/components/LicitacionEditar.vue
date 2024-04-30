@@ -6,7 +6,7 @@
       </h1>
 
       <div
-        class="ficha md:w-1/3 grid gap-2 w-11/12 p-2 mx-auto rounded-md border-2 border-gray-100 text-center"
+        class="ficha md:w-1/3 grid gap-2 w-11/12 p-2 mx-auto rounded-md-2 border-gray-100 text-center"
       >
         <h2 class="text-gray-500 text-sm font-bold">Ficha del Producto</h2>
         <p class="text-gray-400 text-xs">Maíz duro amarillo</p>
@@ -21,13 +21,13 @@
         <input
           type="text"
           name="Precio"
-          class="w-full text-gray-500 mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+          class="w-full text-gray-500 mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md"
           placeholder="$14,40"
         />
 
         <select
           name="size"
-          class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
+          class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
         >
           <option selected>QQ</option>
           <option>KG</option>
@@ -41,13 +41,13 @@
         <input
           type="text"
           name="Cantidad"
-          class="w-full text-gray-500 mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+          class="w-full text-gray-500 mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md"
           placeholder="#200"
         />
 
         <select
           name="size"
-          class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
+          class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
         >
           <option selected>QQ</option>
           <option>KG</option>
@@ -60,7 +60,7 @@
         >
         <select
           name="size"
-          class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
+          class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
         >
           <option selected>En sacos</option>
           <option>En bolsas</option>
@@ -68,11 +68,102 @@
 
         <select
           name="size"
-          class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
+          class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
         >
           <option selected>100 libras</option>
           <option>50 libras</option>
         </select>
+      </div>
+
+      <div class="grid relative w-full mx-auto">
+        <div class="inline-flex gap-2 w-full items-center">
+          <label for="" class="text-gray-500 font-bold w-full"
+            >Agregar Parámetros de Calidad</label
+          >
+          <button
+            type="button"
+            class="default-bar h-10 p-2 text-white font-bold rounded-md"
+            @click="newParametro"
+          >
+            +
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3 gap-1 w-full mx-auto">
+        <div class="grid gap-1 w-full items-center">
+          <label for="nombreParametro" class="text-gray-500 font-bold w-full"
+            >Nombre</label
+          >
+          <input
+            v-model="nombreParametro"
+            id="nombreParametro"
+            placeholder="Nombre"
+            type="text"
+            class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
+          />
+        </div>
+        <div class="grid gap-1 w-full items-center">
+          <label for="minParametro" class="text-gray-500 font-bold w-full"
+            >Min</label
+          >
+          <input
+            v-model="minParametro"
+            placeholder="2%"
+            id="minParametro"
+            type="text"
+            class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
+          />
+        </div>
+        <div class="grid gap-1 w-full items-center">
+          <label for="maxParametro" class="text-gray-500 font-bold w-full"
+            >Max</label
+          >
+          <input
+            v-model="maxParametro"
+            placeholder="No Max"
+            id="maxParametro"
+            type="text"
+            class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
+          />
+        </div>
+      </div>
+
+      <div class="grid gap-1 w-full mx-auto" v-if="newParametros.length > 0">
+        <h1 class="text-gray-600 mb-3 font-bold">Parámetros Agregados</h1>
+
+        <p
+          class="text-gray-500 flex gap-3 items-center"
+          v-for="item in newParametros"
+          :key="item"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="18"
+            fill="#a2afbe"
+            viewBox="0 -960 960 960"
+            width="18"
+          >
+            <path
+              d="m560-120-57-57 144-143H200v-480h80v400h367L503-544l56-57 241 241-240 240Z"
+            />
+          </svg>
+          {{ item.nombre }}, Min: {{ minParametro }}%, Max: {{ maxParametro }}%
+
+          <button type="button" v-on:click="deleteParametro(item)">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24"
+              viewBox="0 -960 960 960"
+              width="24"
+              fill="#E87C61"
+            >
+              <path
+                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+              />
+            </svg>
+          </button>
+        </p>
       </div>
 
       <div class="grid mt-3 gap-2">
@@ -82,7 +173,7 @@
         <input
           type="date"
           name="Validez"
-          class="w-full text-gray-500 mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+          class="w-full text-gray-500 mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md"
         />
       </div>
 
@@ -94,11 +185,13 @@
           type="text"
           name="Adicional"
           placeholder="Precio negociable"
-          class="w-full text-gray-500 mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+          class="w-full text-gray-500 mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md"
         />
       </div>
 
-      <button @click="showModal" type="button"
+      <button
+        @click="showModal"
+        type="button"
         class="py-3 px-5 default-bar mx-auto mt-3 w-2/3 rounded font-bold grid items-center mb-3"
       >
         Actualizar
@@ -106,8 +199,7 @@
     </form>
   </div>
 
-  
-  <CModal alignment="center" :visible="visible">
+  <CModal alignment="center" :visible="visible" @close="closeModal">
     <CModalBody>
       <div class="grid w-full gap-3 pb-3">
         <img
@@ -117,13 +209,14 @@
           class="justify-self-end"
         />
         <h2
-          class="text-center text-xl font-bold text-gray-500 w-3/4 mx-auto text-center"
+          class="text-center text-xl font-bold text-gray-500 w-3/4 mx-auto"
         >
           Confirmación
         </h2>
         <div class="mx-auto text-center">
           <p class="text-gray-400 text-sm w-11/12 mx-auto">
-            Agradecemos tu publicación, Agroec buscará los mejores clientes para tu publicación.
+            Agradecemos tu publicación, Agroec buscará los mejores clientes para
+            tu publicación.
           </p>
         </div>
       </div>
@@ -139,11 +232,16 @@ export default {
     CModalBody,
   },
   props: {
-    Licitacion: String
+    Licitacion: String,
   },
   data() {
     return {
       visible: false,
+      parametros: false,
+      nombreParametro: "",
+      newParametros: [],
+      minParametro: 0,
+      maxParametro: 0,
     };
   },
   methods: {
@@ -153,6 +251,20 @@ export default {
     closeModal() {
       // Close the menu by setting menuOpen to false
       this.visible = false;
+    },
+    newParametro() {
+      if (
+        this.nombreParametro != "" &&
+        this.minParametro != "" &&
+        this.maxParametro != ""
+      ) {
+        this.newParametros.push({
+          nombre: this.nombreParametro,
+          min: this.minParametro,
+          max: this.maxParametro,
+        });
+        return;
+      }
     },
   },
 };

@@ -23,7 +23,7 @@
             </select>
           </div>
 
-          <div class="form-input grid gap-1">
+          <div class="form-input grid gap-1" v-if="paymentMethod != 2">
             <label for="monto" class="text-gray-600 font-bold w-5/6"
               >Monto de recarga</label
             >
@@ -43,7 +43,7 @@
               >Transferencia Bancaria</label
             >
             <li class="text-gray-700">Numero Cuenta: 0000005721192722</li>
-            <li class="text-gray-700">Banco: Citibank</li>
+            <li class="text-gray-700">Banco: Banco A</li>
             <li class="text-gray-700">
               Contacta con área financiera vía WhatsApp
               <a href="wa.link/10nq8r" class="font-bold" target="_blank"

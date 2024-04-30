@@ -26,7 +26,7 @@
           type="text"
           id="comp"
           v-model="razon"
-          class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+          class="text-gray-400 w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md"
           placeholder="Razon Social"
         />
       </div>
@@ -47,7 +47,7 @@
           <select
             id="identificador"
             v-model="identificacion"
-            class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
+            class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
           >
             <option selected value="RUC">RUC</option>
             <option value="Cédula">Cédula</option>
@@ -76,7 +76,7 @@
           type="number"
           name="cedula"
           v-model="numeroIdentificacion"
-          class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+          class="text-gray-400 w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md"
           placeholder="Numero de Identificacion"
         />
       </div>
@@ -97,7 +97,7 @@
           type="email"
           id="correo"
           v-model="email"
-          class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+          class="text-gray-400 w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md"
           placeholder="Correo"
         />
       </div>
@@ -119,7 +119,7 @@
           type="password"
           id="clave"
           v-model="password"
-          class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+          class="text-gray-400 w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md"
           placeholder="Clave"
         />
 
@@ -128,7 +128,7 @@
           type="text"
           id="clave"
           v-model="password"
-          class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+          class="text-gray-400 w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md"
           placeholder="Clave"
         />
         <button @click="changeVisibility" type="button">
@@ -164,7 +164,7 @@
           <select
             id="provincia"
             v-model="provincia"
-            class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
+            class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
           >
             <option selected>Jaramijó</option>
             <option>Pedro Carbo</option>
@@ -190,7 +190,7 @@
           <select
             id="canton"
             v-model="canton"
-            class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
+            class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
           >
             <option selected>Jaramijó</option>
             <option>Pedro Carbo</option>
@@ -198,48 +198,120 @@
           </select>
         </div>
       </div>
-      <div class="">
-        <label
-          for="dic"
-          class="text-gray-600 font-bold w-5/6 mx-auto"
-          v-if="direccion != '' || direccion == '' || !showErrors"
-          >Dirección</label
+
+      <div class="grid gap-1 mx-auto mt-3 col-span-2 w-full">
+        <label for="" class="text-gray-600 font-bold"
+          >Matriz y puntos de recepción</label
         >
-        <label
-          for="dic"
-          class="text-red-400 font-bold w-5/6 mx-auto"
-          v-if="direccion == '' && showErrors"
-          >Debes ingresar tu Dirección</label
-        >
+        <label for="direccionMatriz" class="text-gray-500">Dirección</label>
         <input
           type="text"
-          id="dic"
-          v-model="direccion"
-          class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
-          placeholder="Dirección"
+          id="direccionMatriz"
+          placeholder="Direccion"
+          class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
         />
+        <label for="ubicacionMatriz" class="text-gray-500">Ubicación</label>
+        <div class="inline-flex justify-between gap-2">
+          <input
+            type="text"
+            id="ubicacionMatriz"
+            placeholder="Ubicacion"
+            class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
+          />
+          <button
+            class="default-bar text-white font-bold grid items-center h-full p-2 rounded-md"
+          >
+            <img src="@/assets/Status/LocationPin.svg" alt="Pin Ubication" />
+          </button>
+        </div>
+        <label for="puntos" class="text-gray-500">Puntos de recepción</label>
+
+        <div class="inline-flex gap-2">
+          <div class="grid grid-cols-3 gap-1 w-full mx-auto">
+            <div class="grid gap-1 w-full items-center">
+              <label for="NombrePunto" class="text-gray-500 font-bold w-full"
+                >Nombre</label
+              >
+              <input
+                v-model="nombrePunto"
+                id="NombrePunto"
+                placeholder="Nombre"
+                type="text"
+                class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
+              />
+            </div>
+            <div class="grid gap-1 w-full items-center">
+              <label for="UbicacionPunto" class="text-gray-500 font-bold w-full"
+                >Ubicación</label
+              >
+              <input
+                v-model="ubicacionPunto"
+                placeholder="Ubicación"
+                id="UbicacionPunto"
+                type="text"
+                class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
+              />
+            </div>
+            <div class="grid gap-1 w-full items-center">
+              <label for="DireccionPunto" class="text-gray-500 font-bold w-full"
+                >Direccion</label
+              >
+              <input
+                v-model="direccionPunto"
+                placeholder="Dirección"
+                id="DireccionPunto"
+                type="text"
+                class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
+              />
+            </div>
+          </div>
+          <button
+            type="button"
+            @click="savePunto"
+            class="default-bar h-full self-center text-white font-bold grid items-center p-2 rounded-md"
+          >
+            +
+          </button>
+        </div>
       </div>
-      <div class="">
-        <label
-          for="dic"
-          class="text-gray-600 font-bold w-5/6 mx-auto"
-          v-if="ubicacion != '' || ubicacion == '' || !showErrors"
-          >Ubicación</label
+
+      <div class="grid mb-2" v-if="puntosRecepcion.length > 0">
+        <h1 class="text-gray-600 mb-3 font-bold">Puntos de recepción</h1>
+
+        <p
+          class="text-gray-500 flex gap-3 items-center"
+          v-for="item in puntosRecepcion"
+          :key="item.nombre"
         >
-        <label
-          for="dic"
-          class="text-red-400 font-bold w-5/6 mx-auto"
-          v-if="ubicacion == '' && showErrors"
-          >Debes ingresar tu Ubicación</label
-        >
-        <input
-          type="text"
-          id="ubicacion"
-          v-model="ubicacion"
-          class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
-          placeholder="Ubicación"
-        />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="18"
+            fill="#a2afbe"
+            viewBox="0 -960 960 960"
+            width="18"
+          >
+            <path
+              d="m560-120-57-57 144-143H200v-480h80v400h367L503-544l56-57 241 241-240 240Z"
+            />
+          </svg>
+          {{ item.nombre }}
+
+          <button type="button" v-on:click="deletePunto(item)">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24"
+              viewBox="0 -960 960 960"
+              width="24"
+              fill="#E87C61"
+            >
+              <path
+                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+              />
+            </svg>
+          </button>
+        </p>
       </div>
+
       <div class="col-span-2">
         <label
           for="telf"
@@ -257,7 +329,7 @@
           type="text"
           id="telf"
           v-model="telefono"
-          class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+          class="text-gray-400 w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md"
           placeholder="Teléfono"
         />
       </div>
@@ -285,7 +357,7 @@
           type="text"
           id="eco"
           v-model="actividadEconomica"
-          class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+          class="text-gray-400 w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md"
           placeholder="Actividad Económica"
         />
       </div>
@@ -307,62 +379,16 @@
           <select
             id="negocio"
             v-model="tipoNegocio"
-            class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
+            class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
           >
-            <option selected>Agricultor</option>
-            <option>Comerciante</option>
-            <option>Asociación de Agricultor</option>
+            <option selected>Industrial</option>
+            <option>Comercial</option>
+            <option>Intermediario</option>
           </select>
         </div>
       </div>
 
-      <div class="grid gap-1 mx-auto mt-3 col-span-2 w-full">
-        <label for="" class="text-gray-600 font-bold"
-          >Matriz y puntos de recepción</label
-        >
-        <label for="nombreMatriz" class="text-gray-500">Nombre Matriz</label>
-        <input
-          type="text"
-          id="nombreMatriz"
-          placeholder="Nombre"
-          class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
-        />
-        <label for="direccionMatriz" class="text-gray-500">Dirección</label>
-        <input
-          type="text"
-          id="direccionMatriz"
-          placeholder="Direccion"
-          class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
-        />
-        <label for="ubicacionMatriz" class="text-gray-500">Ubicación</label>
-        <div class="inline-flex justify-between gap-2">
-          <input
-            type="text"
-            id="ubicacionMatriz"
-            placeholder="Ubicacion"
-            class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
-          />
-          <button
-            class="default-bar text-white font-bold grid items-center h-full p-2 rounded-md"
-          >
-            <img src="@/assets/Status/LocationPin.svg" alt="Pin Ubication" />
-          </button>
-        </div>
-        <label for="puntos" class="text-gray-500">Puntos de recepción</label>
-        <div class="inline-flex justify-between gap-2">
-          <input
-            type="text"
-            id="puntos"
-            placeholder="Agregar punto de recepción"
-            class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
-          />
-          <button
-            class="default-bar text-white font-bold grid items-center h-full p-2 rounded-md"
-          >
-            +
-          </button>
-        </div>
-      </div>
+      
 
       <div class="col-span-2">
         <label
@@ -382,7 +408,7 @@
           name="ctm"
           placeholder="Consumo Mes TM"
           v-model="consumoMesTM"
-          class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+          class="text-gray-400 w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md"
         />
       </div>
 
@@ -404,7 +430,7 @@
           name="ca"
           placeholder="Consumo Anual"
           v-model="consumoAnual"
-          class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+          class="text-gray-400 w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md"
         />
       </div>
 
@@ -426,7 +452,7 @@
           name="pmes"
           placeholder="Presupuesto por Mes"
           v-model="presupuestoMes"
-          class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+          class="text-gray-400 w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md"
         />
       </div>
 
@@ -453,7 +479,7 @@
           v-model="politicasRecepcion"
           cols="20"
           rows="10"
-          class="text-gray-400 w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md"
+          class="text-gray-400 w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md"
         ></textarea>
       </div>
 
@@ -475,9 +501,7 @@
           @click="closeModal"
           class="justify-self-end"
         />
-        <h2
-          class="text-center text-xl font-bold text-gray-500 w-5/6 mx-auto text-center"
-        >
+        <h2 class="text-center text-xl font-bold text-gray-500 w-5/6 mx-auto">
           Perfil actualizado
         </h2>
         <div class="mx-auto text-center">
@@ -529,6 +553,10 @@ export default {
       actividadEconomica: "",
       politicasRecepcion: "",
       tipoNegocio: "Agricultor",
+      nombrePunto: "",
+      ubicacionPunto: "",
+      direccionPunto: "",
+      puntosRecepcion: [],
       consumoMesTM: "",
       consumoAnual: "",
       presupuestoMes: "",
@@ -542,6 +570,22 @@ export default {
     closeModal() {
       // Close the menu by setting menuOpen to false
       this.visible = false;
+    },
+    savePunto() {
+      if (
+        this.nombrePunto != "" &&
+        this.ubicacionPunto != "" &&
+        this.direccionPunto != ""
+      ) {
+        this.puntosRecepcion.push({
+          nombre: this.nombrePunto,
+          ubicacion: this.ubicacionPunto,
+          direccion: this.direccionPunto,
+        });
+      }
+    },
+    deletePunto(x) {
+      this.puntosRecepcion = this.puntosRecepcion.filter((y) => y != x);
     },
     changeVisibility() {
       this.visiblePassword = !this.visiblePassword;

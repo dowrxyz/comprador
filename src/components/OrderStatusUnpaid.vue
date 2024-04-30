@@ -1,5 +1,6 @@
 <template>
-  <div class="content w-11/12 mx-auto grid my-3 gap-3">
+  <div class="content w-11/12 mx-auto grid my-3 gap-3" v-if="!condiciones">
+    
     <button
       v-if="!payFeesButton"
       class="default-bar rounded-md h-12 p-2 text-white text-center"
@@ -15,15 +16,21 @@
       Pagar Agroec
     </button>
 
+    
     <div class="deliver-title grid gap-2">
       <p class="text-gray-500 text-sm font-bold">Proceso creado:</p>
-      <div class="flex gap-2">
-        <img
-          src="@/assets/Status/Event.svg"
-          alt="Calendar"
-          class="w-4 h-4 self-center"
-        />
-        <h2 class="text-center text-gray-600 text-2xl">Octubre 5, 2023</h2>
+      <div class="flex flex-row justify-between gap-2">
+        <div class="inline-flex gap-2 items-center">
+          <img
+            src="@/assets/Status/Event.svg"
+            alt="Calendar"
+            class="w-4 h-4 self-center"
+          />
+          <h2 class="text-center text-gray-600 text-2xl">Octubre 5, 2023</h2>
+        </div>
+        <button class="justify-self-end default-bar p-2 rounded-md" @click="manageCondicionesPage">
+          <img src="../assets/Document.svg" alt="Condiciones" class="h-6 w-6" />
+        </button>
       </div>
     </div>
 
@@ -45,6 +52,10 @@
       />
 
       <div class="deliver-cards grid gap-3 w-full">
+        <div class="bg-yellow-100 text-left px-4 py-3 rounded-md grid gap-1">
+          <h2 class="text-md text-gray-700">Pago en garantía de $35.000</h2>
+          <p class="text-sm text-gray-600">Noviembre 19, 2023 4:50 PM</p>
+        </div>
         <div class="bg-gray-200 text-left px-4 py-3 rounded-md grid gap-1">
           <h2 class="text-md text-gray-700">Pendiente de entrega</h2>
           <p class="text-sm text-gray-600">Noviembre 19, 2023 4:50 PM</p>
@@ -134,7 +145,11 @@
         <p class="text-sm text-gray-700 text-right">$15,50</p>
       </div>
       <div class="grid grid-cols-2">
-        <p class="text-sm text-gray-700 text-left">Cantidad</p>
+        <p class="text-sm text-gray-700 text-left">Cantidad Negociada</p>
+        <p class="text-sm text-gray-700 text-right">200</p>
+      </div>
+      <div class="grid grid-cols-2">
+        <p class="text-sm text-gray-700 text-left">Cantidad Recibida</p>
         <p class="text-sm text-gray-700 text-right">200</p>
       </div>
       <div class="grid grid-cols-2">
@@ -144,6 +159,7 @@
     </div>
   </div>
 
+  <CondicionesOferta v-if="condiciones" :entregas="[]"></CondicionesOferta>
   <!-- Alert Modal -->
   <CModal alignment="center" :visible="delivered" @close="closeModal">
     <CModalBody>
@@ -154,9 +170,7 @@
           @click="closeModal"
           class="justify-self-end"
         />
-        <h2
-          class="text-center text-md font-bold text-gray-500 w-3/5 mx-auto text-center"
-        >
+        <h2 class="text-center text-md font-bold text-gray-500 w-3/5 mx-auto">
           ¿Ha recibido el producto?
         </h2>
         <div class="flex gap-3 w-5/6 mx-auto">
@@ -164,7 +178,7 @@
             class="default-bar text-white text-center p-2 w-3/5 rounded-md shadow"
             @click="manageFeesModal"
           >
-            Si
+            Recibido
           </button>
           <button
             class="bg-gray-400 text-white text-center p-2 w-3/5 rounded-md shadow"
@@ -174,9 +188,9 @@
           </button>
           <button
             class="bg-red-400 text-white text-center p-2 w-3/5 rounded-md shadow"
-            @click="manageFeedbackModal"
+            @click="manageRechazoModal"
           >
-            Rechazar
+            No recibido
           </button>
         </div>
       </div>
@@ -184,35 +198,30 @@
   </CModal>
 
   <!-- Feedback Modal -->
-  <CModal alignment="center" :visible="feedback" @close="manageFeedbackModal">
+  <CModal alignment="center" :visible="rechazo" @close="manageRechazoModal">
     <CModalBody>
       <div class="grid w-full gap-3 pb-3">
         <img
           src="@/assets/Nav/X.svg"
           alt="Close alert"
-          @click="closeModal"
+          @click="manageFeedbackModal"
           class="justify-self-end"
         />
         <h2
-          class="mt-3 text-center text-md font-bold text-gray-900 w-3/5 mx-auto text-center"
+          class="mt-3 text-center text-md font-bold text-gray-900 w-3/5 mx-auto"
         >
-          ¿Qué sucedió?
+          Reconfirmación de Rechazo
         </h2>
-        <div class="flex gap-3 w-5/6 mx-auto justify-center">
-          <select
-            name="select"
-            id="select"
-            class="h-12 p-2 w-full rounded-md border-2 border-gray-300 text-gray-600 bg-transparent"
-          >
-            <option value="1" selected>Rechazado</option>
-            <option value="2">Nunca llegó</option>
-          </select>
+        <div class="flex gap-3 w-full mx-auto justify-center">
+          <p class="text-center text-gray-600">
+            ¿Estás seguro de querer marcar como no recibido?
+          </p>
         </div>
         <button
           @click="notReceived"
-          class="mt-3 default-bar text-white font-bold shadow p-2 h-12 mx-auto w-3/5 rounded-md"
+          class="mt-3 bg-red-400 text-white font-bold shadow p-2 h-12 mx-auto w-3/5 rounded-md"
         >
-          Enviar
+          Confirmar
         </button>
       </div>
     </CModalBody>
@@ -229,7 +238,7 @@
           class="justify-self-end"
         />
         <h2
-          class="mt-3 text-center text-md font-bold text-gray-900 w-3/5 mx-auto text-center"
+          class="mt-3 text-center text-md font-bold text-gray-900 w-3/5 mx-auto"
         >
           Cobro de fee de Agroec
         </h2>
@@ -248,6 +257,47 @@
     </CModalBody>
   </CModal>
 
+  <CModal alignment="center" :visible="garantia" @close="payGuarantee">
+    <CModalBody>
+      <div class="grid w-full gap-2 pb-3">
+        <img
+          src="@/assets/Nav/X.svg"
+          alt="Close alert"
+          @click="payGuarantee"
+          class="justify-self-end"
+        />
+        <h2
+          class="mt-3 text-center text-md font-bold text-gray-900 w-3/5 mx-auto"
+        >
+          Realizar pago garantía
+        </h2>
+        <div class="gap-1 mx-auto grid">
+          <p class="text-center text-gray-700">
+            Se efectuará el cobro del [Porcentaje]%
+          </p>
+          <h1 class="text-center text-gray-700 font-bold text-xl">
+            Total <span class="text-lime-500 font-bold">$</span>[Valor Garantía]
+          </h1>
+          <select
+            name="paymentMethod"
+            id="paymentMethod"
+            class="bg-transparent p-2 h-12 border-2 rounded-md w-2/3 text-gray-700 mx-auto"
+          >
+            <option value="0" selected disabled>Método de pago</option>
+            <option value="1">Transferencia Bancaria</option>
+            <option value="2">TD/TC</option>
+          </select>
+        </div>
+        <button
+          @click="payGuarantee"
+          class="mt-1 default-bar text-white font-bold shadow p-2 h-12 mx-auto w-1/2 rounded-md"
+        >
+          Pagar
+        </button>
+      </div>
+    </CModalBody>
+  </CModal>
+
   <!-- Waiting Modal -->
   <CModal alignment="center" :visible="waiting" @close="manageWaitingModal">
     <CModalBody>
@@ -259,7 +309,7 @@
           class="justify-self-end"
         />
         <h2
-          class="mt-3 text-center text-md font-bold text-gray-900 w-3/5 mx-auto text-center"
+          class="mt-3 text-center text-md font-bold text-gray-900 w-3/5 mx-auto"
         >
           Tiempo de Espera
         </h2>
@@ -288,7 +338,7 @@
     <CModalBody>
       <div class="grid w-full gap-2 pb-3">
         <h2
-          class="mt-3 text-center text-md font-bold text-gray-900 w-3/5 mx-auto text-center"
+          class="mt-3 text-center text-md font-bold text-gray-900 w-3/5 mx-auto"
         >
           Porfavor califica al vendedor
         </h2>
@@ -336,13 +386,89 @@
       </div>
     </CModalBody>
   </CModal>
+
+  <CModal alignment="center" :visible="politicasModal" @close="managePoliticas">
+    <CModalBody>
+      <div class="grid w-full gap-3 pb-3">
+        <img
+          src="@/assets/Nav/X.svg"
+          alt="Close alert"
+          @click="managePoliticas"
+          class="justify-self-end"
+        />
+        <h2 class="text-center text-xl font-bold text-gray-500 w-3/4 mx-auto">
+          Politicas
+        </h2>
+        <div class="mx-auto text-left max-h-52 overflow-y-scroll">
+          <p class="text-gray-700 text-sm w-3/4 mx-auto">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+            vestibulum orci ligula. Proin eget lorem justo. Donec sodales urna
+            vel imperdiet accumsan. Ut dignissim ipsum et condimentum placerat.
+            Aenean porttitor tellus purus, a feugiat nibh faucibus et. Praesent
+            quam tellus, rutrum at vehicula quis, condimentum nec tellus. Mauris
+            quis aliquet orci. Nulla condimentum dapibus metus, vel faucibus
+            mauris dignissim ut. Aliquam pretium libero in quam gravida, sed
+            ornare eros efficitur. Nam vitae mattis est. Vivamus ornare metus eu
+            neque auctor hendrerit. Sed tincidunt nisi et porta imperdiet. Donec
+            sagittis turpis felis, et imperdiet neque viverra at. Duis nisl
+            purus, congue sed lacus sit amet, pellentesque ullamcorper mauris.
+            Quisque laoreet, odio eu pretium euismod, tortor nisi scelerisque
+            orci, a malesuada augue diam in dolor. Cras nec sagittis sem, vel
+            imperdiet tellus. Proin gravida quis nisi vitae fringilla. Cras
+            feugiat sapien mi, vel mattis augue hendrerit non. Morbi efficitur
+            at leo vel scelerisque. Duis turpis ligula, ultrices in mollis et,
+            faucibus non neque. Nunc sed nisl in arcu vulputate vestibulum.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus
+            eleifend laoreet. Donec aliquet placerat vulputate.
+          </p>
+        </div>
+      </div>
+    </CModalBody>
+  </CModal>
+  <!-- Feedback Modal -->
+  <CModal alignment="center" :visible="feedback" @close="manageFeedbackModal">
+    <CModalBody>
+      <div class="grid w-full gap-3 pb-3">
+        <img
+          src="@/assets/Nav/X.svg"
+          alt="Close alert"
+          @click="manageFeedbackModal"
+          class="justify-self-end"
+        />
+        <h2
+          class="mt-3 text-center text-md font-bold text-gray-900 w-3/5 mx-auto"
+        >
+          ¿Qué sucedió?
+        </h2>
+        <div class="flex gap-3 w-5/6 mx-auto justify-center">
+          <select
+            name="select"
+            id="select"
+            class="h-12 p-2 w-full rounded-md border-2 border-gray-300 text-gray-600 bg-transparent"
+          >
+            <option value="1" selected>Rechazado</option>
+            <option value="2">Nunca llegó</option>
+          </select>
+        </div>
+        <button
+          @click="manageFeedbackModal"
+          class="mt-3 default-bar text-white font-bold shadow p-2 h-12 mx-auto w-3/5 rounded-md"
+        >
+          Enviar
+        </button>
+      </div>
+    </CModalBody>
+  </CModal>
 </template>
 
 <script>
 import { CModal, CModalBody } from "@coreui/vue";
 import Calify from "@/components/Calify.vue";
+import CondicionesOferta from './CondicionesOferta.vue';
+import event from '@/libs/event';
 export default {
   components: {
+    CondicionesOferta,
     CModal,
     Calify,
     CModalBody,
@@ -362,13 +488,32 @@ export default {
       value: 0,
       selectedDate: "",
       maxDate: "",
+      garantia: false,
       payFeesButton: true,
+      rechazo: false,
+      quantity: false,
+      condiciones: false,
+      politicasModal: false,
     };
   },
   created() {
+    event.on('openPoliticas', this.managePoliticas)
+    event.on('closeDatos', this.manageCondicionesPage);
     this.setThreeDaysLimit();
   },
   methods: {
+    manageCondicionesPage(){
+      this.condiciones = !this.condiciones
+    },
+    manageRechazoModal(){
+      this.rechazo = !this.rechazo;
+    },
+    managePoliticas(){
+      this.politicasModal = !this.politicasModal
+    },
+    payGuarantee() {
+      this.garantia = !this.garantia;
+    },
     calify(value) {
       this.value = value;
     },
@@ -417,6 +562,7 @@ export default {
       }
     },
     manageFeedbackModal() {
+      this.rechazo = false;
       this.feedback = !this.feedback;
     },
     manageFeesModal() {

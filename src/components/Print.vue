@@ -10,7 +10,7 @@
               >
               <select
                 id="identificador"
-                class="w-full mx-auto bg-transparent border border-2 border-gray-300 rounded-[16px] px-3 py-3 rounded-md text-gray-600"
+                class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
               >
                 <option selected value="b82skam290010lsu">Orden #345</option>
                 <option value="b82skam290010lsu">Orden #346</option>

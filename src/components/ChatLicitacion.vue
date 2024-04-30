@@ -8,9 +8,9 @@
     >
       <div class="messages grid gap-3 p-2 md:w-full">
         <div
-          class="w-2/3 mx-auto grid items-center text-center bg-gray-100 rounded-lg md:w-1/3"
+          class="w-1/2 mx-auto grid items-center text-center bg-gray-100 rounded-lg md:w-1/3"
         >
-          <span class="p-2 text-uppercase text-gray-500 font-bold"
+          <span class="p-2 text-sm text-gray-500 font-bold"
             >12 de diciembre de 2024</span
           >
         </div>
@@ -20,43 +20,46 @@
             alt="Incoming Message Profile Icon"
             class="h-16 w-16"
           />
-          <div class="relative w-full">
-            <div class="message-content incoming-chat rounded-md p-2 w-full">
+          <div
+            class="relative w-full"
+            draggable="true"
+            @dragend="draggedMessageEnd"
+            @dragstart="draggedMessageStart"
+            @touchstart="draggedMessageStart"
+            @touchend="draggedMessageEnd"
+          >
+            <div
+              class="message-content incoming-chat rounded-md p-2 w-11/12 relative"
+            >
               <p class="text-sm text-gray-800 w-11/12">
                 Me intereso, te ofrezco $17.50, puesto en mi planta.
               </p>
+
+              <span
+                class="text-gray-700 text-sm absolute right-1 top-8 md:top-4 hour-text"
+                >13:25 PM</span
+              >
             </div>
-            <span
-              class="text-gray-700 text-sm absolute right-1 top-8 md:top-4 hour-text"
-              >13:25 PM</span
-            >
           </div>
-          <button class="h-auto w-auto">
-            <img
-              src="../assets/reply.svg"
-              alt="Reply Message"
-              class="h-8 w-8"
-            />
-          </button>
         </div>
         <div class="message-outgoing flex gap-2 items-center">
-          <button class="h-auto w-auto">
-            <img
-              src="../assets/replyleft.svg"
-              alt="Reply Message"
-              class="h-8 w-8"
-            />
-          </button>
-          <div class="relative w-full">
-            <div class="message-content outgoing-chat rounded-md p-2 w-full">
+          <div class="grid w-full">
+            <div
+              class="message-content outgoing-chat justify-self-end rounded-md p-2 w-11/12 relative"
+              draggable="true"
+              @dragend="draggedMessageEnd"
+              @dragstart="draggedMessageStart"
+              @touchstart="draggedMessageStart"
+              @touchend="draggedMessageEnd"
+            >
               <p class="text-sm text-gray-800 w-11/12">
                 Acepto donde esta ubicado, envieme su ubicacion.
               </p>
+              <span
+                class="text-gray-700 text-sm absolute right-2 top-8 md:top-4 hour-text"
+                >02:43 AM</span
+              >
             </div>
-            <span
-              class="text-gray-700 text-sm absolute right-2 top-8 md:top-4 hour-text"
-              >16:13 PM</span
-            >
           </div>
           <img
             src="@/assets/People/Aso.svg"
@@ -65,23 +68,23 @@
           />
         </div>
         <div class="message-outgoing flex gap-2 items-center">
-          <button class="h-auto w-auto">
-            <img
-              src="../assets/replyleft.svg"
-              alt="Reply Message"
-              class="h-8 w-8"
-            />
-          </button>
-          <div class="relative w-full">
-            <div class="message-content outgoing-chat rounded-md p-2 w-full">
+          <div class="grid w-full">
+            <div
+              class="message-content outgoing-chat justify-self-end rounded-md p-2 w-11/12 relative"
+              draggable="true"
+              @dragend="draggedMessageEnd"
+              @dragstart="draggedMessageStart"
+              @touchstart="draggedMessageStart"
+              @touchend="draggedMessageEnd"
+            >
               <p class="text-sm text-gray-800 w-11/12">
                 Acepto donde esta ubicado, envieme su ubicacion.
               </p>
+              <span
+                class="text-gray-700 text-sm absolute right-2 top-8 md:top-4 hour-text"
+                >02:43 AM</span
+              >
             </div>
-            <span
-              class="text-gray-700 text-sm absolute right-2 top-8 md:top-4 hour-text"
-              >17:13 PM</span
-            >
           </div>
           <img
             src="@/assets/People/Aso.svg"
@@ -90,23 +93,23 @@
           />
         </div>
         <div class="message-outgoing flex gap-2 items-center">
-          <button class="h-auto w-auto">
-            <img
-              src="../assets/replyleft.svg"
-              alt="Reply Message"
-              class="h-8 w-8"
-            />
-          </button>
-          <div class="relative w-full">
-            <div class="message-content outgoing-chat rounded-md p-2 w-full">
+          <div class="grid w-full">
+            <div
+              class="message-content outgoing-chat justify-self-end rounded-md p-2 w-11/12 relative"
+              draggable="true"
+              @dragend="draggedMessageEnd"
+              @dragstart="draggedMessageStart"
+              @touchstart="draggedMessageStart"
+              @touchend="draggedMessageEnd"
+            >
               <p class="text-sm text-gray-800 w-11/12">
                 Acepto donde esta ubicado, envieme su ubicacion.
               </p>
+              <span
+                class="text-gray-700 text-sm absolute right-2 top-8 md:top-4 hour-text"
+                >02:43 AM</span
+              >
             </div>
-            <span
-              class="text-gray-700 text-sm absolute right-2 top-8 md:top-4 hour-text"
-              >18:53 PM</span
-            >
           </div>
           <img
             src="@/assets/People/Aso.svg"
@@ -115,23 +118,23 @@
           />
         </div>
         <div class="message-outgoing flex gap-2 items-center">
-          <button class="h-auto w-auto">
-            <img
-              src="../assets/replyleft.svg"
-              alt="Reply Message"
-              class="h-8 w-8"
-            />
-          </button>
-          <div class="relative w-full">
-            <div class="message-content outgoing-chat rounded-md p-2 w-full">
+          <div class="grid w-full">
+            <div
+              class="message-content outgoing-chat justify-self-end rounded-md p-2 w-11/12 relative"
+              draggable="true"
+              @dragend="draggedMessageEnd"
+              @dragstart="draggedMessageStart"
+              @touchstart="draggedMessageStart"
+              @touchend="draggedMessageEnd"
+            >
               <p class="text-sm text-gray-800 w-11/12">
                 Acepto donde esta ubicado, envieme su ubicacion.
               </p>
+              <span
+                class="text-gray-700 text-sm absolute right-2 top-8 md:top-4 hour-text"
+                >02:43 AM</span
+              >
             </div>
-            <span
-              class="text-gray-700 text-sm absolute right-2 top-8 md:top-4 hour-text"
-              >19:13 PM</span
-            >
           </div>
           <img
             src="@/assets/People/Aso.svg"
@@ -140,36 +143,92 @@
           />
         </div>
         <div
-          class="w-2/3 mx-auto grid items-center text-center bg-gray-100 rounded-lg md:w-1/3"
+          class="w-1/2 mx-auto grid items-center text-center bg-gray-100 rounded-lg md:w-1/3"
         >
-          <span class="p-2 text-uppercase text-gray-500 font-bold"
-            >15 de diciembre de 2024</span
+          <span class="p-2 text-sm text-gray-500 font-bold"
+            >13 de diciembre de 2024</span
           >
         </div>
         <div class="message-outgoing flex gap-2 items-center">
-          <button class="h-auto w-auto">
-            <img
-              src="../assets/replyleft.svg"
-              alt="Reply Message"
-              class="h-8 w-8"
-            />
-          </button>
-          <div class="relative w-full">
-            <div class="message-content outgoing-chat rounded-md p-2 w-full">
+          <div class="grid w-full">
+            <div
+              class="message-content outgoing-chat justify-self-end rounded-md p-2 w-11/12 relative"
+              draggable="true"
+              @dragend="draggedMessageEnd"
+              @dragstart="draggedMessageStart"
+              @touchstart="draggedMessageStart"
+              @touchend="draggedMessageEnd"
+            >
               <p class="text-sm text-gray-800 w-11/12">
                 Acepto donde esta ubicado, envieme su ubicacion.
               </p>
+              <span
+                class="text-gray-700 text-sm absolute right-2 top-8 md:top-4 hour-text"
+                >02:43 AM</span
+              >
             </div>
-            <span
-              class="text-gray-700 text-sm absolute right-2 top-8 md:top-4 hour-text"
-              >02:43 AM</span
-            >
           </div>
           <img
             src="@/assets/People/Aso.svg"
             alt="Outgoing Message Profile Icon"
             class="h-16 w-16"
           />
+        </div>
+        <div class="message-outgoing flex gap-2 items-center"  v-if="false">
+          <div class="grid w-full">
+            <div
+              class="message-content outgoing-chat justify-self-end rounded-md p-2 w-11/12 relative"
+            >
+              <div
+                class="grid replied-outgoing-chat p-2 text-gray-600 rounded-lg mb-2"
+              >
+                <h1 class="default-color font-bold">Agricultor</h1>
+                <p>Me intereso te ofrezco...</p>
+              </div>
+
+              <p class="text-sm text-gray-800 w-11/12">
+                Acepto donde esta ubicado, envieme su ubicacion.
+              </p>
+              <span
+                class="text-gray-700 text-sm absolute right-2 bottom-0 hour-text"
+                >02:43 AM</span
+              >
+            </div>
+          </div>
+          <img
+            src="@/assets/People/Aso.svg"
+            alt="Outgoing Message Profile Icon"
+            class="h-16 w-16"
+          />
+        </div>
+        <div class="message-incoming flex gap-2 items-center" v-if="false">
+          <img
+            src="@/assets/People/Factory.svg"
+            alt="Incoming Message Profile Icon"
+            class="h-16 w-16"
+          />
+          <div
+            class="relative w-full"
+          >
+            <div
+              class="message-content incoming-chat rounded-md p-2 w-11/12 relative"
+            >
+              <div
+                class="grid replied-incoming-chat p-2 text-gray-600 rounded-lg mb-2"
+              >
+                <h1 class="replied-incoming-title font-bold">Tú</h1>
+                <p>Acepto donde esta ubicado...</p>
+              </div>
+              <p class="text-sm text-gray-800 w-11/12">
+                Estoy en Guayas, Pedro Carbo.
+              </p>
+
+              <span
+                class="text-gray-700 text-sm absolute right-1 bottom-0 hour-text"
+                >13:25 PM</span
+              >
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -217,16 +276,51 @@
         </p>
       </div>
 
-      <div class="message-form self-center relative">
-        <input
-          type="text"
-          v-model="messageInput"
-          class="bg-gray-200 rounded-md w-full h-12 p-3 text-gray-500"
-          placeholder="Responder"
-        />
-        <button class="absolute right-2 top-4" @click="sendMessage">
-          <img src="@/assets/Send.svg" alt="Send Message" class="h-4 w-4" />
-        </button>
+      <div
+        class="grid gap-2 p-4 bg-gray-100 rounded-md relative"
+        v-if="false"
+      >
+        <h1 class="text-gray-400 font-bold">Respondiendo a</h1>
+        <span
+          class="text-gray-500 font-bold absolute top-0 right-2 text-xl"
+          @click="deleteReply"
+          >X</span
+        >
+        <div
+          class="bg-gray-200 p-3 rounded-md text-gray-500 relative"
+          v-if="repliedMessage"
+        >
+          {{ repliedMessage }}
+
+          <span
+            class="text-gray-700 text-sm absolute right-1 bottom-0 hour-text"
+            >13:25 PM</span
+          >
+        </div>
+        <div class="message-form self-center relative">
+          <input
+            type="text"
+            v-model="messageInput"
+            class="bg-gray-200 rounded-md w-full h-12 p-3 text-gray-500"
+            placeholder="Responder"
+          />
+          <button class="absolute right-2 top-4" @click="sendMessage">
+            <img src="@/assets/Send.svg" alt="Send Message" class="h-4 w-4" />
+          </button>
+        </div>
+      </div>
+      <div class="grid" v-else>
+        <div class="message-form self-center relative">
+          <input
+            type="text"
+            v-model="messageInput"
+            class="bg-gray-200 rounded-md w-full h-12 p-3 text-gray-500"
+            placeholder="Responder"
+          />
+          <button class="absolute right-2 top-4" @click="sendMessage">
+            <img src="@/assets/Send.svg" alt="Send Message" class="h-4 w-4" />
+          </button>
+        </div>
       </div>
 
       <p
@@ -279,7 +373,7 @@
         <div class="grid gap-2 mt-2 md:grid-cols-2 col-span-2">
           <div class="grid gap-1 w-full">
             <label for="cantidad" class="text-gray-700">Cantidad</label>
-            <div class="inline-flex gap-1">
+            <div class="grid grid-cols-2 gap-1">
               <input
                 type="number"
                 id="cantidad"
@@ -307,16 +401,8 @@
                 placeholder="Cantidad"
                 class="bg-gray-50 border p-2 rounded-md text-gray-600 w-full"
               />
-              <select
-                name="unidadEntrega"
-                v-model="unidadEntrega"
-                class="w-full bg-gray-50 border rounded-md p-2 text-gray-600"
-              >
-                <option selected class="text-gray-600" value="QQ">QQ</option>
-                <option class="text-gray-600" value="KG">KG</option>
-              </select>
               <button
-                @click="saveEntrega"
+                @click="addNewEntregas"
                 class="default-bar text-white font-bold grid items-center h-12 p-2 rounded-md"
               >
                 +
@@ -330,8 +416,8 @@
 
           <p
             class="text-gray-500 flex gap-3 items-center"
-            v-for="item in entregas"
-            :key="item.nombre"
+            v-for="(item, index) in entregas"
+            :key="index"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -344,8 +430,30 @@
                 d="m560-120-57-57 144-143H200v-480h80v400h367L503-544l56-57 241 241-240 240Z"
               />
             </svg>
-            {{ item.cantidad }} {{ item.unidad }}
+            <span class="grid gap-1">
+              {{ index + startIndex }}: {{ item.cantidadPerEntrega }}
+              {{ item.unidadEntrega }}, {{ item.fechaEntrega }} -
+              {{ item.horaEntrega }}
+              <span v-for="punto in item.puntoEntrega" :key="punto"
+                >{{ punto.nombre }}, {{ punto.ubicacion }},
+                {{ punto.direccion }}</span
+              >
+            </span>
 
+            <button type="button" v-on:click="editEntrega(item, index)">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 13 13"
+                fill="#000000"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.4606 0.585786C12.2417 1.36684 12.2417 2.63316 11.4606 3.41421L4.07415 10.8007C3.75375 11.1211 3.3523 11.3484 2.91272 11.4583L0.621723 12.031C0.255533 12.1226 -0.0761638 11.7909 0.0153838 11.4247L0.588134 9.13367C0.698029 8.69409 0.925326 8.29264 1.24572 7.97225L8.63218 0.585786C9.41323 -0.195262 10.6796 -0.195262 11.4606 0.585786ZM7.925 2.707L1.95283 8.67935C1.76059 8.87159 1.62421 9.11246 1.55828 9.37621L1.18764 10.8588L2.67019 10.4881C2.93394 10.4222 3.1748 10.2858 3.36704 10.0936L9.339 4.121L7.925 2.707ZM9.33929 1.29289L8.632 2L10.046 3.414L10.7535 2.70711C11.144 2.31658 11.144 1.68342 10.7535 1.29289C10.363 0.902369 9.72981 0.902369 9.33929 1.29289Z"
+                  fill="rgb(75 85 99)"
+                />
+              </svg>
+            </button>
             <button type="button" v-on:click="deleteEntrega(item)">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -362,167 +470,104 @@
           </p>
         </div>
 
-        <div class="grid gap-1 mx-auto mt-3 col-span-2 w-full">
-          <label for="fechaEntrega" class="text-gray-700 text-sm"
-            >Fecha de entrega</label
-          >
-          <input
-            type="date"
-            id="fechaEntrega"
-            class="bg-gray-50 border p-2 rounded-md text-gray-600"
-          />
-        </div>
-        <div class="grid gap-1 mx-auto mt-3 col-span-2 w-full">
-          <label for="horaEntrega" class="text-gray-700 text-sm"
-            >Hora de entrega</label
-          >
-          <input
-            type="time"
-            id="horaEntrega"
-            class="bg-gray-50 border p-2 rounded-md text-gray-600"
-          />
-        </div>
-
-        <div class="grid gap-1 mx-auto mt-3 col-span-2 w-full">
-          <label for="" class="text-gray-700 text-sm font-bold"
-            >Matriz y puntos de recepción</label
-          >
-          <label for="nombreMatriz" class="text-gray-500">Nombre Matriz</label>
-          <input
-            type="text"
-            id="nombreMatriz"
-            placeholder="Nombre"
-            class="bg-gray-50 border p-2 rounded-md text-gray-600 w-full"
-          />
-          <label for="direccionMatriz" class="text-gray-500">Dirección</label>
-          <input
-            type="text"
-            id="direccionMatriz"
-            placeholder="Direccion"
-            class="bg-gray-50 border p-2 rounded-md text-gray-600 w-full"
-          />
-          <label for="ubicacionMatriz" class="text-gray-500">Ubicación</label>
-          <div class="inline-flex justify-between gap-2">
-            <input
-              type="text"
-              id="ubicacionMatriz"
-              placeholder="Ubicacion"
-              class="bg-gray-50 border p-2 rounded-md text-gray-600 w-full"
-            />
-            <button
-              class="default-bar text-white font-bold grid items-center h-full p-2 rounded-md"
+        <div class="grid relative mx-auto mt-3">
+          <div class="inline-flex gap-2 w-full items-center">
+            <label for="" class="text-gray-700 w-full"
+              >Agregar Parámetros de Calidad</label
             >
-              <img src="@/assets/Status/LocationPin.svg" alt="Pin Ubication" />
-            </button>
-          </div>
-          <label for="puntos" class="text-gray-700 text-sm"
-            >Puntos de recepción</label
-          >
-          <div class="inline-flex justify-between gap-2">
-            <input
-              type="text"
-              id="nombrePunto"
-              v-model="nombrePunto"
-              placeholder="Nombre"
-              class="bg-gray-50 border p-2 rounded-md text-gray-600 w-full"
-            />
-            <input
-              type="text"
-              id="direccionPunto"
-              v-model="direccionPunto"
-              placeholder="Dirección"
-              class="bg-gray-50 border p-2 rounded-md text-gray-600 w-full"
-            />
-            <input
-              type="text"
-              id="ubicacionPunto"
-              v-model="ubicacionPunto"
-              placeholder="Ubicación"
-              class="bg-gray-50 border p-2 rounded-md text-gray-600 w-full"
-            />
             <button
-              @click="savePunto"
-              class="default-bar text-white font-bold grid items-center h-12 p-2 rounded-md"
+              type="button"
+              class="default-bar h-10 p-2 text-white font-bold rounded-md"
+              @click="newParametro"
             >
               +
             </button>
           </div>
-
-          <div class="grid mb-2" v-if="puntosRecepcion.length > 0">
-            <h1 class="text-gray-600 mb-3 font-bold">Puntos de recepción</h1>
-
-            <p
-              class="text-gray-500 flex gap-3 items-center"
-              v-for="item in puntosRecepcion"
-              :key="item.nombre"
+        </div>
+        <div class="grid grid-cols-3 gap-1 mx-auto mt-2">
+          <div class="grid gap-1 w-full items-center">
+            <label for="nombreParametro" class="text-gray-700 w-full"
+              >Nombre</label
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="18"
-                fill="#a2afbe"
-                viewBox="0 -960 960 960"
-                width="18"
-              >
-                <path
-                  d="m560-120-57-57 144-143H200v-480h80v400h367L503-544l56-57 241 241-240 240Z"
-                />
-              </svg>
-              {{ item.nombre }}
-
-              <button type="button" v-on:click="deletePunto(item)">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24"
-                  viewBox="0 -960 960 960"
-                  width="24"
-                  fill="#E87C61"
-                >
-                  <path
-                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
-                  />
-                </svg>
-              </button>
-            </p>
+            <input
+              v-model="nombreParametro"
+              id="nombreParametro"
+              placeholder="Nombre"
+              type="text"
+              class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
+            />
           </div>
-
-          <label for="puntosPerfil" class="text-gray-700 text-sm"
-            >Puntos del perfil</label
-          >
-          <select
-            name="puntosPerfil"
-            v-model="puntoFromPerfil"
-            @change="addPuntoFromPerfil"
-            class="w-full mx-auto bg-gray-50 border rounded-md p-2 text-gray-600"
-          >
-            <option selected class="text-gray-600" value="PuntoPerfil">
-              Punto 1
-            </option>
-            <option class="text-gray-600" value="Punto2">Punto 2</option>
-          </select>
-          <div class="grid grid-cols-2 gap-2">
-            <button
-              class="default-bar text-white font-bold grid items-center h-12 p-2 rounded-md"
-            >
-              Cargar del perfil
-            </button>
-
-            <button
-              class="default-bar text-white font-bold grid items-center h-12 p-2 rounded-md"
-            >
-              Guardar puntos
-            </button>
+          <div class="grid gap-1 w-full items-center">
+            <label for="minParametro" class="text-gray-700 w-full">Min</label>
+            <input
+              v-model="minParametro"
+              placeholder="2%"
+              id="minParametro"
+              type="text"
+              class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
+            />
+          </div>
+          <div class="grid gap-1 w-full items-center">
+            <label for="maxParametro" class="text-gray-700 w-full">Max</label>
+            <input
+              v-model="maxParametro"
+              placeholder="No Max"
+              id="maxParametro"
+              type="text"
+              class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
+            />
           </div>
         </div>
 
-        <div class="grid gap-1 mx-auto mt-3 col-span-2 w-full">
-          <label for="parametros" class="text-gray-700 text-sm"
-            >Confirmar principales parámetros de calidad</label
+        <div class="grid gap-1 mx-auto mt-2" v-if="newParametros.length > 0">
+          <h1 class="text-gray-700 mb-3">Parámetros Agregados</h1>
+
+          <p
+            class="text-gray-600 flex gap-3 items-center"
+            v-for="(item, index) in newParametros"
+            :key="index"
           >
-          <input
-            type="text"
-            id="parametros"
-            class="bg-gray-50 border p-2 rounded-md text-gray-600"
-          />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="18"
+              fill="#a2afbe"
+              viewBox="0 -960 960 960"
+              width="18"
+            >
+              <path
+                d="m560-120-57-57 144-143H200v-480h80v400h367L503-544l56-57 241 241-240 240Z"
+              />
+            </svg>
+            {{ item.nombre }}, Min: {{ item.min }}%, Max: {{ item.max }}%
+
+            <button type="button" v-on:click="editParametro(item, index)">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 13 13"
+                fill="#000000"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.4606 0.585786C12.2417 1.36684 12.2417 2.63316 11.4606 3.41421L4.07415 10.8007C3.75375 11.1211 3.3523 11.3484 2.91272 11.4583L0.621723 12.031C0.255533 12.1226 -0.0761638 11.7909 0.0153838 11.4247L0.588134 9.13367C0.698029 8.69409 0.925326 8.29264 1.24572 7.97225L8.63218 0.585786C9.41323 -0.195262 10.6796 -0.195262 11.4606 0.585786ZM7.925 2.707L1.95283 8.67935C1.76059 8.87159 1.62421 9.11246 1.55828 9.37621L1.18764 10.8588L2.67019 10.4881C2.93394 10.4222 3.1748 10.2858 3.36704 10.0936L9.339 4.121L7.925 2.707ZM9.33929 1.29289L8.632 2L10.046 3.414L10.7535 2.70711C11.144 2.31658 11.144 1.68342 10.7535 1.29289C10.363 0.902369 9.72981 0.902369 9.33929 1.29289Z"
+                  fill="rgb(75 85 99)"
+                />
+              </svg>
+            </button>
+            <button type="button" v-on:click="deleteParametro(item)">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                viewBox="0 -960 960 960"
+                width="24"
+                fill="#E87C61"
+              >
+                <path
+                  d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+                />
+              </svg>
+            </button>
+          </p>
         </div>
 
         <div class="grid gap-1 mx-auto col-span-2 w-full mt-3">
@@ -580,6 +625,25 @@ Aliquam pretium libero in quam gravida, sed ornare eros efficitur. Nam vitae mat
           class="grid gap-1 mx-auto mt-3 col-span-2 w-full"
           v-if="paymentMethod == 1"
         >
+          <label for="modoPago" class="text-gray-700"
+            >Modo de pago porcentaje final</label
+          >
+          <select
+            name="modoPago"
+            class="w-full mx-auto bg-gray-50 border rounded-md p-2 text-gray-600"
+          >
+            <option selected class="text-gray-600" value="0" disabled>
+              Modo de pago
+            </option>
+            <option class="text-gray-600" value="2">Pago en sitio</option>
+            <option class="text-gray-600" value="3">Pago a credito</option>
+          </select>
+        </div>
+
+        <div
+          class="grid gap-1 mx-auto mt-3 col-span-2 w-full"
+          v-if="paymentMethod == 1"
+        >
           <label for="garantiaFinal" class="text-gray-700"
             >Porcentaje final</label
           >
@@ -592,6 +656,16 @@ Aliquam pretium libero in quam gravida, sed ornare eros efficitur. Nam vitae mat
           />
         </div>
 
+        <div class="grid gap-1 mx-auto mt-3 col-span-2 w-full">
+          <label for="notas" class="text-gray-700">Notas</label>
+          <textarea
+            cols="20"
+            rows="3"
+            id="notas"
+            class="bg-gray-50 border p-2 rounded-md text-gray-600"
+          ></textarea>
+        </div>
+
         <div
           class="inline-flex justify-between mx-auto mt-3 col-span-2 w-11/12"
         >
@@ -601,6 +675,12 @@ Aliquam pretium libero in quam gravida, sed ornare eros efficitur. Nam vitae mat
           <input type="checkbox" id="domicilio" />
         </div>
       </div>
+
+      <button
+        class="default-bar h-12 p-2 rounded-md text-center text-white font-bold w-11/12 mx-auto"
+      >
+        Actualizar
+      </button>
 
       <div class="mx-auto w-full overflow-x-scroll md:w-5/6" v-if="false">
         <table class="text-gray-500">
@@ -1088,6 +1168,203 @@ Aliquam pretium libero in quam gravida, sed ornare eros efficitur. Nam vitae mat
     </CModalBody>
   </CModal>
 
+  <CModal alignment="center" :visible="editParam" @close="manageEditParamModal">
+    <CModalBody>
+      <div class="grid w-full gap-3 pb-3">
+        <img
+          src="@/assets/Nav/X.svg"
+          alt="Close alert"
+          @click="manageEditParamModal"
+          class="justify-self-end"
+        />
+        <h2 class="text-center text-xl font-bold text-gray-500 w-3/4 mx-auto">
+          Editar Parametro
+        </h2>
+        <div class="mx-auto text-center">
+          <div class="grid grid-cols-3 gap-1 mx-auto mt-2">
+            <div class="grid gap-1 w-full items-center">
+              <label for="nombreParametro" class="text-gray-700 w-full"
+                >Nombre</label
+              >
+              <input
+                v-model="nombreParametro"
+                id="nombreParametro"
+                placeholder="Nombre"
+                type="text"
+                class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
+              />
+            </div>
+            <div class="grid gap-1 w-full items-center">
+              <label for="minParametro" class="text-gray-700 w-full">Min</label>
+              <input
+                v-model="minParametro"
+                placeholder="2%"
+                id="minParametro"
+                type="text"
+                class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
+              />
+            </div>
+            <div class="grid gap-1 w-full items-center">
+              <label for="maxParametro" class="text-gray-700 w-full">Max</label>
+              <input
+                v-model="maxParametro"
+                placeholder="No Max"
+                id="maxParametro"
+                type="text"
+                class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
+              />
+            </div>
+          </div>
+
+          <button
+            class="default-bar p-2 text-center text-white font-bold rounded-lg mt-2 w-full"
+            @click="saveEditParam"
+          >
+            Guardar
+          </button>
+        </div>
+      </div>
+    </CModalBody>
+  </CModal>
+
+  <CModal
+    alignment="center"
+    :visible="editEntregaModal"
+    @close="manageEditEntregaModal"
+  >
+    <CModalBody>
+      <div class="grid w-full gap-3 pb-3">
+        <img
+          src="@/assets/Nav/X.svg"
+          alt="Close alert"
+          @click="manageEditEntregaModal"
+          class="justify-self-end"
+        />
+        <h2 class="text-center text-xl font-bold text-gray-500 w-3/4 mx-auto">
+          Editar Entrega
+        </h2>
+        <div class="mx-auto text-center">
+          <div class="grid grid-cols-2 gap-2 mx-auto mt-2">
+            <div class="grid gap-1 w-full items-center">
+              <label for="cantidadPerEntrega" class="text-gray-700 w-full"
+                >Cantidad</label
+              >
+              <input
+                v-model="cantidadPerEntrega"
+                id="cantidadPerEntrega"
+                placeholder="Nombre"
+                type="number"
+                class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
+              />
+            </div>
+            <div class="grid gap-1 w-full items-center">
+              <label for="unidadEntrega" class="text-gray-700 w-full"
+                >Unidad Entrega</label
+              >
+              <select
+                name="unidadEntrega"
+                v-model="unidadEntrega"
+                class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
+              >
+                <option selected class="text-gray-600" option="QQ">QQ</option>
+                <option class="text-gray-600" option="KG">KG</option>
+              </select>
+            </div>
+            <div class="grid gap-1 w-full items-center">
+              <label for="entregaFecha" class="text-gray-700 w-full"
+                >Fecha Entrega</label
+              >
+              <input
+                v-model="fechaEntrega"
+                id="entregaFecha"
+                type="date"
+                class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
+              />
+            </div>
+            <div class="grid gap-1 w-full items-center">
+              <label for="horaEntrega" class="text-gray-700 w-full"
+                >Hora Entrega</label
+              >
+              <input
+                v-model="horaEntrega"
+                id="horaEntrega"
+                type="time"
+                class="w-full mx-auto bg-transparent border-2 border-gray-300 px-3 py-3 rounded-md text-gray-600"
+              />
+            </div>
+
+            <div class="gap-2 grid col-span-2">
+              <label for="puntos" class="text-gray-700 text-sm"
+                >Puntos de recepción</label
+              >
+              <div class="inline-flex justify-between gap-2">
+                <select
+                  name="puntosPerfil"
+                  v-model="puntoFromPerfil"
+                  @change="addPuntoFromPerfil"
+                  class="w-full mx-auto bg-transparent border-2 border-gray-300 p-2 rounded-md text-gray-600"
+                >
+                  <option selected class="text-gray-600" value="PuntoPerfil">
+                    Punto 1
+                  </option>
+                  <option class="text-gray-600" value="Punto2">Punto 2</option>
+                </select>
+                <button
+                  v-if="puntosRecepcionFields"
+                  @click="savePunto"
+                  class="default-bar text-white font-bold grid items-center h-12 p-2 rounded-md"
+                >
+                  +
+                </button>
+                <button
+                  v-if="!puntosRecepcionFields"
+                  @click="enablePuntosRecepcion"
+                  class="default-bar text-white font-bold grid items-center h-12 p-2 rounded-md"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="grid grid-cols-3 gap-2 col-span-2"
+              v-if="puntosRecepcionFields"
+            >
+              <input
+                type="text"
+                id="nombrePunto"
+                v-model="nombrePunto"
+                placeholder="Nombre"
+                class="w-full mx-auto bg-transparent border-2 border-gray-300 p-2 rounded-md text-gray-600"
+              />
+              <input
+                type="text"
+                id="direccionPunto"
+                v-model="direccionPunto"
+                placeholder="Dirección"
+                class="w-full mx-auto bg-transparent border-2 border-gray-300 p-2 rounded-md text-gray-600"
+              />
+              <input
+                type="text"
+                id="ubicacionPunto"
+                v-model="ubicacionPunto"
+                placeholder="Ubicación"
+                class="w-full mx-auto bg-transparent border-2 border-gray-300 p-2 rounded-md text-gray-600"
+              />
+            </div>
+          </div>
+
+          <button
+            class="default-bar p-2 text-center text-white font-bold rounded-lg mt-2 w-full"
+            @click="saveEntregaParam"
+          >
+            Guardar
+          </button>
+        </div>
+      </div>
+    </CModalBody>
+  </CModal>
+
   <CModal alignment="center" :visible="errorChat" @close="closeChatModal">
     <CModalBody>
       <div class="grid w-full gap-3 pb-3">
@@ -1129,6 +1406,7 @@ export default {
   },
   data() {
     return {
+      startIndex: 1,
       details: false,
       puntoFromPerfil: "",
       offerSaw: false,
@@ -1158,6 +1436,24 @@ export default {
       entregas: [],
       entregasModal: false,
       entregasSelect: true,
+      minParametro: 0,
+      maxParametro: 0,
+      nombreParametro: "",
+      newParametros: [],
+      inEditionParam: {},
+      inEditionSlot: 0,
+      editParam: false,
+
+      inEditionEntrega: {},
+      inEditionEntregaSlot: 0,
+
+      fechaEntrega: "",
+      horaEntrega: "",
+      cantidadPerEntrega: 0,
+      puntoEntrega: [],
+      puntosRecepcionFields: false,
+      editEntregaModal: false,
+      repliedMessage: "",
     };
   },
   created() {
@@ -1166,18 +1462,97 @@ export default {
     });
   },
   methods: {
+    draggedMessageEnd(e) {
+      this.repliedMessage = e.target.textContent;
+    },
+    deleteReply() {
+      this.repliedMessage = "";
+    },
+    enablePuntosRecepcion() {
+      this.puntosRecepcionFields = !this.puntosRecepcionFields;
+    },
+    manageEditEntregaModal() {
+      this.editEntregaModal = !this.editEntregaModal;
+    },
+    editEntrega(item, index) {
+      this.cantidadPerEntrega = 0;
+      this.fechaEntrega = "";
+      this.horaEntrega = "";
+      this.unidadEntrega = "";
+      this.puntoEntrega = [];
+      this.inEditionEntregaSlot = index;
+      this.inEditionEntrega = item;
+      this.manageEditEntregaModal();
+    },
+
+    saveEntregaParam() {
+      let newObject = {
+        cantidadPerEntrega: this.cantidadPerEntrega,
+        unidadEntrega: this.unidadEntrega,
+        fechaEntrega: this.fechaEntrega,
+        horaEntrega: this.horaEntrega,
+        puntoEntrega: this.puntoEntrega,
+      };
+      this.entregas[this.inEditionEntregaSlot] = newObject;
+      this.manageEditEntregaModal();
+    },
+    manageEditParamModal() {
+      this.editParam = !this.editParam;
+    },
+    editParametro(item, index) {
+      this.nombreParametro = "";
+      this.minParametro = 0;
+      this.maxParametro = 0;
+      this.inEditionSlot = index;
+      this.inEditionParam = item;
+      this.manageEditParamModal();
+    },
+
+    saveEditParam() {
+      let newObject = {
+        nombre: this.nombreParametro,
+        min: this.minParametro,
+        max: this.maxParametro,
+      };
+      this.newParametros[this.inEditionSlot] = newObject;
+      this.manageEditParamModal();
+    },
     manageEntregasSelect() {
       this.entregasSelect = !this.entregasSelect;
     },
     manageEntregasModal() {
       this.entregasModal = !this.entregasModal;
     },
-    saveEntrega() {
-      if (this.cantidadEntrega != "" && this.unidadEntrega != "") {
-        this.entregas.push({
-          cantidad: this.cantidadEntrega,
-          unidad: this.unidadEntrega,
+    deleteParametro(x) {
+      return (this.newParametros = this.newParametros.filter((y) => y != x));
+    },
+    newParametro() {
+      if (
+        this.nombreParametro != "" &&
+        this.minParametro != "" &&
+        this.maxParametro != ""
+      ) {
+        this.newParametros.push({
+          nombre: this.nombreParametro,
+          min: this.minParametro,
+          max: this.maxParametro,
         });
+        return;
+      }
+    },
+    addNewEntregas() {
+      if (this.cantidadEntrega) {
+        let i = this.cantidadEntrega;
+        while (i > 0) {
+          this.entregas.push({
+            cantidad: "",
+            unidad: "",
+            fecha: "",
+            hora: "",
+            punto: {},
+          });
+          i--;
+        }
       }
     },
     deleteEntrega(x) {
@@ -1195,7 +1570,7 @@ export default {
         this.ubicacionPunto != "" &&
         this.direccionPunto != ""
       ) {
-        this.puntosRecepcion.push({
+        this.puntoEntrega.push({
           nombre: this.nombrePunto,
           ubicacion: this.ubicacionPunto,
           direccion: this.direccionPunto,

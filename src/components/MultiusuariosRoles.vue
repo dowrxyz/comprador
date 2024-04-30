@@ -47,7 +47,7 @@
           class="justify-self-end"
         />
         <h2
-          class="text-center text-xl font-bold text-gray-500 w-3/4 mx-auto text-center"
+          class="text-center text-xl font-bold text-gray-500 w-3/4 mx-auto"
         >
           Rol Modificado
         </h2>

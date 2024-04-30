@@ -114,10 +114,11 @@
 
       <RouterLink to="/app/propuestas/filter">
         <div
-          class="card w-full h-28 border rounded-md border-gray-300 grid text-center items-center"
+          class="card w-full h-28 border rounded-md border-gray-300 grid text-center items-center relative"
         >
-          <span class="text-white text-4xl font-bold bg-red-600 rounded-full h-14 md:h-16 md:w-1/5 w-1/2 grid items-center mx-auto">8</span>
+          <span class="text-green-new text-4xl font-bold">7</span>
           <p class="text-gray-500 text-xs font-bold">Negociaciones Abiertas</p>
+          <span class="bg-red-600 rounded-full h-6 grid items-center w-6 text-center text-white text-xs absolute -top-1 -right-1">9</span>
         </div>
       </RouterLink>
 

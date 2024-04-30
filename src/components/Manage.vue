@@ -316,7 +316,7 @@
               >Plan</label
             >
 
-            <div class="custom-select bg-transparent text-gray-500 border-2 border-gray-200 rounded-md" @click="toggleDropdown">
+            <div class="custom-select bg-transparent text-gray-500 border-2 border-gray-200 rounded-md" @mouseenter="toggleDropdown">
               <div class="select-selected border-">{{ selectedOption.name }}</div>
               <div v-if="isOpen" class="select-items">
                 <div
@@ -462,7 +462,7 @@ export default {
       pagarSuscripcion: false,
       excel: false,
       isOpen: false,
-      selectedOption: "Selecciona una opción",
+      selectedOption: {name: "Selecciona una opción"},
       options: [{name: "Trimestral", price: 9.99}, {name: "Semestral", price: 49.99}, {name: "Anual", price: 109.99}], // Agrega aquí tus opciones
     };
   },
@@ -472,13 +472,8 @@ export default {
     },
     selectOption(option) {
       this.selectedOption = option;
+      this.toggleDropdown();
       this.tipo = option.price;
-      this.toggleDropdown()
-    },
-    closeDropdown(event) {
-      if (!this.$el.contains(event.target)) {
-        this.isOpen = false;
-      }
     },
     downloadExcel() {
       this.closeGrafico();
