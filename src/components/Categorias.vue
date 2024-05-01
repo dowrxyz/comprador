@@ -35,7 +35,7 @@
           class="card p-1 w-full h-28 border rounded-md border-gray-300 grid text-center items-center"
         >
           <img
-            src="@/assets/people/Aso.svg"
+            src="@/assets/People/Aso.svg"
             alt="App Icon"
             class="w-12 h-12 mx-auto"
           />
