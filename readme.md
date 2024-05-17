@@ -1,6 +1,6 @@
 # Web Application - Agroec Comprador
 
-Como correr la Aplicacion Frontend y compilar la Mobile.
+Como correr la Aplicacion Frontend y compilar la Mobile.abc
 
 ## Espacios de trabajo.
 
